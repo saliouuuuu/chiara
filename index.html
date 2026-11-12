@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chiara Pilates — Pilates, benessere e suono a Fossano</title>
+<meta name="description" content="Studio di Pilates, pre parto, riflessologia e armonizzazione sonora a Fossano (CN). Prenota la tua lezione di prova.">
+<meta name="theme-color" content="#EFEBE5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EFEBE5; --bg-2:#E6E0D8; --card:#F7F4F0;
+  --ink:#2C2231; --ink-2:#5E5263; --muted:#8C8090;
+  --accent:#9A6BB8; --accent-deep:#5A2D73; --accent-soft:#D9C8E6;
+  --line:#D6CEC5;
+  --r-lg:42px; --r-md:28px;
+  --gutter:clamp(16px,4vw,48px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-stretch:100%;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-stretch:100%;letter-spacing:0}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.h-display{font-stretch:118%;font-weight:600;letter-spacing:-.02em;line-height:1.02}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;border:1px solid currentColor;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn--solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn--solid:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn--light{color:#fff}
+.btn--light:hover{background:#fff;color:var(--ink)}
+.btn .arr{transition:transform .4s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,backdrop-filter .4s,box-shadow .4s}
+.nav.scrolled{background:rgba(239,235,229,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center;gap:10px;font-stretch:120%;font-weight:600;letter-spacing:.02em;font-size:19px;text-transform:uppercase}
+.logo svg{width:34px;height:34px;color:var(--accent-deep)}
+.logo small{display:block;font-size:9px;letter-spacing:.3em;font-weight:400;color:var(--muted);margin-top:2px}
+.nav__links{display:flex;gap:30px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.nav__links a{position:relative}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav__cta{padding:.75em 1.4em}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);position:relative}
+.burger span{position:absolute;left:13px;right:13px;height:1px;background:var(--ink);transition:transform .4s var(--ease)}
+.burger span:nth-child(1){top:18px}.burger span:nth-child(2){top:25px}
+.menu-open .burger span:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:0 var(--gutter);gap:8px;clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .8s var(--ease)}
+.menu-open .mobile-menu{clip-path:circle(150% at calc(100% - 40px) 40px)}
+.mobile-menu a{font-size:clamp(34px,9vw,56px);font-stretch:118%;font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.mobile-menu a em{font-family:"Instrument Serif",serif;font-weight:400;font-stretch:100%}
+
+/* ---------- HERO ---------- */
+.hero{padding-top:92px}
+.hero__card{position:relative;border-radius:var(--r-lg);overflow:hidden;height:min(86vh,820px);min-height:560px;background:#3a2c3e;isolation:isolate}
+.hero__media{position:absolute;inset:-6% 0;will-change:transform}
+.hero__media video,.hero__media img{width:100%;height:100%;object-fit:cover}
+.hero__card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(35,22,40,.72) 0%,rgba(35,22,40,.35) 45%,rgba(35,22,40,.05) 70%),linear-gradient(0deg,rgba(35,22,40,.55),transparent 45%)}
+.hero__content{position:absolute;z-index:2;inset:0;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;padding:clamp(28px,5vw,64px);color:#fff}
+.hero__tag{position:absolute;top:clamp(24px,4vw,44px);left:clamp(28px,5vw,64px);display:flex;align-items:center;gap:10px;color:#fff}
+.dot{width:8px;height:8px;border-radius:50%;background:#B9F0B0;box-shadow:0 0 0 0 rgba(185,240,176,.7);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(185,240,176,0)}100%{box-shadow:0 0 0 0 rgba(185,240,176,0)}}
+.hero h1{font-size:clamp(40px,5.4vw,90px)}
+.hero h1 .line{white-space:nowrap}
+.hero h1 .serif{font-size:1.08em;position:relative;display:inline-block;padding:0 .12em}
+.hero h1 .ring{position:absolute;inset:-14% -8% -10% -8%;width:116%;height:124%;overflow:visible;pointer-events:none}
+.hero h1 .ring path{fill:none;stroke:#fff;stroke-width:1.4;stroke-dasharray:1000;stroke-dashoffset:1000}
+.loaded .hero h1 .ring path{animation:draw 2.2s 1.2s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.line{display:block;overflow:hidden;padding-bottom:.06em}
+.line>span{display:inline-block;transform:translateY(110%);transition:transform 1.3s var(--ease)}
+.loaded .line>span{transform:none}
+.loaded .line:nth-child(2)>span{transition-delay:.12s}
+.loaded .line:nth-child(3)>span{transition-delay:.24s}
+.hero__side{max-width:320px;justify-self:end;opacity:0;transform:translateY(20px);transition:1.2s .6s var(--ease)}
+.loaded .hero__side{opacity:1;transform:none}
+.hero__side p{font-size:14px;line-height:1.6;opacity:.9;margin-bottom:22px}
+.hero__side .btns{display:flex;gap:10px;flex-wrap:wrap}
+.hero__sound{position:absolute;z-index:3;right:clamp(24px,4vw,44px);top:clamp(24px,4vw,44px);display:flex;align-items:center;gap:8px;color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.hero__sound i{display:flex;gap:2px;align-items:flex-end;height:14px}
+.hero__sound i b{width:2px;background:#fff;height:30%;animation:eq 1s infinite ease-in-out}
+.hero__sound i b:nth-child(2){animation-delay:.2s}.hero__sound i b:nth-child(3){animation-delay:.4s}.hero__sound i b:nth-child(4){animation-delay:.1s}
+.paused .hero__sound i b{animation-play-state:paused}
+@keyframes eq{50%{height:100%}}
+
+/* trust strip */
+.trust{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:28px 0 0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.trust div{display:flex;align-items:center;gap:10px}
+.trust strong{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:28px;letter-spacing:0;text-transform:none;color:var(--ink)}
+
+/* ---------- STATEMENT ---------- */
+.statement{padding:clamp(90px,13vw,170px) 0 clamp(60px,8vw,110px)}
+.statement__grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end}
+.statement h2{font-size:clamp(28px,3.4vw,48px);font-stretch:112%;font-weight:500;letter-spacing:-.015em;line-height:1.15;color:var(--ink)}
+.statement h2 .w{opacity:.15;transition:opacity .4s}
+.statement h2 .w.on{opacity:1}
+.statement h2 .serif{color:var(--accent-deep)}
+.statement__img{border-radius:var(--r-md);overflow:hidden;aspect-ratio:16/10}
+.statement__img img{width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
+.statement .eyebrow{margin-top:28px;color:var(--ink-2)}
+
+/* ---------- CLASSES (marquee + cards) ---------- */
+.classes{position:relative;padding:40px 0 120px;overflow:hidden}
+.marquee{position:absolute;left:0;right:0;top:50%;transform:translateY(-58%);display:flex;flex-direction:column;gap:0;pointer-events:none;z-index:0}
+.marquee__row{display:flex;white-space:nowrap;font-stretch:125%;font-weight:600;font-size:clamp(70px,11vw,170px);line-height:.95;letter-spacing:-.02em;color:#D5CCC0}
+.marquee__row span{padding-right:.35em}
+.marquee__track{display:flex;animation:mq 40s linear infinite}
+.marquee__row:nth-child(2) .marquee__track{animation-direction:reverse;animation-duration:50s}
+@keyframes mq{to{transform:translateX(-50%)}}
+.cards{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,44px);max-width:1100px;margin:0 auto}
+.ccard{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:3/4;color:#fff;cursor:pointer;background:#999;transform:translateY(40px);opacity:0;transition:transform 1.2s var(--ease),opacity 1.2s var(--ease)}
+.ccard.in{transform:none;opacity:1}
+.ccard:nth-child(2){transition-delay:.12s;margin-top:40px}.ccard:nth-child(3){transition-delay:.24s}
+.ccard img,.ccard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),opacity .6s}
+.ccard video{opacity:0}
+.ccard:hover img{transform:scale(1.06)}
+.ccard:hover video{opacity:1}
+.ccard::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,18,36,.65),rgba(30,18,36,.05) 55%)}
+.ccard__label{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;font-stretch:120%;font-weight:600;font-size:clamp(22px,2.3vw,32px);letter-spacing:.02em;text-transform:uppercase}
+.ccard__meta{position:absolute;z-index:1;left:22px;right:22px;bottom:22px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.06em}
+.ccard__meta .plus{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.7);display:grid;place-items:center;transition:background .4s,color .4s,transform .5s var(--ease)}
+.ccard:hover .plus{background:#fff;color:var(--ink);transform:rotate(90deg)}
+.center{text-align:center}
+.classes .center{margin-top:56px;position:relative;z-index:1}
+
+/* ---------- SERVICES LIST ---------- */
+.services{padding:clamp(70px,10vw,140px) 0;background:var(--card);border-radius:var(--r-lg) var(--r-lg) 0 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(36px,5vw,76px)}
+.sec-head p{max-width:380px;color:var(--ink-2);font-size:15px}
+.svc{display:grid;grid-template-columns:70px 1.1fr 1fr 60px;gap:24px;align-items:center;padding:30px 0;border-top:1px solid var(--line);position:relative;cursor:pointer}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc__n{font-size:12px;color:var(--muted);letter-spacing:.1em}
+.svc__t{font-size:clamp(24px,2.8vw,40px);font-stretch:115%;font-weight:500;letter-spacing:-.015em;line-height:1.1;transition:transform .6s var(--ease),color .4s}
+.svc__d{color:var(--ink-2);font-size:14.5px;max-width:420px}
+.svc__a{justify-self:end;width:48px;height:48px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:background .4s,color .4s,transform .6s var(--ease)}
+.svc:hover .svc__t{transform:translateX(14px);color:var(--accent-deep)}
+.svc:hover .svc__a{background:var(--ink);color:var(--bg);transform:rotate(-45deg)}
+.svc__peek{position:fixed;z-index:30;width:240px;aspect-ratio:3/4;border-radius:22px;overflow:hidden;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.85) rotate(-4deg);transition:opacity .35s,transform .5s var(--ease)}
+.svc__peek.show{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-4deg)}
+.svc__peek img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- REELS ---------- */
+.reels{padding:clamp(80px,11vw,150px) 0;background:var(--ink);color:var(--bg);border-radius:var(--r-lg)}
+.reels .sec-head p{color:#BDB2C1}
+.reels .serif{color:var(--accent-soft)}
+.reels__row{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gutter) 10px;scrollbar-width:none;cursor:grab}
+.reels__row::-webkit-scrollbar{display:none}
+.reel{flex:0 0 clamp(230px,22vw,300px);scroll-snap-align:start;position:relative;border-radius:var(--r-md);overflow:hidden;aspect-ratio:9/16;background:#3a2c3e}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 20px 20px;background:linear-gradient(0deg,rgba(20,12,24,.85),transparent);font-size:13px}
+.reel figcaption b{display:block;font-weight:600;font-stretch:115%;font-size:17px;letter-spacing:-.005em;margin-bottom:2px}
+.reels__nav{display:flex;gap:10px}
+.reels__nav button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(239,235,229,.5);display:grid;place-items:center;transition:background .3s,color .3s}
+.reels__nav button:hover{background:var(--bg);color:var(--ink)}
+
+/* ---------- ABOUT / 1:1 ---------- */
+.about{padding:clamp(90px,12vw,170px) 0}
+.about__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,90px);align-items:center}
+.about__img{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5}
+.about__img img{width:100%;height:120%;object-fit:cover;will-change:transform}
+.about__badge{position:absolute;right:-1px;bottom:-1px;background:var(--bg);border-radius:var(--r-md) 0 0 0;padding:18px 22px;display:flex;align-items:center;gap:12px}
+.about__badge svg{width:46px;height:46px;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.about h2{font-size:clamp(34px,4.4vw,64px);margin:16px 0 26px}
+.about h2 .serif{position:relative;display:inline-block}
+.about p{color:var(--ink-2);max-width:520px;margin-bottom:16px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px 0 38px}
+.pillar{padding:20px;border:1px solid var(--line);border-radius:20px;transition:border-color .4s,background .4s}
+.pillar:hover{border-color:var(--accent);background:var(--card)}
+.pillar b{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:30px;line-height:1;margin-bottom:8px;color:var(--accent-deep)}
+.pillar span{font-size:13px;color:var(--ink-2);line-height:1.4;display:block}
+
+/* ---------- STEPS ---------- */
+.steps{padding:0 0 clamp(90px,12vw,160px)}
+.steps__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--card);border-radius:var(--r-md);padding:34px 30px 30px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .6s var(--ease),background .5s}
+.step:hover{transform:translateY(-6px);background:#fff}
+.step__n{font-family:"Instrument Serif",serif;font-style:italic;font-size:64px;line-height:1;color:var(--accent)}
+.step h3{font-stretch:115%;font-weight:600;font-size:22px;letter-spacing:-.01em;margin-bottom:8px}
+.step p{font-size:14px;color:var(--ink-2)}
+
+/* ---------- TESTIMONIALS ---------- */
+.quotes{padding:clamp(80px,10vw,140px) 0;background:var(--bg-2);border-radius:var(--r-lg)}
+.quote-stage{position:relative;min-height:300px;max-width:980px;margin:0 auto;text-align:center}
+.quote{position:absolute;inset:0;opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease),transform .9s var(--ease);pointer-events:none}
+.quote.active{opacity:1;transform:none;pointer-events:auto}
+.quote blockquote{font-size:clamp(24px,3.2vw,44px);font-stretch:110%;font-weight:500;letter-spacing:-.015em;line-height:1.2}
+.quote blockquote .serif{color:var(--accent-deep)}
+.quote cite{display:block;margin-top:28px;font-style:normal;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.stars{color:var(--accent-deep);letter-spacing:4px;margin-bottom:22px;font-size:14px}
+.quote-dots{display:flex;justify-content:center;gap:10px;margin-top:30px}
+.quote-dots button{width:34px;height:3px;border-radius:3px;background:var(--line);overflow:hidden;position:relative}
+.quote-dots button.active::after{content:"";position:absolute;inset:0;background:var(--ink);transform-origin:left;animation:bar 6s linear forwards}
+@keyframes bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* ---------- FAQ ---------- */
+.faq{padding:clamp(90px,12vw,160px) 0}
+.faq__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,90px)}
+.faq h2{font-size:clamp(36px,4.6vw,68px);position:sticky;top:120px}
+.qa{border-top:1px solid var(--line)}
+.qa:last-child{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;text-align:left;font-size:clamp(17px,1.6vw,21px);font-stretch:108%;font-weight:500}
+.qa .ico{flex:0 0 34px;height:34px;border-radius:50%;border:1px solid var(--ink);position:relative;transition:background .4s,transform .5s var(--ease)}
+.qa .ico::before,.qa .ico::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:currentColor;transform:translate(-50%,-50%)}
+.qa .ico::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .5s var(--ease)}
+.qa.open .ico{background:var(--ink);color:var(--bg)}
+.qa.open .ico::after{transform:translate(-50%,-50%) rotate(0)}
+.qa__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.qa.open .qa__a{grid-template-rows:1fr}
+.qa__a>div{overflow:hidden}
+.qa__a p{padding:0 50px 26px 0;color:var(--ink-2)}
+
+/* ---------- CONTACT ---------- */
+.contact{padding:0 0 30px}
+.contact__card{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--accent-deep);color:#fff;display:grid;grid-template-columns:1fr 1fr}
+.contact__left{position:relative;padding:clamp(34px,5vw,70px);display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:620px;isolation:isolate}
+.contact__left img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.9}
+.contact__left::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(90,45,115,.85),rgba(44,34,49,.55))}
+.contact h2{font-size:clamp(38px,4.8vw,72px)}
+.contact__info{display:grid;gap:18px;font-size:15px}
+.contact__info a,.contact__info div{display:flex;gap:14px;align-items:flex-start}
+.contact__info svg{flex:0 0 20px;margin-top:2px;opacity:.85}
+.contact__info small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.form{background:var(--card);color:var(--ink);padding:clamp(30px,4.5vw,64px);display:flex;flex-direction:column;gap:22px}
+.form h3{font-stretch:115%;font-weight:600;font-size:26px;letter-spacing:-.01em}
+.form > p{color:var(--ink-2);font-size:14px;margin-top:-12px}
+.field{position:relative}
+.field input,.field textarea,.field select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:22px 0 10px;outline:none;transition:border-color .3s;border-radius:0;appearance:none;-webkit-appearance:none}
+.field textarea{resize:vertical;min-height:90px}
+.field label{position:absolute;left:0;top:22px;color:var(--muted);font-size:15px;pointer-events:none;transition:all .3s var(--ease)}
+.field input:focus,.field textarea:focus{border-color:var(--accent-deep)}
+.field input:focus+label,.field input:not(:placeholder-shown)+label,.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label{top:0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips legend{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;width:100%}
+fieldset.chips{border:0;padding:0;margin:0;min-width:0}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:.6em 1.1em;border:1px solid var(--line);border-radius:999px;font-size:13px;cursor:pointer;transition:all .3s var(--ease);user-select:none}
+.chip input:checked+span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.privacy{display:flex;gap:10px;font-size:12.5px;color:var(--ink-2);align-items:flex-start}
+.privacy input{margin-top:3px;accent-color:var(--accent-deep)}
+.form .btn{align-self:flex-start}
+.form__ok{display:none;padding:14px 18px;border-radius:14px;background:#E3F1DF;color:#2F5A28;font-size:14px}
+.map{margin-top:20px;border-radius:var(--r-lg);overflow:hidden;height:340px;filter:grayscale(.9) sepia(.15) contrast(.95)}
+.map iframe{width:100%;height:100%;border:0}
+
+/* ---------- FOOTER ---------- */
+.footer{padding:70px 0 34px}
+.footer__big{font-stretch:125%;font-weight:600;letter-spacing:-.03em;font-size:clamp(46px,11.5vw,190px);line-height:.9;color:var(--ink);white-space:nowrap}
+.footer__big .serif{color:var(--accent)}
+.footer__row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-2);letter-spacing:.06em}
+.footer__row nav{display:flex;gap:22px;flex-wrap:wrap}
+
+/* floating whatsapp */
+.wa{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);border-radius:999px;padding:8px 8px 8px 20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(44,34,49,.25);transform:translateY(120px);transition:transform .7s var(--ease),background .3s}
+.wa.show{transform:none}
+.wa:hover{background:var(--accent-deep)}
+.wa i{width:40px;height:40px;border-radius:50%;background:#25D366;display:grid;place-items:center}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+
+/* intro curtain */
+.curtain{position:fixed;inset:0;z-index:100;background:var(--accent-deep);display:grid;place-items:center;transition:transform 1.1s var(--ease) .2s}
+.curtain svg{width:64px;color:#fff;opacity:0;animation:fadein .8s .1s forwards}
+.loaded .curtain{transform:translateY(-100%)}
+@keyframes fadein{to{opacity:1}}
+
+.wrap{padding-left:var(--gutter)!important;padding-right:var(--gutter)!important}
+.quotes.wrap{max-width:calc(1320px - 2*var(--gutter))}
+
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* hero v2 (Attune-style) */
+.hero__wrap{position:relative}
+.hero__card::after{background:linear-gradient(180deg,rgba(35,22,40,.45) 0%,rgba(35,22,40,.1) 35%,rgba(35,22,40,.25) 60%,rgba(35,22,40,.7) 100%)}
+.hero__title{position:absolute;z-index:2;left:0;right:0;top:50%;transform:translateY(-46%);text-align:center;color:#fff;pointer-events:none}
+.hero__big{display:inline-block;font-stretch:125%;font-weight:500;letter-spacing:-.02em;line-height:.85;white-space:nowrap;font-size:13vw}
+.hero__big .ch{display:inline-block;transform:translateY(60%);opacity:0;filter:blur(8px);transition:transform 1.4s var(--ease),opacity 1.2s var(--ease),filter 1.2s var(--ease);transition-delay:calc(.25s + var(--k)*.06s)}
+.loaded .hero__big .ch{transform:none;opacity:1;filter:none}
+.hero__script{display:block;position:relative;z-index:1;color:#F1D7F5;font-size:clamp(48px,9vw,150px);line-height:.8;margin-bottom:-.18em;transform:rotate(-4deg)}
+.hero__script>span{display:inline-block;clip-path:inset(0 100% 0 0);transition:clip-path 1.6s var(--ease) 1s}
+.loaded .hero__script>span{clip-path:inset(0 0 0 0)}
+.hero__bottom{position:absolute;z-index:2;left:clamp(28px,5vw,64px);right:clamp(28px,5vw,64px);bottom:clamp(28px,4vw,48px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;color:#fff;opacity:0;transform:translateY(16px);transition:1.2s 1.4s var(--ease)}
+.loaded .hero__bottom{opacity:1;transform:none}
+.hero__bottom p{max-width:340px;font-size:13.5px;line-height:1.6;opacity:.92}
+.hero__link{font-size:11px;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:4px;margin-bottom:60px}
+.hero__pill{position:absolute;z-index:5;left:50%;bottom:0;transform:translate(-50%,50%);display:inline-flex;align-items:center;gap:10px;padding:18px 30px;border-radius:999px;background:var(--accent-deep);color:#fff;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;box-shadow:0 14px 40px rgba(90,45,115,.35),0 0 0 8px var(--bg);transition:background .4s,transform .5s var(--ease);white-space:nowrap}
+.hero__pill:hover{background:var(--ink);transform:translate(-50%,calc(50% - 3px))}
+.hero__pill span{transition:transform .4s var(--ease)}
+.hero__pill:hover span{transform:translate(3px,-3px)}
+.hero .trust{padding-top:64px}
+
+/* practice grid (Attune "Discover your practice") */
+.practice{padding-block:clamp(60px,8vw,110px)}
+.practice__panel{background:#FBF9F7;border-radius:var(--r-lg);padding:clamp(26px,4vw,56px);box-shadow:0 30px 80px -40px rgba(44,34,49,.25)}
+.practice__head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:30px}
+.practice__head h2{font-size:clamp(34px,4.4vw,64px)}
+.practice__head p{max-width:360px;font-size:14px;color:var(--ink-2)}
+.ico-inline{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);font-size:10px}
+.practice__bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{padding:.7em 1.3em;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink-2);transition:all .35s var(--ease)}
+.tab sup{font-size:9px;margin-left:2px;opacity:.6}
+.tab:hover{border-color:var(--ink);color:var(--ink)}
+.tab.active{border-color:var(--ink);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.saved-link{font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:var(--ink-2)}
+.saved-link span{min-width:22px;height:22px;border-radius:11px;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;font-size:11px;letter-spacing:0;transition:transform .4s var(--ease)}
+.saved-link.bump span{transform:scale(1.35)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,24px)}
+.pcard{position:relative;transition:opacity .45s var(--ease),transform .6s var(--ease)}
+.pcard.out{opacity:0;transform:scale(.96)}
+.pcard.gone{display:none}
+.pcard.enter{opacity:0;transform:translateY(24px)}
+.pcard__media{position:relative;display:block;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-2);isolation:isolate}
+.pcard__media img,.pcard__media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .5s}
+.pcard__media video{opacity:0}
+.pcard:hover .pcard__media img{transform:scale(1.06)}
+.pcard.playing .pcard__media video{opacity:1}
+.pcard__media::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(185,140,205,.92) 0%,rgba(205,170,220,.55) 28%,rgba(255,255,255,0) 52%)}
+.pcard__badge{position:absolute;z-index:2;left:14px;bottom:76px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.85);color:var(--ink);padding:4px 9px;border-radius:999px}
+.pcard__title{position:absolute;z-index:2;left:14px;right:14px;bottom:16px;color:#fff;font-size:12.5px;line-height:1.35;opacity:.95}
+.pcard__title b{display:block;font-weight:600;font-stretch:112%;font-size:clamp(15px,1.3vw,18px);letter-spacing:-.005em;margin-bottom:2px}
+.pcard__play{position:absolute;z-index:2;left:50%;top:42%;width:46px;height:46px;margin:-23px;border-radius:50%;background:rgba(255,255,255,.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;display:grid;place-items:center;font-size:12px;transition:opacity .4s,transform .5s var(--ease)}
+.pcard.playing .pcard__play{opacity:0;transform:scale(.6)}
+.pcard__save{position:absolute;z-index:3;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);display:grid;place-items:center;color:var(--ink);transition:transform .4s var(--ease),background .3s,color .3s}
+.pcard__save:hover{transform:scale(1.1)}
+.pcard__save[aria-pressed="true"]{background:var(--accent-deep);color:#fff}
+.pcard__save[aria-pressed="true"] path{fill:currentColor}
+.pcard__foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 4px 0}
+.pcard__foot b{display:block;font-size:13px;font-weight:500}
+.pcard__foot small{display:block;font-size:9.5px;letter-spacing:.12em;color:var(--muted);margin-top:2px}
+.avatar{flex:0 0 32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;font-size:11px;font-weight:600}
+
+/* about: circle + vertical text (Yoga Method) */
+.about{overflow-x:clip}
+.about__visual{position:relative;padding-right:44px}
+.about__visual::before{content:"";position:absolute;z-index:-1;width:118%;aspect-ratio:1;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,var(--bg) 0 46%,var(--bg-2) 46.3% 62%,transparent 62.3%)}
+.vtext{position:absolute;right:0;top:50%;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);font-size:11px;letter-spacing:.32em;color:var(--muted);white-space:nowrap}
+.vtext b{color:var(--ink);font-weight:600}
+
+/* side indicator (Yoga Method) */
+.sidex{position:fixed;z-index:44;right:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:14px;color:#fff;mix-blend-mode:difference;pointer-events:none;opacity:0;transition:opacity .6s}
+.sidex.show{opacity:1}
+.sidex__label{writing-mode:vertical-rl;transform:rotate(180deg);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;transition:opacity .3s}
+.sidex__line{width:1px;height:36px;background:currentColor;opacity:.6}
+.sidex__num{writing-mode:vertical-rl;transform:rotate(180deg);font-stretch:125%;font-weight:600;font-size:22px;letter-spacing:.02em}
+.sidex__dots{display:flex;flex-direction:column;gap:7px}
+.sidex__dots i{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.35;transition:all .4s var(--ease)}
+.sidex__dots i.on{opacity:1;transform:scale(1.6)}
+.sidex__scroll{margin-top:18px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.3em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.sidex__scroll i{width:14px;height:22px;border:1px solid currentColor;border-radius:8px;position:relative}
+.sidex__scroll i::after{content:"";position:absolute;left:50%;top:4px;width:2px;height:4px;margin-left:-1px;background:currentColor;border-radius:1px;animation:wheel 1.8s infinite}
+@keyframes wheel{60%{transform:translateY(-6px);opacity:0}}
+
+.toast{visibility:hidden;opacity:0;position:fixed;z-index:60;left:50%;bottom:28px;transform:translate(-50%,140%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-size:13px;transition:transform .5s var(--ease);white-space:nowrap}
+.toast.show{transform:translate(-50%,0);visibility:visible;opacity:1}
+
+@media (max-width:1180px){.sidex{display:none}}
+@media (hover:none){.pcard__play{display:none}}
+@media (max-width:980px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){
+  .hero__bottom{flex-direction:column;align-items:flex-start;gap:14px;bottom:56px}
+  .hero__bottom p{font-size:13px}
+  .hero__link{margin-bottom:0}
+  .hero__title{top:40%}
+  .hero__script{font-size:clamp(40px,13vw,64px)}
+  .hero__pill{padding:16px 22px;font-size:11px}
+  .pgrid{gap:12px}
+  .pcard__badge{bottom:auto;top:12px;left:12px;font-size:8.5px}
+  .practice__panel{padding:22px 16px}
+  .pcard__title b{font-size:14px}
+  .pcard__title{font-size:11.5px}
+  .pcard__foot small{font-size:8.5px}
+  .about__visual{padding-right:30px}
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .nav__links,.nav__cta{display:none}
+  .burger{display:block}
+  .hero__content{grid-template-columns:1fr;gap:24px}
+  .hero__side{justify-self:start}
+  .statement__grid,.about__grid,.faq__grid,.contact__card{grid-template-columns:1fr}
+  .faq h2{position:static}
+  .svc{grid-template-columns:44px 1fr 48px}
+  .svc__d{grid-column:2/3}
+  .svc__a{grid-row:1/3;grid-column:3}
+  .steps__grid{grid-template-columns:1fr}
+  .step{min-height:0;gap:30px}
+  .contact__left{min-height:460px}
+}
+@media (max-width:700px){
+  .cards{grid-template-columns:1fr;max-width:420px}
+  .ccard{aspect-ratio:4/5}
+  .ccard:nth-child(2){margin-top:0}
+  .hero__card{height:calc(100svh - 110px);min-height:540px;border-radius:30px}
+  .hero__sound span{display:none}
+  .hero__tag{font-size:9.5px;letter-spacing:.12em;right:64px}
+  .trust{justify-content:flex-start;gap:16px 28px}
+  .pillars{grid-template-columns:1fr}
+  .quote-stage{min-height:380px}
+  .wa span{display:none}
+  .wa{padding:6px}
+  .about__badge{padding:12px 14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv,.ccard,.line>span,.hero__side,.hero__bottom,.hero__big .ch{opacity:1!important;transform:none!important;filter:none!important}
+  .hero__script>span{clip-path:none!important}
+  .curtain{display:none}
+  .statement h2 .w{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<div class="curtain" aria-hidden="true"><svg viewBox="0 0 64 48"><use href="#lotus"/></svg></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lotus" viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+    <path d="M32 44C26 36 25 22 32 6c7 16 6 30 0 38Z"/>
+    <path d="M32 44c-8-4-15-14-14-28 9 6 13 18 14 28Z"/>
+    <path d="M32 44c8-4 15-14 14-28-9 6-13 18-14 28Z"/>
+    <path d="M32 44C22 44 10 38 6 26c11 1 20 9 26 18Z"/>
+    <path d="M32 44c10 0 22-6 26-18-11 1-20 9-26 18Z"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a href="#top" class="logo" aria-label="Chiara Pilates, home">
+      <svg viewBox="0 0 64 48"><use href="#lotus"/></svg>
+      <span>Chiara Pilates<small>Fossano · Studio</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Principale">
+      <a href="#corsi">Corsi</a>
+      <a href="#trattamenti">Percorsi</a>
+      <a href="#studio">Lo studio</a>
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contatti" class="btn nav__cta">Prenota una prova</a>
+    <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#corsi">Corsi</a>
+  <a href="#trattamenti"><em>Trattamenti</em></a>
+  <a href="#studio">Lo studio</a>
+  <a href="#chi-sono">Chi sono</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contatti"><em>Prenota</em> →</a>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero wrap" data-label="Benvenuta">
+  <div class="hero__wrap">
+  <div class="hero__card" id="heroCard">
+    <div class="hero__media" id="heroMedia">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__tag eyebrow"><span class="dot"></span> Iscrizioni aperte · Stagione 2026/27</div>
+    <button class="hero__sound" id="heroToggle" aria-label="Metti in pausa il video"><i><b></b><b></b><b></b><b></b></i><span>Pausa</span></button>
+    <h1 class="hero__title">
+      <span class="sr-only">Pilates, corpo e suono a Fossano: ritrova il tuo equilibrio</span>
+      <span class="hero__script serif" aria-hidden="true"><span>ritrova il tuo</span></span>
+      <span class="hero__big" id="heroBig" aria-hidden="true">EQUILIBRIO</span>
+    </h1>
+    <div class="hero__bottom">
+      <p>Pilates in piccoli gruppi, pre parto, riflessologia e armonizzazione sonora. Un unico studio a Fossano dove il movimento incontra la cura di sé.</p>
+      <a href="#corsi" class="hero__link">Scopri i corsi <span>↓</span></a>
+    </div>
+  </div>
+  <a href="#contatti" class="hero__pill">Prenota la prova gratuita <span>↗</span></a>
+  </div>
+  <div class="trust">
+    <div><strong>Piccoli</strong> gruppi, attenzione reale</div>
+    <div><strong>8</strong> percorsi in un solo studio</div>
+    <div><strong>1:1</strong> lezioni private su misura</div>
+    <div><strong>Centro</strong> di Fossano</div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement wrap" data-label="Il metodo">
+  <div class="statement__grid">
+    <div>
+      <h2 id="splitText">Mal di schiena, stress, un corpo che non senti più tuo? Qui non trovi una palestra affollata, ma un percorso pensato <span class="serif">su di te</span>: movimento consapevole, respiro e cura, un passo alla volta.</h2>
+      <p class="eyebrow">Sentiti forte nel tuo corpo. Leggera nella tua mente.</p>
+    </div>
+    <div class="statement__img rv"><img src="assets/img/campana-buddha.jpg" alt="Campana tibetana con mala su tavolo in legno chiaro" loading="lazy" data-parallax="0.08"></div>
+  </div>
+</section>
+
+<!-- CLASSES -->
+<section class="classes" id="corsi" data-label="Corsi">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__row"><div class="marquee__track"><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span></div></div>
+    <div class="marquee__row"><div class="marquee__track"><span>MUOVITI · RESPIRA</span><span>MUOVITI · RESPIRA</span><span>MUOVITI · RESPIRA</span><span>MUOVITI · RESPIRA</span></div></div>
+    <div class="marquee__row"><div class="marquee__track"><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span></div></div>
+  </div>
+  <div class="wrap">
+    <div class="cards">
+      <a class="ccard" href="#contatti" data-interest="Pilates">
+        <img src="assets/img/card-pilates.jpg" alt="Allieva in torsione laterale su tappetino" loading="lazy">
+        <div class="ccard__label">Pilates</div>
+        <div class="ccard__meta"><span>Matwork · Reformer · Posturale</span><span class="plus">+</span></div>
+      </a>
+      <a class="ccard" href="#contatti" data-interest="Pre parto">
+        <img src="assets/img/card-preparto.jpg" alt="Donna in gravidanza che si allena con elastico" loading="lazy">
+        <div class="ccard__label">Pre parto</div>
+        <div class="ccard__meta"><span>Gravidanza in movimento</span><span class="plus">+</span></div>
+      </a>
+      <a class="ccard" href="#contatti" data-interest="Armonizzazione sonora">
+        <img src="assets/img/suono-gruppo.jpg" alt="Sessione di gruppo con campane tibetane" loading="lazy">
+        <video muted loop playsinline preload="none" data-src="assets/video/suono-coppia.mp4"></video>
+        <div class="ccard__label">Suono</div>
+        <div class="ccard__meta"><span>Campane tibetane · Gong</span><span class="plus">+</span></div>
+      </a>
+    </div>
+    <div class="center"><a href="#trattamenti" class="btn">Tutti i percorsi <span class="arr">↓</span></a></div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="practice wrap" id="trattamenti" data-label="Percorsi">
+  <div class="practice__panel">
+    <div class="practice__head">
+      <h2 class="h-display rv">Scopri la tua <span class="serif">pratica</span></h2>
+      <p class="rv rv-d1">Movimento, trattamenti e suono. Salva quello che ti incuriosisce con <span class="ico-inline">⌑</span>: lo trovi già nella richiesta.</p>
+    </div>
+    <div class="practice__bar">
+      <div class="tabs" role="tablist" aria-label="Filtra i percorsi">
+        <button class="tab active" data-f="all" role="tab" aria-selected="true">Tutti <sup>8</sup></button>
+        <button class="tab" data-f="movimento" role="tab" aria-selected="false">Movimento <sup>4</sup></button>
+        <button class="tab" data-f="trattamenti" role="tab" aria-selected="false">Trattamenti <sup>2</sup></button>
+        <button class="tab" data-f="suono" role="tab" aria-selected="false">Suono <sup>2</sup></button>
+      </div>
+      <a href="#contatti" class="saved-link" id="savedLink">La tua richiesta <span id="savedCount">0</span></a>
+    </div>
+    <div class="pgrid" id="pgrid">
+      <article class="pcard" data-cat="movimento" style="--i:0">
+        <a href="#contatti" class="pcard__media" data-interest="Pilates">
+          <img src="assets/img/card-pilates.jpg" alt="Pilates Matwork" loading="lazy">
+          <span class="pcard__badge">Piccoli gruppi</span>
+          <span class="pcard__title"><b>Pilates Matwork</b>Tono, allungamento e postura</span>
+        </a>
+        <button class="pcard__save" data-save="Pilates" aria-pressed="false" aria-label="Aggiungi Pilates Matwork alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Chiara</b><small>MATWORK · TUTTI I LIVELLI</small></div><span class="avatar">C</span></div>
+      </article>
+      <article class="pcard" data-cat="movimento" style="--i:1">
+        <a href="#contatti" class="pcard__media" data-interest="Pilates posturale">
+          <img src="assets/img/card-posturale.jpg" alt="Mondo scientifico" loading="lazy">
+          <span class="pcard__badge">Scientifico</span>
+          <span class="pcard__title"><b>Mondo scientifico</b>Schiena, spalle e collo</span>
+        </a>
+        <button class="pcard__save" data-save="Pilates posturale" aria-pressed="false" aria-label="Aggiungi Mondo scientifico alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Chiara</b><small>POSTURALE · PRINCIPIANTI</small></div><span class="avatar">C</span></div>
+      </article>
+      <article class="pcard" data-cat="movimento" style="--i:2">
+        <a href="#contatti" class="pcard__media" data-interest="Pre parto">
+          <img src="assets/img/card-preparto.jpg" alt="Pre parto" loading="lazy">
+          <span class="pcard__badge">Gravidanza</span>
+          <span class="pcard__title"><b>Pre parto</b>Respiro e pavimento pelvico</span>
+        </a>
+        <button class="pcard__save" data-save="Pre parto" aria-pressed="false" aria-label="Aggiungi Pre parto alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Chiara</b><small>DAL 2° TRIMESTRE</small></div><span class="avatar">C</span></div>
+      </article>
+      <article class="pcard" data-cat="movimento" style="--i:3">
+        <a href="#contatti" class="pcard__media" data-interest="Lezione privata 1:1">
+          <img src="assets/img/card-privata.jpg" alt="Lezione 1:1" loading="lazy">
+          <span class="pcard__badge">Privata</span>
+          <span class="pcard__title"><b>Lezione 1:1</b>Un programma solo per te</span>
+        </a>
+        <button class="pcard__save" data-save="Lezione privata 1:1" aria-pressed="false" aria-label="Aggiungi Lezione 1:1 alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Chiara</b><small>SU MISURA · OGNI LIVELLO</small></div><span class="avatar">C</span></div>
+      </article>
+      <article class="pcard" data-cat="trattamenti" style="--i:0">
+        <a href="#contatti" class="pcard__media" data-interest="Riflessologia">
+          <img src="assets/img/viso-donna.jpg" alt="Riflessologia del viso" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/riflessologia-viso.mp4"></video>
+          <span class="pcard__badge">Trattamento</span><span class="pcard__play" aria-hidden="true">▶</span>
+          <span class="pcard__title"><b>Riflessologia del viso</b>Trattare il corpo dal viso</span>
+        </a>
+        <button class="pcard__save" data-save="Riflessologia" aria-pressed="false" aria-label="Aggiungi Riflessologia del viso alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>Trattamento individuale</b><small>RILASSANTE · 50 MIN</small></div><span class="avatar">R</span></div>
+      </article>
+      <article class="pcard" data-cat="trattamenti" style="--i:1">
+        <a href="#contatti" class="pcard__media" data-interest="Riflessologia">
+          <img src="assets/img/card-plantare.jpg" alt="Riflessologia plantare" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/riflessologia-plantare.mp4"></video>
+          <span class="pcard__badge">Trattamento</span><span class="pcard__play" aria-hidden="true">▶</span>
+          <span class="pcard__title"><b>Riflessologia plantare</b>Sblocca la tua energia</span>
+        </a>
+        <button class="pcard__save" data-save="Riflessologia" aria-pressed="false" aria-label="Aggiungi Riflessologia plantare alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>Trattamento individuale</b><small>RIEQUILIBRANTE · 50 MIN</small></div><span class="avatar">R</span></div>
+      </article>
+      <article class="pcard" data-cat="suono" style="--i:2">
+        <a href="#contatti" class="pcard__media" data-interest="Armonizzazione sonora">
+          <img src="assets/img/card-individuale.jpg" alt="Armonizzazione sonora" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/armonizzazione.mp4"></video>
+          <span class="pcard__badge">Individuale</span><span class="pcard__play" aria-hidden="true">▶</span>
+          <span class="pcard__title"><b>Armonizzazione sonora</b>Un percorso sonoro su misura</span>
+        </a>
+        <button class="pcard__save" data-save="Armonizzazione sonora" aria-pressed="false" aria-label="Aggiungi Armonizzazione sonora alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Aluna</b><small>CAMPANE · GONG</small></div><span class="avatar">A</span></div>
+      </article>
+      <article class="pcard" data-cat="suono" style="--i:3">
+        <a href="#contatti" class="pcard__media" data-interest="Armonizzazione sonora">
+          <img src="assets/img/card-coppia.jpg" alt="Sessione di coppia" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/suono-coppia.mp4"></video>
+          <span class="pcard__badge">Coppia</span><span class="pcard__play" aria-hidden="true">▶</span>
+          <span class="pcard__title"><b>Sessione di coppia</b>Un momento di pace insieme</span>
+        </a>
+        <button class="pcard__save" data-save="Armonizzazione sonora" aria-pressed="false" aria-label="Aggiungi Sessione di coppia alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Aluna</b><small>DA REGALARE · 60 MIN</small></div><span class="avatar">A</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="reels" id="studio" data-label="Lo studio">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h-display rv">Dentro <span class="serif">lo studio</span></h2>
+      <div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
+        <p class="rv rv-d1">Guarda come lavoriamo davvero: niente stock, solo le nostre sessioni.</p>
+        <div class="reels__nav rv rv-d2"><button id="rPrev" aria-label="Video precedente">←</button><button id="rNext" aria-label="Video successivo">→</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="reels__row" id="reelsRow">
+    <figure class="reel"><video muted loop playsinline preload="none" poster="assets/img/suono-coppia-poster.jpg" data-src="assets/video/suono-coppia.mp4"></video><figcaption><b>Sessioni di coppia</b>Campane tibetane e strumenti</figcaption></figure>
+    <figure class="reel"><video muted loop playsinline preload="none" poster="assets/img/armonizzazione-poster.jpg" data-src="assets/video/armonizzazione.mp4"></video><figcaption><b>Armonizzazione individuale</b>Un percorso sonoro su misura</figcaption></figure>
+    <figure class="reel"><video muted loop playsinline preload="none" poster="assets/img/riflessologia-viso-poster.jpg" data-src="assets/video/riflessologia-viso.mp4"></video><figcaption><b>Riflessologia del viso</b>Gestire il corpo trattando il viso</figcaption></figure>
+    <figure class="reel"><video muted loop playsinline preload="none" poster="assets/img/riflessologia-plantare-poster.jpg" data-src="assets/video/riflessologia-plantare.mp4"></video><figcaption><b>Riflessologia plantare</b>Sblocca la tua energia</figcaption></figure>
+    <figure class="reel"><video muted loop playsinline preload="none" poster="assets/img/naturopatia-poster.jpg" data-src="assets/video/naturopatia.mp4"></video><figcaption><b>Naturopatia</b>Corsi e approfondimenti 2026/27</figcaption></figure>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about wrap" id="chi-sono" data-label="Chi sono">
+  <div class="about__grid">
+    <div class="about__visual rv">
+    <span class="vtext" aria-hidden="true"><b>ASCOLTO</b> · METODO · CURA</span>
+    <div class="about__img">
+      <img src="assets/img/campane-gong.jpg" alt="Sessione con campane tibetane e gong" loading="lazy" data-parallax="0.1">
+      <div class="about__badge">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="c" d="M50 50m-36 0a36 36 0 1 1 72 0a36 36 0 1 1-72 0"/></defs><text font-size="11.5" letter-spacing="2.6" fill="currentColor" font-family="Archivo"><textPath href="#c">CHIARA PILATES · FOSSANO · </textPath></text></svg>
+        <span class="eyebrow">Studio<br>certificato</span>
+      </div>
+    </div>
+    </div>
+    <div>
+      <p class="eyebrow rv" style="color:var(--accent-deep)">Lezioni private · Chi sono</p>
+      <h2 class="h-display rv rv-d1">Un supporto <span class="serif">1:1</span> da chi ti <span class="serif">ascolta</span></h2>
+      <p class="rv rv-d2">Sono Chiara, insegnante di Pilates e operatrice olistica. Ho creato questo studio con un’idea semplice: ogni corpo ha una storia, e merita un percorso che la rispetti.</p>
+      <p class="rv rv-d2">Che tu voglia liberarti dal mal di schiena, prepararti al parto o semplicemente staccare dalla frenesia, partiamo da un colloquio conoscitivo e costruiamo insieme il tuo programma.</p>
+      <div class="pillars rv rv-d3">
+        <div class="pillar"><b>Ascolto</b><span>Colloquio iniziale e valutazione posturale</span></div>
+        <div class="pillar"><b>Metodo</b><span>Basi anatomiche e progressioni misurabili</span></div>
+        <div class="pillar"><b>Cura</b><span>Suono e riflessologia per il recupero</span></div>
+      </div>
+      <a href="#contatti" class="btn btn--solid rv">Prenota il colloquio <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps wrap" data-label="Come iniziare">
+  <div class="sec-head">
+    <h2 class="h-display rv">Iniziare è <span class="serif">semplice</span></h2>
+    <p class="rv rv-d1">Tre passi, nessun impegno: la prima lezione serve a conoscerci.</p>
+  </div>
+  <div class="steps__grid">
+    <div class="step rv"><span class="step__n">01</span><div><h3>Scrivici</h3><p>Compila il modulo o mandaci un messaggio WhatsApp: ti rispondiamo entro 24 ore.</p></div></div>
+    <div class="step rv rv-d1"><span class="step__n">02</span><div><h3>Lezione di prova</h3><p>Vieni in studio, conosci l’insegnante e prova il metodo con calma.</p></div></div>
+    <div class="step rv rv-d2"><span class="step__n">03</span><div><h3>Il tuo percorso</h3><p>Scegli il pacchetto più adatto a te: gruppo, privato o trattamenti.</p></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="quotes wrap" aria-label="Recensioni" data-label="Recensioni">
+  <div class="quote-stage" id="quotes">
+    <div class="quote active"><div class="stars">★★★★★</div><blockquote>“Dopo anni di mal di schiena finalmente mi sento <span class="serif">libera</span> di muovermi. Lezioni curate in ogni dettaglio.”</blockquote><cite>Allieva Pilates · da 2 anni</cite></div>
+    <div class="quote"><div class="stars">★★★★★</div><blockquote>“Il corso pre parto è stato il mio momento di pace in gravidanza. Mi sono sentita <span class="serif">accompagnata</span>.”</blockquote><cite>Neo mamma · Fossano</cite></div>
+    <div class="quote"><div class="stars">★★★★★</div><blockquote>“La sessione di coppia con le campane è un’esperienza che consiglio a <span class="serif">chiunque</span>. Siamo usciti rinati.”</blockquote><cite>Sessione di coppia</cite></div>
+  </div>
+  <div class="quote-dots" id="qDots"><button class="active" aria-label="Recensione 1"></button><button aria-label="Recensione 2"></button><button aria-label="Recensione 3"></button></div>
+</section>
+
+<!-- FAQ -->
+<section class="faq wrap" id="faq" data-label="FAQ">
+  <div class="faq__grid">
+    <h2 class="h-display rv">Domande <span class="serif">frequenti</span></h2>
+    <div>
+      <div class="qa rv"><button aria-expanded="false">Non ho mai fatto Pilates, posso iniziare?<span class="ico"></span></button><div class="qa__a"><div><p>Assolutamente sì. I gruppi sono piccoli e divisi per livello: l’insegnante adatta ogni esercizio alle tue possibilità, a partire dalla lezione di prova.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Cosa devo portare alla prima lezione?<span class="ico"></span></button><div class="qa__a"><div><p>Abbigliamento comodo e calze antiscivolo. Tappetini e attrezzi sono forniti dallo studio.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Da quale mese di gravidanza posso seguire il pre parto?<span class="ico"></span></button><div class="qa__a"><div><p>In genere dal secondo trimestre, con il via libera del tuo ginecologo o della tua ostetrica. Ne parliamo insieme nel colloquio iniziale.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Come funziona una sessione di armonizzazione sonora?<span class="ico"></span></button><div class="qa__a"><div><p>Ti sdrai comoda e vestita mentre campane tibetane, gong e tamburo creano vibrazioni che favoriscono un rilassamento profondo. Dura circa 60 minuti, anche in coppia.</p></div></div></div>
+      <div class="qa rv"><button aria-expanded="false">Posso regalare una sessione?<span class="ico"></span></button><div class="qa__a"><div><p>Sì, sono disponibili gift card per lezioni, trattamenti e sessioni di coppia. Scrivici e la prepariamo per te.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact wrap" id="contatti" data-label="Contatti">
+  <div class="contact__card">
+    <div class="contact__left">
+      <img src="assets/img/campane-1.jpg" alt="" loading="lazy">
+      <div>
+        <p class="eyebrow" style="opacity:.8">Prima lezione di prova</p>
+        <h2 class="h-display" style="margin-top:14px">Il tuo primo passo <span class="serif">inizia qui</span></h2>
+      </div>
+      <div class="contact__info">
+        <a href="tel:+393886967485"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span><small>Telefono / WhatsApp</small>388 696 7485</span></a>
+        <a href="https://maps.google.com/?q=Viale+Ambrogio+da+Fossano+1+Fossano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Studio</small>Viale Ambrogio da Fossano 1, Fossano (CN)</span></a>
+        <a href="https://instagram.com/chiara_pilates" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg><span><small>Instagram</small>@chiara_pilates</span></a>
+      </div>
+    </div>
+    <form class="form" id="bookForm" novalidate>
+      <h3>Richiedi informazioni</h3>
+      <p>Ti ricontattiamo entro 24 ore per fissare la tua prova.</p>
+      <div class="field"><input id="fName" name="nome" placeholder=" " required autocomplete="name"><label for="fName">Nome e cognome</label></div>
+      <div class="field"><input id="fPhone" name="telefono" type="tel" placeholder=" " required autocomplete="tel"><label for="fPhone">Telefono</label></div>
+      <fieldset class="chips" id="chips">
+        <legend>Mi interessa</legend>
+        <label class="chip"><input type="checkbox" name="int" value="Pilates"><span>Pilates</span></label>
+        <label class="chip"><input type="checkbox" name="int" value="Pilates posturale"><span>Posturale</span></label>
+        <label class="chip"><input type="checkbox" name="int" value="Pre parto"><span>Pre parto</span></label>
+        <label class="chip"><input type="checkbox" name="int" value="Riflessologia"><span>Riflessologia</span></label>
+        <label class="chip"><input type="checkbox" name="int" value="Armonizzazione sonora"><span>Suono</span></label>
+        <label class="chip"><input type="checkbox" name="int" value="Lezione privata 1:1"><span>Privata 1:1</span></label>
+      </fieldset>
+      <div class="field"><textarea id="fMsg" name="messaggio" placeholder=" " rows="3"></textarea><label for="fMsg">Raccontaci qualcosa di te (facoltativo)</label></div>
+      <label class="privacy"><input type="checkbox" id="fPriv" required> Acconsento al trattamento dei dati personali per essere ricontattata/o.</label>
+      <button class="btn btn--solid" type="submit">Invia su WhatsApp <span class="arr">→</span></button>
+      <div class="form__ok" id="formOk" role="status">Perfetto! Si sta aprendo WhatsApp con il tuo messaggio già pronto.</div>
+    </form>
+  </div>
+  <div class="map rv"><iframe title="Mappa dello studio Chiara Pilates" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Viale%20Ambrogio%20da%20Fossano%201%2C%20Fossano&z=16&output=embed"></iframe></div>
+</section>
+
+</main>
+
+<footer class="footer wrap">
+  <div class="footer__big">Chiara <span class="serif">Pilates</span></div>
+  <div class="footer__row">
+    <span>© 2026 Chiara Pilates · Viale Ambrogio da Fossano 1, Fossano (CN)</span>
+    <nav><a href="#corsi">Corsi</a><a href="#trattamenti">Trattamenti</a><a href="#contatti">Contatti</a><a href="https://instagram.com/chiara_pilates" target="_blank" rel="noopener">Instagram</a><a href="#">Privacy</a></nav>
+  </div>
+</footer>
+
+<aside class="sidex" id="sidex" aria-hidden="true">
+  <span class="sidex__label" id="sidexLabel">Benvenuta</span>
+  <span class="sidex__line"></span>
+  <span class="sidex__num" id="sidexNum">01</span>
+  <span class="sidex__dots" id="sidexDots"></span>
+  <span class="sidex__scroll"><i></i>Scroll</span>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<a class="wa" id="wa" href="https://wa.me/393886967485?text=Ciao%20Chiara%2C%20vorrei%20informazioni%20sulle%20lezioni" target="_blank" rel="noopener"><span>Scrivici</span><i><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg></i></a>
+
+<script>
+(() => {
+  const $ = (s, c=document) => c.querySelector(s), $$ = (s, c=document) => [...c.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+
+  // intro
+  const go = () => root.classList.add('loaded');
+  window.addEventListener('load', () => setTimeout(go, 350));
+  setTimeout(go, 2200);
+
+  // nav
+  const nav = $('#nav'), wa = $('#wa');
+  const onScroll = () => {
+    const y = scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+    wa.classList.toggle('show', y > innerHeight * .6);
+  };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // mobile menu
+  const burger = $('#burger'), menu = $('#mobileMenu');
+  const setMenu = open => { document.body.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); menu.setAttribute('aria-hidden', !open); document.body.style.overflow = open ? 'hidden' : ''; };
+  burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  // hero video toggle
+  const hv = $('#heroVideo'), ht = $('#heroToggle');
+  ht.addEventListener('click', () => {
+    if (hv.paused) { hv.play(); document.body.classList.remove('paused'); ht.lastElementChild.textContent = 'Pausa'; ht.setAttribute('aria-label','Metti in pausa il video'); }
+    else { hv.pause(); document.body.classList.add('paused'); ht.lastElementChild.textContent = 'Play'; ht.setAttribute('aria-label','Riproduci il video'); }
+  });
+  if (reduce) { hv.removeAttribute('autoplay'); hv.pause(); document.body.classList.add('paused'); ht.lastElementChild.textContent = 'Play'; }
+
+  // reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15, rootMargin:'0px 0px -6% 0px'});
+  $$('.rv, .ccard').forEach(el => io.observe(el));
+
+  // lazy video: load + play only when visible
+  const vio = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) {
+      if (v.dataset.src && !v.src) { v.src = v.dataset.src; }
+      if (!v.closest('.ccard') && !reduce) v.play().catch(()=>{});
+    } else v.pause();
+  }), {threshold:.35});
+  $$('video[data-src]').forEach(v => vio.observe(v));
+  $$('.ccard').forEach(c => {
+    const v = $('video', c); if (!v) return;
+    c.addEventListener('mouseenter', () => { if (!v.src) v.src = v.dataset.src; v.play().catch(()=>{}); });
+    c.addEventListener('mouseleave', () => v.pause());
+  });
+
+  // statement word-by-word highlight
+  const st = $('#splitText');
+  const walk = node => { [...node.childNodes].forEach(n => {
+    if (n.nodeType === 3) { const frag = document.createDocumentFragment(); n.textContent.split(/(\s+)/).forEach(w => { if (!w.trim()) frag.append(w); else { const s = document.createElement('span'); s.className = 'w'; s.textContent = w; frag.append(s); } }); n.replaceWith(frag); }
+    else if (n.nodeType === 1) { n.classList.add('w'); }
+  }); };
+  walk(st);
+  const words = $$('.w', st);
+
+  // parallax + scroll-linked
+  const hm = $('#heroMedia'), plx = $$('[data-parallax]');
+  let ticking = false;
+  const frame = () => {
+    ticking = false;
+    const vh = innerHeight;
+    if (!reduce) {
+      const y = scrollY; if (y < vh * 1.2) hm.style.transform = `translate3d(0,${y * .18}px,0) scale(${1 + y * .00012})`;
+      plx.forEach(el => { const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return; const p = (r.top + r.height/2 - vh/2) / vh; el.style.transform = `translate3d(0,${p * -100 * +el.dataset.parallax * 3}px,0) scale(1.15)`; });
+    }
+    const r = st.getBoundingClientRect();
+    const prog = Math.min(1, Math.max(0, (vh * .85 - r.top) / (r.height + vh * .35)));
+    const n = Math.round(prog * words.length);
+    words.forEach((w, i) => w.classList.toggle('on', i < n));
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, {passive:true});
+  frame();
+
+  // preselect interest from cards / services
+  $$('[data-interest]').forEach(el => el.addEventListener('click', () => {
+    const val = el.dataset.interest;
+    $$('#chips input').forEach(i => { if (i.value === val) i.checked = true; });
+  }));
+
+
+  // hero big word: split + fit to width
+  const big = $('#heroBig');
+  big.innerHTML = [...big.textContent].map((c,k)=>`<span class="ch" style="--k:${k}">${c}</span>`).join('');
+  const fit = () => { const W = $('#heroCard').clientWidth * .9; big.style.fontSize = '100px'; big.style.fontSize = Math.min(100 * W / big.offsetWidth, 260) + 'px'; };
+  fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+
+  // practice filter
+  const pcards = $$('.pcard'), tabs = $$('.tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => { x.classList.toggle('active', x === t); x.setAttribute('aria-selected', x === t); });
+    const f = t.dataset.f;
+    pcards.forEach(c => c.classList.add('out'));
+    setTimeout(() => {
+      pcards.forEach(c => { const show = f === 'all' || c.dataset.cat === f; c.classList.toggle('gone', !show); c.classList.remove('out'); if (show) c.classList.add('enter'); });
+      requestAnimationFrame(() => requestAnimationFrame(() => $$('.pcard.enter').forEach((c,i) => { c.style.transitionDelay = (i*.07)+'s'; c.classList.remove('enter'); setTimeout(()=>c.style.transitionDelay='', 900); })));
+    }, 380);
+  }));
+  // hover video on practice cards
+  pcards.forEach(c => { const v = $('video', c); if (!v) return;
+    const on = () => { if (!v.src) v.src = v.dataset.src; v.play().then(()=>c.classList.add('playing')).catch(()=>{}); };
+    const off = () => { v.pause(); c.classList.remove('playing'); };
+    c.addEventListener('mouseenter', on); c.addEventListener('mouseleave', off);
+  });
+  // save -> adds to request form
+  const toast = $('#toast'); let tt;
+  const say = m => { toast.textContent = m; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), 2200); };
+  const sync = () => { const n = $$('#chips input:checked').length; $('#savedCount').textContent = n; const l=$('#savedLink'); l.classList.add('bump'); setTimeout(()=>l.classList.remove('bump'),300);
+    $$('.pcard__save').forEach(b => b.setAttribute('aria-pressed', !!$$('#chips input').find(i => i.value === b.dataset.save && i.checked))); };
+  $$('.pcard__save').forEach(b => b.addEventListener('click', () => {
+    const inp = $$('#chips input').find(i => i.value === b.dataset.save); if (!inp) return;
+    inp.checked = !inp.checked; sync();
+    say(inp.checked ? `“${inp.value}” aggiunto alla tua richiesta` : `“${inp.value}” rimosso`);
+  }));
+  $$('#chips input').forEach(i => i.addEventListener('change', sync));
+  $$('[data-interest]').forEach(el => el.addEventListener('click', () => setTimeout(sync)));
+
+  // side section indicator
+  const secs = $$('section[data-label]'), sidex = $('#sidex'), dotsW = $('#sidexDots');
+  secs.forEach(() => dotsW.append(document.createElement('i')));
+  const sdots = $$('i', dotsW);
+  const sio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return;
+    const i = secs.indexOf(e.target); $('#sidexLabel').textContent = e.target.dataset.label; $('#sidexNum').textContent = String(i+1).padStart(2,'0');
+    sdots.forEach((d,k) => d.classList.toggle('on', k === i)); }), {rootMargin:'-45% 0px -45% 0px'});
+  secs.forEach(x => sio.observe(x));
+  addEventListener('scroll', () => sidex.classList.toggle('show', scrollY > 200 && scrollY < document.body.scrollHeight - innerHeight - 300), {passive:true});
+
+  // reels nav + drag
+  const row = $('#reelsRow');
+  const step = () => row.querySelector('.reel').offsetWidth + 20;
+  $('#rNext').addEventListener('click', () => row.scrollBy({left: step(), behavior:'smooth'}));
+  $('#rPrev').addEventListener('click', () => row.scrollBy({left: -step(), behavior:'smooth'}));
+  let down = false, sx = 0, sl = 0;
+  row.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; sx = e.clientX; sl = row.scrollLeft; row.style.scrollSnapType = 'none'; row.style.cursor = 'grabbing'; });
+  addEventListener('pointerup', () => { if (!down) return; down = false; row.style.scrollSnapType = ''; row.style.cursor = ''; });
+  addEventListener('pointermove', e => { if (down) row.scrollLeft = sl - (e.clientX - sx); });
+
+  // testimonials
+  const qs = $$('.quote'), dots = $$('#qDots button'); let qi = 0, qt;
+  const showQ = i => { qs[qi].classList.remove('active'); dots[qi].classList.remove('active'); qi = i; qs[qi].classList.add('active'); void dots[qi].offsetWidth; dots[qi].classList.add('active'); clearTimeout(qt); qt = setTimeout(() => showQ((qi + 1) % qs.length), 6000); };
+  dots.forEach((d, i) => d.addEventListener('click', () => showQ(i)));
+  qt = setTimeout(() => showQ(1), 6000);
+
+  // FAQ
+  $$('.qa').forEach(q => $('button', q).addEventListener('click', () => {
+    const open = !q.classList.contains('open');
+    $$('.qa.open').forEach(o => { o.classList.remove('open'); $('button', o).setAttribute('aria-expanded', false); });
+    q.classList.toggle('open', open); $('button', q).setAttribute('aria-expanded', open);
+  }));
+
+  // form -> WhatsApp
+  $('#bookForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target, name = $('#fName').value.trim(), phone = $('#fPhone').value.trim();
+    let bad = null;
+    [['#fName', name], ['#fPhone', phone.replace(/\D/g,'').length >= 8]].forEach(([s, ok]) => { const el = $(s); el.style.borderColor = ok ? '' : '#C0474B'; if (!ok && !bad) bad = el; });
+    const priv = $('#fPriv'); priv.parentElement.style.color = priv.checked ? '' : '#C0474B'; if (!priv.checked && !bad) bad = priv;
+    if (bad) { bad.focus(); return; }
+    const ints = $$('#chips input:checked').map(i => i.value).join(', ') || 'da definire';
+    const msg = `Ciao Chiara! Sono ${name} (${phone}).\nVorrei prenotare una lezione di prova.\nMi interessa: ${ints}.` + ($('#fMsg').value.trim() ? `\n\n${$('#fMsg').value.trim()}` : '');
+    $('#formOk').style.display = 'block';
+    window.open('https://wa.me/393886967485?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>
