@@ -282,6 +282,112 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 .wrap{padding-left:var(--gutter)!important;padding-right:var(--gutter)!important}
 .quotes.wrap{max-width:calc(1320px - 2*var(--gutter))}
 
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* hero v2 (Attune-style) */
+.hero__wrap{position:relative}
+.hero__card::after{background:linear-gradient(180deg,rgba(35,22,40,.45) 0%,rgba(35,22,40,.1) 35%,rgba(35,22,40,.25) 60%,rgba(35,22,40,.7) 100%)}
+.hero__title{position:absolute;z-index:2;left:0;right:0;top:50%;transform:translateY(-46%);text-align:center;color:#fff;pointer-events:none}
+.hero__big{display:inline-block;font-stretch:125%;font-weight:500;letter-spacing:-.02em;line-height:.85;white-space:nowrap;font-size:13vw}
+.hero__big .ch{display:inline-block;transform:translateY(60%);opacity:0;filter:blur(8px);transition:transform 1.4s var(--ease),opacity 1.2s var(--ease),filter 1.2s var(--ease);transition-delay:calc(.25s + var(--k)*.06s)}
+.loaded .hero__big .ch{transform:none;opacity:1;filter:none}
+.hero__script{display:block;position:relative;z-index:1;color:#F1D7F5;font-size:clamp(48px,9vw,150px);line-height:.8;margin-bottom:-.18em;transform:rotate(-4deg)}
+.hero__script>span{display:inline-block;clip-path:inset(0 100% 0 0);transition:clip-path 1.6s var(--ease) 1s}
+.loaded .hero__script>span{clip-path:inset(0 0 0 0)}
+.hero__bottom{position:absolute;z-index:2;left:clamp(28px,5vw,64px);right:clamp(28px,5vw,64px);bottom:clamp(28px,4vw,48px);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;color:#fff;opacity:0;transform:translateY(16px);transition:1.2s 1.4s var(--ease)}
+.loaded .hero__bottom{opacity:1;transform:none}
+.hero__bottom p{max-width:340px;font-size:13.5px;line-height:1.6;opacity:.92}
+.hero__link{font-size:11px;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:4px;margin-bottom:60px}
+.hero__pill{position:absolute;z-index:5;left:50%;bottom:0;transform:translate(-50%,50%);display:inline-flex;align-items:center;gap:10px;padding:18px 30px;border-radius:999px;background:var(--accent-deep);color:#fff;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;box-shadow:0 14px 40px rgba(90,45,115,.35),0 0 0 8px var(--bg);transition:background .4s,transform .5s var(--ease);white-space:nowrap}
+.hero__pill:hover{background:var(--ink);transform:translate(-50%,calc(50% - 3px))}
+.hero__pill span{transition:transform .4s var(--ease)}
+.hero__pill:hover span{transform:translate(3px,-3px)}
+.hero .trust{padding-top:64px}
+
+/* practice grid (Attune "Discover your practice") */
+.practice{padding-block:clamp(60px,8vw,110px)}
+.practice__panel{background:#FBF9F7;border-radius:var(--r-lg);padding:clamp(26px,4vw,56px);box-shadow:0 30px 80px -40px rgba(44,34,49,.25)}
+.practice__head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:30px}
+.practice__head h2{font-size:clamp(34px,4.4vw,64px)}
+.practice__head p{max-width:360px;font-size:14px;color:var(--ink-2)}
+.ico-inline{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);font-size:10px}
+.practice__bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{padding:.7em 1.3em;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink-2);transition:all .35s var(--ease)}
+.tab sup{font-size:9px;margin-left:2px;opacity:.6}
+.tab:hover{border-color:var(--ink);color:var(--ink)}
+.tab.active{border-color:var(--ink);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.saved-link{font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:8px;color:var(--ink-2)}
+.saved-link span{min-width:22px;height:22px;border-radius:11px;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;font-size:11px;letter-spacing:0;transition:transform .4s var(--ease)}
+.saved-link.bump span{transform:scale(1.35)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,24px)}
+.pcard{position:relative;transition:opacity .45s var(--ease),transform .6s var(--ease)}
+.pcard.out{opacity:0;transform:scale(.96)}
+.pcard.gone{display:none}
+.pcard.enter{opacity:0;transform:translateY(24px)}
+.pcard__media{position:relative;display:block;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:var(--bg-2);isolation:isolate}
+.pcard__media img,.pcard__media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .5s}
+.pcard__media video{opacity:0}
+.pcard:hover .pcard__media img{transform:scale(1.06)}
+.pcard.playing .pcard__media video{opacity:1}
+.pcard__media::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(185,140,205,.92) 0%,rgba(205,170,220,.55) 28%,rgba(255,255,255,0) 52%)}
+.pcard__badge{position:absolute;z-index:2;left:14px;bottom:76px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.85);color:var(--ink);padding:4px 9px;border-radius:999px}
+.pcard__title{position:absolute;z-index:2;left:14px;right:14px;bottom:16px;color:#fff;font-size:12.5px;line-height:1.35;opacity:.95}
+.pcard__title b{display:block;font-weight:600;font-stretch:112%;font-size:clamp(15px,1.3vw,18px);letter-spacing:-.005em;margin-bottom:2px}
+.pcard__play{position:absolute;z-index:2;left:50%;top:42%;width:46px;height:46px;margin:-23px;border-radius:50%;background:rgba(255,255,255,.3);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;display:grid;place-items:center;font-size:12px;transition:opacity .4s,transform .5s var(--ease)}
+.pcard.playing .pcard__play{opacity:0;transform:scale(.6)}
+.pcard__save{position:absolute;z-index:3;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);display:grid;place-items:center;color:var(--ink);transition:transform .4s var(--ease),background .3s,color .3s}
+.pcard__save:hover{transform:scale(1.1)}
+.pcard__save[aria-pressed="true"]{background:var(--accent-deep);color:#fff}
+.pcard__save[aria-pressed="true"] path{fill:currentColor}
+.pcard__foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 4px 0}
+.pcard__foot b{display:block;font-size:13px;font-weight:500}
+.pcard__foot small{display:block;font-size:9.5px;letter-spacing:.12em;color:var(--muted);margin-top:2px}
+.avatar{flex:0 0 32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;font-size:11px;font-weight:600}
+
+/* about: circle + vertical text (Yoga Method) */
+.about{overflow-x:clip}
+.about__visual{position:relative;padding-right:44px}
+.about__visual::before{content:"";position:absolute;z-index:-1;width:118%;aspect-ratio:1;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,var(--bg) 0 46%,var(--bg-2) 46.3% 62%,transparent 62.3%)}
+.vtext{position:absolute;right:0;top:50%;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);font-size:11px;letter-spacing:.32em;color:var(--muted);white-space:nowrap}
+.vtext b{color:var(--ink);font-weight:600}
+
+/* side indicator (Yoga Method) */
+.sidex{position:fixed;z-index:44;right:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:14px;color:#fff;mix-blend-mode:difference;pointer-events:none;opacity:0;transition:opacity .6s}
+.sidex.show{opacity:1}
+.sidex__label{writing-mode:vertical-rl;transform:rotate(180deg);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;transition:opacity .3s}
+.sidex__line{width:1px;height:36px;background:currentColor;opacity:.6}
+.sidex__num{writing-mode:vertical-rl;transform:rotate(180deg);font-stretch:125%;font-weight:600;font-size:22px;letter-spacing:.02em}
+.sidex__dots{display:flex;flex-direction:column;gap:7px}
+.sidex__dots i{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.35;transition:all .4s var(--ease)}
+.sidex__dots i.on{opacity:1;transform:scale(1.6)}
+.sidex__scroll{margin-top:18px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.3em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.sidex__scroll i{width:14px;height:22px;border:1px solid currentColor;border-radius:8px;position:relative}
+.sidex__scroll i::after{content:"";position:absolute;left:50%;top:4px;width:2px;height:4px;margin-left:-1px;background:currentColor;border-radius:1px;animation:wheel 1.8s infinite}
+@keyframes wheel{60%{transform:translateY(-6px);opacity:0}}
+
+.toast{visibility:hidden;opacity:0;position:fixed;z-index:60;left:50%;bottom:28px;transform:translate(-50%,140%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-size:13px;transition:transform .5s var(--ease);white-space:nowrap}
+.toast.show{transform:translate(-50%,0);visibility:visible;opacity:1}
+
+@media (max-width:1180px){.sidex{display:none}}
+@media (hover:none){.pcard__play{display:none}}
+@media (max-width:980px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){
+  .hero__bottom{flex-direction:column;align-items:flex-start;gap:14px;bottom:56px}
+  .hero__bottom p{font-size:13px}
+  .hero__link{margin-bottom:0}
+  .hero__title{top:40%}
+  .hero__script{font-size:clamp(40px,13vw,64px)}
+  .hero__pill{padding:16px 22px;font-size:11px}
+  .pgrid{gap:12px}
+  .pcard__badge{bottom:auto;top:12px;left:12px;font-size:8.5px}
+  .practice__panel{padding:22px 16px}
+  .pcard__title b{font-size:14px}
+  .pcard__title{font-size:11.5px}
+  .pcard__foot small{font-size:8.5px}
+  .about__visual{padding-right:30px}
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:980px){
   .nav__links,.nav__cta{display:none}
@@ -302,8 +408,6 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
   .ccard{aspect-ratio:4/5}
   .ccard:nth-child(2){margin-top:0}
   .hero__card{height:calc(100svh - 110px);min-height:540px;border-radius:30px}
-  .hero h1 .line{white-space:normal}
-  .hero h1{font-size:clamp(40px,11vw,64px)}
   .hero__sound span{display:none}
   .hero__tag{font-size:9.5px;letter-spacing:.12em;right:64px}
   .trust{justify-content:flex-start;gap:16px 28px}
@@ -315,7 +419,8 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .rv,.ccard,.line>span,.hero__side{opacity:1!important;transform:none!important}
+  .rv,.ccard,.line>span,.hero__side,.hero__bottom,.hero__big .ch{opacity:1!important;transform:none!important;filter:none!important}
+  .hero__script>span{clip-path:none!important}
   .curtain{display:none}
   .statement h2 .w{opacity:1}
 }
@@ -344,7 +449,7 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
     </a>
     <nav class="nav__links" aria-label="Principale">
       <a href="#corsi">Corsi</a>
-      <a href="#trattamenti">Trattamenti</a>
+      <a href="#trattamenti">Percorsi</a>
       <a href="#studio">Lo studio</a>
       <a href="#chi-sono">Chi sono</a>
       <a href="#faq">FAQ</a>
@@ -365,7 +470,8 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 <main id="top">
 
 <!-- HERO -->
-<section class="hero wrap">
+<section class="hero wrap" data-label="Benvenuta">
+  <div class="hero__wrap">
   <div class="hero__card" id="heroCard">
     <div class="hero__media" id="heroMedia">
       <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
@@ -374,31 +480,28 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
     </div>
     <div class="hero__tag eyebrow"><span class="dot"></span> Iscrizioni aperte · Stagione 2026/27</div>
     <button class="hero__sound" id="heroToggle" aria-label="Metti in pausa il video"><i><b></b><b></b><b></b><b></b></i><span>Pausa</span></button>
-    <div class="hero__content">
-      <h1 class="h-display">
-        <span class="line"><span>Pilates, corpo</span></span>
-        <span class="line"><span>e suono per</span></span>
-        <span class="line"><span>ritrovare <span class="serif">equilibrio<svg class="ring" viewBox="0 0 300 100" preserveAspectRatio="none"><path d="M150 6C70 4 8 22 6 52s70 44 150 42 140-18 138-46S220 4 120 10"/></svg></span></span></span>
-      </h1>
-      <div class="hero__side">
-        <p>Lezioni di Pilates in piccoli gruppi, percorsi pre parto, riflessologia e armonizzazione sonora. Un unico studio a Fossano dove il movimento incontra la cura di sé.</p>
-        <div class="btns">
-          <a href="#contatti" class="btn btn--light" style="background:#fff;color:var(--ink);border-color:#fff">Prenota la prova gratuita <span class="arr">→</span></a>
-          <a href="#corsi" class="btn btn--light">Scopri i corsi</a>
-        </div>
-      </div>
+    <h1 class="hero__title">
+      <span class="sr-only">Pilates, corpo e suono a Fossano: ritrova il tuo equilibrio</span>
+      <span class="hero__script serif" aria-hidden="true"><span>ritrova il tuo</span></span>
+      <span class="hero__big" id="heroBig" aria-hidden="true">EQUILIBRIO</span>
+    </h1>
+    <div class="hero__bottom">
+      <p>Pilates in piccoli gruppi, pre parto, riflessologia e armonizzazione sonora. Un unico studio a Fossano dove il movimento incontra la cura di sé.</p>
+      <a href="#corsi" class="hero__link">Scopri i corsi <span>↓</span></a>
     </div>
+  </div>
+  <a href="#contatti" class="hero__pill">Prenota la prova gratuita <span>↗</span></a>
   </div>
   <div class="trust">
     <div><strong>Piccoli</strong> gruppi, attenzione reale</div>
-    <div><strong>6</strong> discipline in un solo studio</div>
+    <div><strong>8</strong> percorsi in un solo studio</div>
     <div><strong>1:1</strong> lezioni private su misura</div>
     <div><strong>Centro</strong> di Fossano</div>
   </div>
 </section>
 
 <!-- STATEMENT -->
-<section class="statement wrap">
+<section class="statement wrap" data-label="Il metodo">
   <div class="statement__grid">
     <div>
       <h2 id="splitText">Mal di schiena, stress, un corpo che non senti più tuo? Qui non trovi una palestra affollata, ma un percorso pensato <span class="serif">su di te</span>: movimento consapevole, respiro e cura, un passo alla volta.</h2>
@@ -409,7 +512,7 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 </section>
 
 <!-- CLASSES -->
-<section class="classes" id="corsi">
+<section class="classes" id="corsi" data-label="Corsi">
   <div class="marquee" aria-hidden="true">
     <div class="marquee__row"><div class="marquee__track"><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span><span>ESPLORA I CORSI</span></div></div>
     <div class="marquee__row"><div class="marquee__track"><span>MUOVITI · RESPIRA</span><span>MUOVITI · RESPIRA</span><span>MUOVITI · RESPIRA</span><span>MUOVITI · RESPIRA</span></div></div>
@@ -438,45 +541,101 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="trattamenti">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="h-display rv">Percorsi &amp; <span class="serif">trattamenti</span></h2>
-      <p class="rv rv-d1">Dal lavoro posturale su basi scientifiche alle esperienze sonore: scegli da dove partire, al resto pensiamo insieme.</p>
+<!-- PRACTICE -->
+<section class="practice wrap" id="trattamenti" data-label="Percorsi">
+  <div class="practice__panel">
+    <div class="practice__head">
+      <h2 class="h-display rv">Scopri la tua <span class="serif">pratica</span></h2>
+      <p class="rv rv-d1">Movimento, trattamenti e suono. Salva quello che ti incuriosisce con <span class="ico-inline">⌑</span>: lo trovi già nella richiesta.</p>
     </div>
-    <div class="svc-list">
-      <a href="#contatti" class="svc rv" data-img="assets/img/pilates.jpg" data-interest="Pilates">
-        <span class="svc__n">01</span><span class="svc__t">Pilates matwork &amp; reformer</span>
-        <span class="svc__d">Piccoli gruppi per tonificare, allungare e correggere la postura. Adatto a ogni livello.</span><span class="svc__a">→</span>
-      </a>
-      <a href="#contatti" class="svc rv" data-img="assets/img/mondo-scientifico.jpg" data-interest="Pilates posturale">
-        <span class="svc__n">02</span><span class="svc__t">Mondo scientifico</span>
-        <span class="svc__d">Esercizio basato su anatomia e biomeccanica: schiena, spalle, collo. Il movimento come prevenzione.</span><span class="svc__a">→</span>
-      </a>
-      <a href="#contatti" class="svc rv" data-img="assets/img/pre-parto.jpg" data-interest="Pre parto">
-        <span class="svc__n">03</span><span class="svc__t">Pre parto</span>
-        <span class="svc__d">Un percorso dolce per vivere la gravidanza in movimento: respiro, pavimento pelvico, benessere.</span><span class="svc__a">→</span>
-      </a>
-      <a href="#contatti" class="svc rv" data-img="assets/img/viso-donna.jpg" data-interest="Riflessologia">
-        <span class="svc__n">04</span><span class="svc__t">Riflessologia viso &amp; plantare</span>
-        <span class="svc__d">Trattare il corpo partendo dal viso e dai piedi. Sblocca la tua energia, ritrova vitalità.</span><span class="svc__a">→</span>
-      </a>
-      <a href="#contatti" class="svc rv" data-img="assets/img/campane-gong.jpg" data-interest="Armonizzazione sonora">
-        <span class="svc__n">05</span><span class="svc__t">Armonizzazione sonora</span>
-        <span class="svc__d">Sessioni individuali e di coppia con campane tibetane, gong e tamburo sciamanico.</span><span class="svc__a">→</span>
-      </a>
-      <a href="#contatti" class="svc rv" data-img="assets/img/campana-mani.jpg" data-interest="Lezione privata 1:1">
-        <span class="svc__n">06</span><span class="svc__t">Lezioni private 1:1</span>
-        <span class="svc__d">Un programma costruito solo per te, con i tuoi tempi e i tuoi obiettivi.</span><span class="svc__a">→</span>
-      </a>
+    <div class="practice__bar">
+      <div class="tabs" role="tablist" aria-label="Filtra i percorsi">
+        <button class="tab active" data-f="all" role="tab" aria-selected="true">Tutti <sup>8</sup></button>
+        <button class="tab" data-f="movimento" role="tab" aria-selected="false">Movimento <sup>4</sup></button>
+        <button class="tab" data-f="trattamenti" role="tab" aria-selected="false">Trattamenti <sup>2</sup></button>
+        <button class="tab" data-f="suono" role="tab" aria-selected="false">Suono <sup>2</sup></button>
+      </div>
+      <a href="#contatti" class="saved-link" id="savedLink">La tua richiesta <span id="savedCount">0</span></a>
+    </div>
+    <div class="pgrid" id="pgrid">
+      <article class="pcard" data-cat="movimento" style="--i:0">
+        <a href="#contatti" class="pcard__media" data-interest="Pilates">
+          <img src="assets/img/card-pilates.jpg" alt="Pilates Matwork" loading="lazy">
+          <span class="pcard__badge">Piccoli gruppi</span>
+          <span class="pcard__title"><b>Pilates Matwork</b>Tono, allungamento e postura</span>
+        </a>
+        <button class="pcard__save" data-save="Pilates" aria-pressed="false" aria-label="Aggiungi Pilates Matwork alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Chiara</b><small>MATWORK · TUTTI I LIVELLI</small></div><span class="avatar">C</span></div>
+      </article>
+      <article class="pcard" data-cat="movimento" style="--i:1">
+        <a href="#contatti" class="pcard__media" data-interest="Pilates posturale">
+          <img src="assets/img/card-posturale.jpg" alt="Mondo scientifico" loading="lazy">
+          <span class="pcard__badge">Scientifico</span>
+          <span class="pcard__title"><b>Mondo scientifico</b>Schiena, spalle e collo</span>
+        </a>
+        <button class="pcard__save" data-save="Pilates posturale" aria-pressed="false" aria-label="Aggiungi Mondo scientifico alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Chiara</b><small>POSTURALE · PRINCIPIANTI</small></div><span class="avatar">C</span></div>
+      </article>
+      <article class="pcard" data-cat="movimento" style="--i:2">
+        <a href="#contatti" class="pcard__media" data-interest="Pre parto">
+          <img src="assets/img/card-preparto.jpg" alt="Pre parto" loading="lazy">
+          <span class="pcard__badge">Gravidanza</span>
+          <span class="pcard__title"><b>Pre parto</b>Respiro e pavimento pelvico</span>
+        </a>
+        <button class="pcard__save" data-save="Pre parto" aria-pressed="false" aria-label="Aggiungi Pre parto alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Chiara</b><small>DAL 2° TRIMESTRE</small></div><span class="avatar">C</span></div>
+      </article>
+      <article class="pcard" data-cat="movimento" style="--i:3">
+        <a href="#contatti" class="pcard__media" data-interest="Lezione privata 1:1">
+          <img src="assets/img/card-privata.jpg" alt="Lezione 1:1" loading="lazy">
+          <span class="pcard__badge">Privata</span>
+          <span class="pcard__title"><b>Lezione 1:1</b>Un programma solo per te</span>
+        </a>
+        <button class="pcard__save" data-save="Lezione privata 1:1" aria-pressed="false" aria-label="Aggiungi Lezione 1:1 alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Chiara</b><small>SU MISURA · OGNI LIVELLO</small></div><span class="avatar">C</span></div>
+      </article>
+      <article class="pcard" data-cat="trattamenti" style="--i:0">
+        <a href="#contatti" class="pcard__media" data-interest="Riflessologia">
+          <img src="assets/img/viso-donna.jpg" alt="Riflessologia del viso" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/riflessologia-viso.mp4"></video>
+          <span class="pcard__badge">Trattamento</span><span class="pcard__play" aria-hidden="true">▶</span>
+          <span class="pcard__title"><b>Riflessologia del viso</b>Trattare il corpo dal viso</span>
+        </a>
+        <button class="pcard__save" data-save="Riflessologia" aria-pressed="false" aria-label="Aggiungi Riflessologia del viso alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>Trattamento individuale</b><small>RILASSANTE · 50 MIN</small></div><span class="avatar">R</span></div>
+      </article>
+      <article class="pcard" data-cat="trattamenti" style="--i:1">
+        <a href="#contatti" class="pcard__media" data-interest="Riflessologia">
+          <img src="assets/img/card-plantare.jpg" alt="Riflessologia plantare" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/riflessologia-plantare.mp4"></video>
+          <span class="pcard__badge">Trattamento</span><span class="pcard__play" aria-hidden="true">▶</span>
+          <span class="pcard__title"><b>Riflessologia plantare</b>Sblocca la tua energia</span>
+        </a>
+        <button class="pcard__save" data-save="Riflessologia" aria-pressed="false" aria-label="Aggiungi Riflessologia plantare alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>Trattamento individuale</b><small>RIEQUILIBRANTE · 50 MIN</small></div><span class="avatar">R</span></div>
+      </article>
+      <article class="pcard" data-cat="suono" style="--i:2">
+        <a href="#contatti" class="pcard__media" data-interest="Armonizzazione sonora">
+          <img src="assets/img/card-individuale.jpg" alt="Armonizzazione sonora" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/armonizzazione.mp4"></video>
+          <span class="pcard__badge">Individuale</span><span class="pcard__play" aria-hidden="true">▶</span>
+          <span class="pcard__title"><b>Armonizzazione sonora</b>Un percorso sonoro su misura</span>
+        </a>
+        <button class="pcard__save" data-save="Armonizzazione sonora" aria-pressed="false" aria-label="Aggiungi Armonizzazione sonora alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Aluna</b><small>CAMPANE · GONG</small></div><span class="avatar">A</span></div>
+      </article>
+      <article class="pcard" data-cat="suono" style="--i:3">
+        <a href="#contatti" class="pcard__media" data-interest="Armonizzazione sonora">
+          <img src="assets/img/card-coppia.jpg" alt="Sessione di coppia" loading="lazy"><video muted loop playsinline preload="none" data-src="assets/video/suono-coppia.mp4"></video>
+          <span class="pcard__badge">Coppia</span><span class="pcard__play" aria-hidden="true">▶</span>
+          <span class="pcard__title"><b>Sessione di coppia</b>Un momento di pace insieme</span>
+        </a>
+        <button class="pcard__save" data-save="Armonizzazione sonora" aria-pressed="false" aria-label="Aggiungi Sessione di coppia alla richiesta"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12v18l-6-4-6 4z"/></svg></button>
+        <div class="pcard__foot"><div><b>con Aluna</b><small>DA REGALARE · 60 MIN</small></div><span class="avatar">A</span></div>
+      </article>
     </div>
   </div>
-  <div class="svc__peek" id="peek"><img alt="" id="peekImg"></div>
 </section>
 
 <!-- REELS -->
-<section class="reels" id="studio">
+<section class="reels" id="studio" data-label="Lo studio">
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h-display rv">Dentro <span class="serif">lo studio</span></h2>
@@ -496,14 +655,17 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 </section>
 
 <!-- ABOUT -->
-<section class="about wrap" id="chi-sono">
+<section class="about wrap" id="chi-sono" data-label="Chi sono">
   <div class="about__grid">
-    <div class="about__img rv">
+    <div class="about__visual rv">
+    <span class="vtext" aria-hidden="true"><b>ASCOLTO</b> · METODO · CURA</span>
+    <div class="about__img">
       <img src="assets/img/campane-gong.jpg" alt="Sessione con campane tibetane e gong" loading="lazy" data-parallax="0.1">
       <div class="about__badge">
         <svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="c" d="M50 50m-36 0a36 36 0 1 1 72 0a36 36 0 1 1-72 0"/></defs><text font-size="11.5" letter-spacing="2.6" fill="currentColor" font-family="Archivo"><textPath href="#c">CHIARA PILATES · FOSSANO · </textPath></text></svg>
         <span class="eyebrow">Studio<br>certificato</span>
       </div>
+    </div>
     </div>
     <div>
       <p class="eyebrow rv" style="color:var(--accent-deep)">Lezioni private · Chi sono</p>
@@ -521,7 +683,7 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 </section>
 
 <!-- STEPS -->
-<section class="steps wrap">
+<section class="steps wrap" data-label="Come iniziare">
   <div class="sec-head">
     <h2 class="h-display rv">Iniziare è <span class="serif">semplice</span></h2>
     <p class="rv rv-d1">Tre passi, nessun impegno: la prima lezione serve a conoscerci.</p>
@@ -534,7 +696,7 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="quotes wrap" aria-label="Recensioni">
+<section class="quotes wrap" aria-label="Recensioni" data-label="Recensioni">
   <div class="quote-stage" id="quotes">
     <div class="quote active"><div class="stars">★★★★★</div><blockquote>“Dopo anni di mal di schiena finalmente mi sento <span class="serif">libera</span> di muovermi. Lezioni curate in ogni dettaglio.”</blockquote><cite>Allieva Pilates · da 2 anni</cite></div>
     <div class="quote"><div class="stars">★★★★★</div><blockquote>“Il corso pre parto è stato il mio momento di pace in gravidanza. Mi sono sentita <span class="serif">accompagnata</span>.”</blockquote><cite>Neo mamma · Fossano</cite></div>
@@ -544,7 +706,7 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 </section>
 
 <!-- FAQ -->
-<section class="faq wrap" id="faq">
+<section class="faq wrap" id="faq" data-label="FAQ">
   <div class="faq__grid">
     <h2 class="h-display rv">Domande <span class="serif">frequenti</span></h2>
     <div>
@@ -558,7 +720,7 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
 </section>
 
 <!-- CONTACT -->
-<section class="contact wrap" id="contatti">
+<section class="contact wrap" id="contatti" data-label="Contatti">
   <div class="contact__card">
     <div class="contact__left">
       <img src="assets/img/campane-1.jpg" alt="" loading="lazy">
@@ -604,6 +766,15 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
     <nav><a href="#corsi">Corsi</a><a href="#trattamenti">Trattamenti</a><a href="#contatti">Contatti</a><a href="https://instagram.com/chiara_pilates" target="_blank" rel="noopener">Instagram</a><a href="#">Privacy</a></nav>
   </div>
 </footer>
+
+<aside class="sidex" id="sidex" aria-hidden="true">
+  <span class="sidex__label" id="sidexLabel">Benvenuta</span>
+  <span class="sidex__line"></span>
+  <span class="sidex__num" id="sidexNum">01</span>
+  <span class="sidex__dots" id="sidexDots"></span>
+  <span class="sidex__scroll"><i></i>Scroll</span>
+</aside>
+<div class="toast" id="toast" role="status"></div>
 
 <a class="wa" id="wa" href="https://wa.me/393886967485?text=Ciao%20Chiara%2C%20vorrei%20informazioni%20sulle%20lezioni" target="_blank" rel="noopener"><span>Scrivici</span><i><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg></i></a>
 
@@ -687,23 +858,58 @@ fieldset.chips{border:0;padding:0;margin:0;min-width:0}
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, {passive:true});
   frame();
 
-  // services image peek (desktop only)
-  const peek = $('#peek'), pimg = $('#peekImg');
-  if (matchMedia('(hover:hover) and (min-width:981px)').matches) {
-    let px = 0, py = 0, tx = 0, ty = 0, raf;
-    const loop = () => { px += (tx - px) * .15; py += (ty - py) * .15; peek.style.left = px + 'px'; peek.style.top = py + 'px'; raf = requestAnimationFrame(loop); };
-    $$('.svc').forEach(s => {
-      s.addEventListener('mouseenter', e => { pimg.src = s.dataset.img; peek.classList.add('show'); px = tx = e.clientX + 160; py = ty = e.clientY; cancelAnimationFrame(raf); loop(); });
-      s.addEventListener('mousemove', e => { tx = e.clientX + 160; ty = e.clientY; });
-      s.addEventListener('mouseleave', () => { peek.classList.remove('show'); cancelAnimationFrame(raf); });
-    });
-  }
-
   // preselect interest from cards / services
   $$('[data-interest]').forEach(el => el.addEventListener('click', () => {
     const val = el.dataset.interest;
     $$('#chips input').forEach(i => { if (i.value === val) i.checked = true; });
   }));
+
+
+  // hero big word: split + fit to width
+  const big = $('#heroBig');
+  big.innerHTML = [...big.textContent].map((c,k)=>`<span class="ch" style="--k:${k}">${c}</span>`).join('');
+  const fit = () => { const W = $('#heroCard').clientWidth * .9; big.style.fontSize = '100px'; big.style.fontSize = Math.min(100 * W / big.offsetWidth, 260) + 'px'; };
+  fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+
+  // practice filter
+  const pcards = $$('.pcard'), tabs = $$('.tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => { x.classList.toggle('active', x === t); x.setAttribute('aria-selected', x === t); });
+    const f = t.dataset.f;
+    pcards.forEach(c => c.classList.add('out'));
+    setTimeout(() => {
+      pcards.forEach(c => { const show = f === 'all' || c.dataset.cat === f; c.classList.toggle('gone', !show); c.classList.remove('out'); if (show) c.classList.add('enter'); });
+      requestAnimationFrame(() => requestAnimationFrame(() => $$('.pcard.enter').forEach((c,i) => { c.style.transitionDelay = (i*.07)+'s'; c.classList.remove('enter'); setTimeout(()=>c.style.transitionDelay='', 900); })));
+    }, 380);
+  }));
+  // hover video on practice cards
+  pcards.forEach(c => { const v = $('video', c); if (!v) return;
+    const on = () => { if (!v.src) v.src = v.dataset.src; v.play().then(()=>c.classList.add('playing')).catch(()=>{}); };
+    const off = () => { v.pause(); c.classList.remove('playing'); };
+    c.addEventListener('mouseenter', on); c.addEventListener('mouseleave', off);
+  });
+  // save -> adds to request form
+  const toast = $('#toast'); let tt;
+  const say = m => { toast.textContent = m; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), 2200); };
+  const sync = () => { const n = $$('#chips input:checked').length; $('#savedCount').textContent = n; const l=$('#savedLink'); l.classList.add('bump'); setTimeout(()=>l.classList.remove('bump'),300);
+    $$('.pcard__save').forEach(b => b.setAttribute('aria-pressed', !!$$('#chips input').find(i => i.value === b.dataset.save && i.checked))); };
+  $$('.pcard__save').forEach(b => b.addEventListener('click', () => {
+    const inp = $$('#chips input').find(i => i.value === b.dataset.save); if (!inp) return;
+    inp.checked = !inp.checked; sync();
+    say(inp.checked ? `“${inp.value}” aggiunto alla tua richiesta` : `“${inp.value}” rimosso`);
+  }));
+  $$('#chips input').forEach(i => i.addEventListener('change', sync));
+  $$('[data-interest]').forEach(el => el.addEventListener('click', () => setTimeout(sync)));
+
+  // side section indicator
+  const secs = $$('section[data-label]'), sidex = $('#sidex'), dotsW = $('#sidexDots');
+  secs.forEach(() => dotsW.append(document.createElement('i')));
+  const sdots = $$('i', dotsW);
+  const sio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return;
+    const i = secs.indexOf(e.target); $('#sidexLabel').textContent = e.target.dataset.label; $('#sidexNum').textContent = String(i+1).padStart(2,'0');
+    sdots.forEach((d,k) => d.classList.toggle('on', k === i)); }), {rootMargin:'-45% 0px -45% 0px'});
+  secs.forEach(x => sio.observe(x));
+  addEventListener('scroll', () => sidex.classList.toggle('show', scrollY > 200 && scrollY < document.body.scrollHeight - innerHeight - 300), {passive:true});
 
   // reels nav + drag
   const row = $('#reelsRow');
