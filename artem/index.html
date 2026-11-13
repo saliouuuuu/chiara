@@ -182,6 +182,22 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 #lb button:hover{background:rgba(255,255,255,.14)}
 #lbx{top:22px;right:22px}#lbp{left:22px;top:50%}#lbn{right:22px;top:50%}
 
+
+/* ===== creations ===== */
+.crea__row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.4vw,22px)}
+.cr{margin:0;transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.cr.rv{transform:translateY(40px) rotate(var(--r))}
+.cr.rv.in{transform:rotate(var(--r))}
+.cr.in:hover{transform:rotate(0) translateY(-10px)}
+.cr__img{aspect-ratio:3/4;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 36% 46% at 50% 50%,#000 42%,transparent 100%);mask-image:radial-gradient(ellipse 36% 46% at 50% 50%,#000 42%,transparent 100%)}
+.cr__img img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;transform:scale(1.12);transition:transform 1.2s var(--ease)}
+.cr:hover img{transform:scale(1.2) rotate(-2deg)}
+.cr figcaption{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:-4px;text-align:center}
+.cr figcaption b{font-family:var(--display);font-weight:500;font-size:clamp(20px,2vw,28px);letter-spacing:-.01em}
+.cr figcaption a{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:3px;opacity:.8}
+.cr figcaption a:hover{opacity:1}
+@media (max-width:900px){.crea__row{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}}
+
 /* ===== reviews ===== */
 .rev{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,100px);align-items:center}
 .big{font-family:var(--display);font-size:clamp(120px,20vw,300px);line-height:.85;letter-spacing:-.05em;font-weight:500}
@@ -398,6 +414,22 @@ legend{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.6
   </div>
 </section>
 
+<!-- CREATIONS -->
+<section class="sec crea" id="creazioni" data-tone="pearl" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="disp" data-split>Le nostre <span class="omb">creazioni</span></h2>
+      <p class="rv">Quattro set, un nome ciascuno. Scegline uno e te lo riproduciamo sulle tue mani.</p>
+    </div>
+    <div class="crea__row">
+      <figure class="cr rv" style="--r:-5deg"><div class="cr__img"><img src="assets/img/crea-rose-oro.jpg" alt="Unghia ballerina sfumata rosa con glitter oro sulla punta" loading="lazy"></div><figcaption><b>Rosé e oro</b><a href="#contatti" data-set="Rosé e oro" data-cursor="Scrivi">Voglio questo set →</a></figcaption></figure>
+      <figure class="cr rv" style="--r:-1.5deg;transition-delay:.1s"><div class="cr__img"><img src="assets/img/crea-galassia.jpg" alt="Unghia a mandorla viola con glitter esagonali e sfumatura lattea" loading="lazy"></div><figcaption><b>Galassia viola</b><a href="#contatti" data-set="Galassia viola" data-cursor="Scrivi">Voglio questo set →</a></figcaption></figure>
+      <figure class="cr rv" style="--r:1.5deg;transition-delay:.2s"><div class="cr__img"><img src="assets/img/crea-serpentina.jpg" alt="Unghia lattea e rosa con linea dorata a serpentina" loading="lazy"></div><figcaption><b>Serpentina oro</b><a href="#contatti" data-set="Serpentina oro" data-cursor="Scrivi">Voglio questo set →</a></figcaption></figure>
+      <figure class="cr rv" style="--r:5deg;transition-delay:.3s"><div class="cr__img"><img src="assets/img/crea-aurora.jpg" alt="Unghia con french ovale rosa e glitter argento" loading="lazy"></div><figcaption><b>Aurora argento</b><a href="#contatti" data-set="Aurora argento" data-cursor="Scrivi">Voglio questo set →</a></figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <!-- REVIEWS -->
 <section class="sec" id="recensioni" data-tone="plum">
   <div class="wrap rev">
@@ -554,6 +586,10 @@ $('#sCta').addEventListener('click', () => { const s = SHAPES.find(x => x[0] ===
 
 /* preselect service from buttons */
 $$('[data-pick]').forEach(a => a.addEventListener('click', () => { const i = $$('#svcChips input').find(x => x.value === a.dataset.pick); if (i) i.checked = true; }));
+
+
+/* prefill the message with the chosen set */
+$$('[data-set]').forEach(a => a.addEventListener('click', () => { $('#fMsg').value = `Vorrei il set "${a.dataset.set}".`; }));
 
 /* ---------- ombré scroll tone ---------- */
 const tio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) document.body.dataset.tone = e.target.dataset.tone; }), {rootMargin:'-45% 0px -54% 0px'});
