@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preventivo sito web — Chiara Pilates</title>
+<meta name="description" content="Preventivo per il sito web dello studio Chiara Pilates: pacchetti, prezzi, cosa è incluso e tempi.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EFEBE5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EFEBE5; --bg-2:#E6E0D8; --card:#F7F4F0;
+  --ink:#2C2231; --ink-2:#5E5263; --muted:#8C8090;
+  --accent:#9A6BB8; --accent-deep:#5A2D73; --accent-soft:#D9C8E6;
+  --line:#D6CEC5; --ok:#2F7A4B;
+  --r-lg:42px; --r-md:28px;
+  --gutter:clamp(16px,4vw,48px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-stretch:100%;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:110px}
+img,iframe{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.serif{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-stretch:100%;letter-spacing:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--accent-deep)}
+.h-display{font-stretch:118%;font-weight:600;letter-spacing:-.02em;line-height:1.04}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;border:1px solid currentColor;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn--solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn--solid:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.sec{padding:clamp(60px,8vw,110px) 0}
+.sec-head{margin-bottom:44px;max-width:720px}
+.sec-head h2{font-size:clamp(32px,4.4vw,60px);margin-top:12px}
+.sec-head p{margin-top:14px;color:var(--ink-2)}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.brand{font-stretch:120%;font-weight:600;letter-spacing:.04em}
+.top__meta{color:var(--ink-2);text-align:right;line-height:1.5}
+
+/* hero */
+.hero{padding:clamp(30px,5vw,70px) 0 clamp(50px,7vw,90px)}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero h1{font-size:clamp(40px,6vw,84px);margin:16px 0 22px}
+.hero h1 .serif{color:var(--accent-deep)}
+.hero p.lead{font-size:clamp(16px,1.4vw,19px);color:var(--ink-2);max-width:520px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:34px 0}
+.fact{border:1px solid var(--line);border-radius:20px;padding:16px 18px;background:var(--card)}
+.fact b{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:34px;line-height:1;color:var(--accent-deep)}
+.fact span{font-size:12px;color:var(--ink-2);line-height:1.35;display:block;margin-top:6px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* browser frame / previews */
+.frame{position:relative;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -40px rgba(44,34,49,.45);border:1px solid var(--line)}
+.frame__bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#F3EFEA;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted)}
+.frame__bar i{width:9px;height:9px;border-radius:50%;background:#D9D0C6}
+.frame__bar span{margin-left:10px;flex:1;background:#fff;border-radius:999px;padding:3px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frame__view{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-2)}
+.frame__view iframe{max-width:none;position:absolute;left:0;top:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none}
+.frame__view img{width:100%;height:100%;object-fit:cover}
+.frame__link{position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;justify-content:flex-end;padding:14px;opacity:0;transition:opacity .4s;background:linear-gradient(0deg,rgba(44,34,49,.35),transparent 40%)}
+.frame__link span{background:#fff;color:var(--ink);border-radius:999px;padding:8px 16px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.frame:hover .frame__link,.frame:focus-within .frame__link{opacity:1}
+@media (hover:none){.frame__link{opacity:1;background:none}}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:32px 28px 28px;cursor:pointer;transition:transform .5s var(--ease),border-color .3s,box-shadow .5s,background .3s}
+.plan:hover{transform:translateY(-4px)}
+.plan input{position:absolute;opacity:0;pointer-events:none}
+.plan:has(input:checked){border-color:var(--accent-deep);box-shadow:0 0 0 2px var(--accent-deep),0 30px 60px -30px rgba(90,45,115,.45);background:#fff}
+.plan:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:3px}
+.plan__tag{position:absolute;top:-12px;left:28px;background:var(--accent-deep);color:#fff;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.plan h3{font-stretch:115%;font-weight:600;font-size:22px;letter-spacing:-.01em}
+.plan__for{font-size:13.5px;color:var(--ink-2);margin:6px 0 20px;min-height:42px}
+.plan__price{font-stretch:118%;font-weight:600;font-size:clamp(44px,4.6vw,60px);line-height:1;letter-spacing:-.03em}
+.plan__price small{display:block;font-size:13px;font-weight:400;letter-spacing:0;color:var(--muted);margin-top:8px}
+.plan__time{margin:10px 0 22px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep)}
+.plan ul{list-style:none;display:grid;gap:11px;font-size:14.5px;margin-bottom:26px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li::before{content:"";flex:0 0 18px;height:18px;margin-top:2px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.6 2.6L13 6.6' fill='none' stroke='%235A2D73' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.plan li b{font-weight:600}
+.plan li.plus{color:var(--ink-2)}
+.plan__pick{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;padding:.9em;border-radius:999px;border:1px solid var(--ink);font-size:12px;letter-spacing:.16em;text-transform:uppercase;transition:all .3s var(--ease)}
+.plan:has(input:checked) .plan__pick{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.plan:has(input:checked) .plan__pick::before{content:"✓"}
+
+/* add-ons */
+.addons{margin-top:40px;background:var(--card);border-radius:var(--r-md);padding:clamp(22px,3vw,36px)}
+.addons h3{font-stretch:115%;font-weight:600;font-size:20px;margin-bottom:4px}
+.addons>p{font-size:14px;color:var(--ink-2);margin-bottom:18px}
+.addon{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:16px 0;border-top:1px solid var(--line);cursor:pointer}
+.addon input{width:20px;height:20px;accent-color:var(--accent-deep)}
+.addon b{display:block;font-weight:500}
+.addon small{display:block;color:var(--ink-2);font-size:13px}
+.addon .p{font-stretch:115%;font-weight:600;white-space:nowrap}
+
+/* included */
+.inc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.inc__i{padding:26px 24px;border:1px solid var(--line);border-radius:22px;background:var(--card);transition:transform .5s var(--ease),background .4s}
+.inc__i:hover{transform:translateY(-4px);background:#fff}
+.inc__i b{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:26px;line-height:1.1;color:var(--accent-deep);margin-bottom:8px}
+.inc__i p{font-size:14px;color:var(--ink-2)}
+.inc__i em{display:inline-block;font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent-deep);padding:3px 9px;border-radius:999px;margin-bottom:12px}
+
+/* portfolio */
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.work--one{grid-template-columns:minmax(0,760px)}
+.work__meta{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:16px 4px 0}
+.work__meta b{font-stretch:115%;font-weight:600;font-size:20px}
+.work__meta span{font-size:13px;color:var(--ink-2)}
+
+/* reviews */
+.reviews{background:var(--bg-2);border-radius:var(--r-lg);padding:clamp(40px,6vw,80px) clamp(22px,5vw,70px)}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.rev figure{background:var(--card);border-radius:var(--r-md);padding:30px 28px}
+.rev .stars{color:var(--accent-deep);letter-spacing:4px;font-size:13px;margin-bottom:14px}
+.rev blockquote{font-stretch:108%;font-weight:500;font-size:18px;line-height:1.35;letter-spacing:-.01em}
+.rev figcaption{margin-top:18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:var(--card);border-radius:var(--r-md);padding:28px 24px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+.step .n{font-family:"Instrument Serif",serif;font-style:italic;font-size:54px;line-height:1;color:var(--accent)}
+.step h3{font-stretch:115%;font-weight:600;font-size:19px;margin-bottom:6px}
+.step p{font-size:13.5px;color:var(--ink-2)}
+.step small{display:block;margin-top:10px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep)}
+
+/* terms */
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px)}
+.terms h3{font-stretch:115%;font-weight:600;font-size:20px;margin-bottom:14px}
+.terms ul{list-style:none;display:grid;gap:0}
+.terms li{padding:14px 0;border-top:1px solid var(--line);font-size:14.5px;display:flex;justify-content:space-between;gap:20px}
+.terms li:last-child{border-bottom:1px solid var(--line)}
+.terms li span:first-child{color:var(--ink-2)}
+.terms li span:last-child{text-align:right;font-weight:500}
+
+/* sticky total */
+.bar{transform:translateY(110%);transition:transform .6s var(--ease);position:fixed;z-index:50;left:0;right:0;bottom:0;padding:12px var(--gutter) calc(12px + env(safe-area-inset-bottom));background:rgba(239,235,229,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.bar__in{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.bar__t small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.bar__t b{font-stretch:118%;font-weight:600;font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;line-height:1.1}
+.bar__t i{font-style:normal;font-size:13px;color:var(--ink-2);margin-left:8px}
+.bar__r{display:flex;gap:10px;align-items:center}
+.bar .ghost{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);padding:.9em 1em}
+
+.bar.show{transform:none}
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+[hidden]{display:none!important}
+
+@media (max-width:980px){
+  .hero__grid,.terms{grid-template-columns:1fr}
+  .plans{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .inc{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .work{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .top{flex-direction:column;align-items:flex-start}.top__meta{text-align:left}
+  .facts{grid-template-columns:1fr}
+  .inc,.steps{grid-template-columns:1fr}
+  .step{min-height:0;gap:24px}
+  .bar .ghost{display:none}
+  .addon{grid-template-columns:auto 1fr}.addon .p{grid-column:2}
+}
+@media print{
+  .bar,.hero__cta,.frame__link{display:none!important}
+  body{padding:0;background:#fff}.rv{opacity:1!important;transform:none!important}
+  .sec{padding:28px 0}.frame{box-shadow:none}.plan{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span class="brand" id="brandName">Marea Creative</span>
+    <span class="top__meta">Preventivo n° <b id="qNum"></b><br>del <span id="qDate"></span> · valido fino al <span id="qValid"></span></span>
+  </header>
+</div>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <div class="hero__grid">
+    <div>
+      <p class="eyebrow">Preventivo per Chiara Pilates · Fossano</p>
+      <h1 class="h-display">Il sito che porta <span class="serif">nuove allieve</span> allo studio</h1>
+      <p class="lead">La bozza che hai visto è già online e funzionante. Qui sotto trovi cosa include, quanto costa e in quanto tempo la consegno. Niente voci nascoste.</p>
+      <div class="facts">
+        <div class="fact"><b id="fFrom">460 €</b><span>prezzo di partenza, tutto compreso</span></div>
+        <div class="fact"><b>5–14 gg</b><span>dalla conferma alla consegna</span></div>
+        <div class="fact"><b>50 / 50</b><span>metà all’avvio, metà alla consegna</span></div>
+      </div>
+      <div class="hero__cta">
+        <a href="#pacchetti" class="btn btn--solid">Scegli il pacchetto ↓</a>
+        <a href="https://chiara.mareacreative.workers.dev/" target="_blank" rel="noopener" class="btn">Rivedi la bozza ↗</a>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="frame" data-preview>
+        <div class="frame__bar"><i></i><i></i><i></i><span>chiara.mareacreative.workers.dev</span></div>
+        <div class="frame__view"><iframe data-src="https://chiara.mareacreative.workers.dev/" title="Anteprima della bozza del sito" loading="lazy" tabindex="-1"></iframe>
+          <a class="frame__link" href="https://chiara.mareacreative.workers.dev/" target="_blank" rel="noopener" aria-label="Apri la bozza"><span>Apri la bozza ↗</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="sec wrap" id="pacchetti">
+  <div class="sec-head rv">
+    <p class="eyebrow">Pacchetti</p>
+    <h2 class="h-display">Scegli da dove <span class="serif">partire</span></h2>
+    <p>Prezzi finali, senza costi nascosti. Puoi passare a un pacchetto superiore in qualsiasi momento pagando solo la differenza.</p>
+  </div>
+  <form class="plans" id="plans" onsubmit="return false"></form>
+
+  <div class="addons rv">
+    <h3>Extra, solo se ti servono</h3>
+    <p>Aggiungili al pacchetto: il totale in basso si aggiorna da solo.</p>
+    <div id="addons"></div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="sec wrap">
+  <div class="sec-head rv">
+    <p class="eyebrow">In più, in ogni pacchetto</p>
+    <h2 class="h-display">Quello che di solito <span class="serif">si paga a parte</span></h2>
+  </div>
+  <div class="inc" id="inc"></div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="sec wrap" id="lavori" hidden>
+  <div class="sec-head rv">
+    <p class="eyebrow">Lavori realizzati</p>
+    <h2 class="h-display">Siti <span class="serif">veri</span>, online adesso</h2>
+    <p>Aprili dal telefono: è esattamente quello che avrebbero le tue clienti.</p>
+  </div>
+  <div class="work" id="work"></div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec wrap" id="recensioni" hidden>
+  <div class="reviews">
+    <div class="sec-head rv">
+      <p class="eyebrow">Clienti</p>
+      <h2 class="h-display">Chi ha già <span class="serif">scelto</span></h2>
+    </div>
+    <div class="rev" id="rev"></div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="sec wrap">
+  <div class="sec-head rv">
+    <p class="eyebrow">Come si procede</p>
+    <h2 class="h-display">Quattro passi, <span class="serif">zero stress</span></h2>
+  </div>
+  <div class="steps">
+    <div class="step rv"><span class="n">01</span><div><h3>Conferma</h3><p>Scegli il pacchetto e versi il 50%. Da quel momento partiamo.</p><small>Giorno 0</small></div></div>
+    <div class="step rv"><span class="n">02</span><div><h3>Materiali</h3><p>Mi mandi logo, foto e testi (o li scrivo io con l’extra). Ti dico io cosa serve.</p><small>Giorni 1–2</small></div></div>
+    <div class="step rv"><span class="n">03</span><div><h3>Revisione</h3><p>Vedi la versione finale online e chiedi le modifiche incluse.</p><small>Giorni 3–6</small></div></div>
+    <div class="step rv"><span class="n">04</span><div><h3>Online</h3><p>Saldo del restante 50%, pubblico il sito e ti spiego come aggiornarlo.</p><small>Consegna</small></div></div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section class="sec wrap">
+  <div class="terms">
+    <div class="rv">
+      <h3>Condizioni</h3>
+      <ul>
+        <li><span>Pagamento</span><span>50% all’avvio · 50% alla consegna</span></li>
+        <li><span>Validità del preventivo</span><span id="tValid"></span></li>
+        <li><span>Modifiche incluse</span><span id="tRev"></span></li>
+        <li><span>Proprietà</span><span>Il sito e i contenuti sono tuoi</span></li>
+      </ul>
+    </div>
+    <div class="rv">
+      <h3>Cosa mi serve da te</h3>
+      <ul>
+        <li><span>Logo</span><span>File originale (se c’è)</span></li>
+        <li><span>Foto e video</span><span>Quelli dello studio e dei corsi</span></li>
+        <li><span>Orari e prezzi</span><span>Quelli da mostrare sul sito</span></li>
+        <li><span>Tempo per le risposte</span><span>Entro 48 ore, per rispettare i tempi</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY TOTAL -->
+<div class="bar" role="region" aria-label="Totale preventivo">
+  <div class="bar__in">
+    <div class="bar__t"><small id="barLabel">Pacchetto Completo</small><b id="barTotal">0 €</b><i id="barMonthly"></i></div>
+    <div class="bar__r">
+      <button class="ghost" onclick="window.print()">Scarica PDF</button>
+      <a class="btn btn--solid" id="accept" href="#" target="_blank" rel="noopener">Accetto e partiamo →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ======================================================================
+   DATI DEL PREVENTIVO — modifica solo questo blocco
+   ====================================================================== */
+const CONFIG = {
+  brand: "Marea Creative",
+  quoteNumber: "2026-001",
+  issuedOn: "2026-11-12",
+  validDays: 14,
+  revisionsIncluded: "2 giri per pacchetto",
+  whatsapp: "",            // es. "393331234567" (solo cifre). Vuoto = WhatsApp fa scegliere il contatto
+
+  plans: [
+    { id: "essenziale", name: "Essenziale", price: 460, days: "5 giorni lavorativi",
+      forWho: "Per essere online subito, con tutto il necessario.",
+      features: [
+        "Sito <b>one-page</b> da 5 sezioni",
+        "Perfetto su <b>telefono, tablet e PC</b>",
+        "Pulsante <b>WhatsApp</b> e telefono sempre visibili",
+        "Orari, indirizzo e <b>mappa</b> dello studio",
+        "<b>Google</b>: titolo e descrizione per farti trovare a Fossano",
+        "Pubblicazione e <b>dominio collegato</b>",
+      ] },
+    { id: "completo", name: "Completo", price: 790, days: "7 giorni lavorativi", recommended: true,
+      forWho: "Il sito che hai visto nella bozza: quello che convince.",
+      features: [
+        "<b>Tutto di Essenziale</b>, più:",
+        "<b>Video a tutto schermo</b> nella prima schermata",
+        "Animazioni curate e scorrimento fluido",
+        "Percorsi <b>filtrabili</b> con anteprima video",
+        "<b>Modulo di richiesta</b> che invia il messaggio su WhatsApp",
+        "Sezioni recensioni e domande frequenti",
+        "Scheda <b>Google Business</b> ottimizzata",
+        "<b>30 giorni</b> di assistenza dopo la consegna",
+      ] },
+    { id: "premium", name: "Premium", price: 1190, days: "14 giorni lavorativi",
+      forWho: "Per chi vuole un sito completo da far crescere nel tempo.",
+      features: [
+        "<b>Tutto di Completo</b>, più:",
+        "Fino a <b>6 pagine</b> (un corso per pagina)",
+        "<b>Prenotazione online</b> delle lezioni",
+        "<b>Testi scritti da me</b> per tutte le pagine",
+        "Statistiche visite e richieste",
+        "<b>90 giorni</b> di assistenza dopo la consegna",
+      ] },
+  ],
+
+  addons: [
+    { id: "testi", name: "Testi scritti da me", desc: "Descrizioni dei corsi e presentazione, nel tuo tono. (Già incluso in Premium)", price: 120, excludeIn: ["premium"] },
+    { id: "pagine", name: "2 pagine in più", desc: "Una pagina per corso o trattamento, ottima per Google.", price: 140, excludeIn: ["premium"] },
+    { id: "booking", name: "Prenotazione online", desc: "Le allieve scelgono giorno e ora dal sito. (Già incluso in Premium)", price: 150, excludeIn: ["premium"] },
+  ],
+  care: { id: "care", name: "Cura mensile", desc: "Hosting, aggiornamenti, backup e fino a 2 modifiche al mese.", price: 29 },
+
+  included: [
+    { tag: "Valore in più", t: "Test su telefono reale", d: "Più della metà delle visite arriva da smartphone: controllo ogni pagina su dispositivi veri prima della consegna." },
+    { tag: "Valore in più", t: "Ti faccio trovare", d: "Titoli, descrizioni e dati dello studio impostati perché Google ti mostri a chi cerca “pilates Fossano”." },
+    { tag: "Valore in più", t: "Mini-formazione", d: "30 minuti di videochiamata per mostrarti come cambiare orari e foto da sola." },
+    { tag: "Valore in più", t: "Backup e sicurezza", d: "Connessione protetta (HTTPS) e copia di sicurezza del sito alla consegna." },
+    { tag: "Valore in più", t: "Veloce", d: "Immagini e video ottimizzati: la pagina si apre in meno di 3 secondi anche con rete debole." },
+    { tag: "Valore in più", t: "Tutto è tuo", d: "Contenuti e dominio intestati a te. Non sei legata a me per continuare." },
+  ],
+
+  /* Lavori realizzati: compaiono solo le voci con "url". Aggiungi Lisa qui. */
+  portfolio: [
+    { name: "Lisa", type: "", url: "", image: "" },
+  ],
+
+  /* Recensioni: compaiono solo le voci con "text". Usa solo recensioni vere. */
+  reviews: [
+    { name: "Lisa", role: "", text: "" },
+  ],
+};
+/* ====================================================================== */
+
+const $ = (s, c=document) => c.querySelector(s), $$ = (s, c=document) => [...c.querySelectorAll(s)];
+const eur = n => new Intl.NumberFormat("it-IT", {style:"currency", currency:"EUR", maximumFractionDigits:0, useGrouping:"always"}).format(n);
+const fmtDate = d => d.toLocaleDateString("it-IT", {day:"numeric", month:"long", year:"numeric"});
+
+// header
+const issued = new Date(CONFIG.issuedOn + "T12:00:00"), valid = new Date(issued); valid.setDate(valid.getDate() + CONFIG.validDays);
+$("#brandName").textContent = CONFIG.brand; $("#qNum").textContent = CONFIG.quoteNumber;
+$("#qDate").textContent = fmtDate(issued); $("#qValid").textContent = fmtDate(valid);
+$("#tValid").textContent = `${CONFIG.validDays} giorni (fino al ${fmtDate(valid)})`; $("#tRev").textContent = CONFIG.revisionsIncluded;
+$("#fFrom").textContent = eur(Math.min(...CONFIG.plans.map(p => p.price)));
+
+// plans
+$("#plans").innerHTML = CONFIG.plans.map(p => `
+  <label class="plan rv">
+    ${p.recommended ? '<span class="plan__tag">Consigliato</span>' : ''}
+    <input type="radio" name="plan" value="${p.id}" ${p.recommended ? 'checked' : ''}>
+    <h3>${p.name}</h3>
+    <p class="plan__for">${p.forWho}</p>
+    <div class="plan__price">${eur(p.price)}<small>una tantum</small></div>
+    <div class="plan__time">Online in ${p.days}</div>
+    <ul>${p.features.map(f => `<li><span>${f}</span></li>`).join("")}</ul>
+    <span class="plan__pick">Scelgo ${p.name}</span>
+  </label>`).join("");
+
+// addons
+const allAddons = [...CONFIG.addons, {...CONFIG.care, monthly:true}];
+$("#addons").innerHTML = allAddons.map(a => `
+  <label class="addon" data-id="${a.id}">
+    <input type="checkbox" value="${a.id}">
+    <span><b>${a.name}</b><small>${a.desc}</small></span>
+    <span class="p">+ ${eur(a.price)}${a.monthly ? " /mese" : ""}</span>
+  </label>`).join("");
+
+// included
+$("#inc").innerHTML = CONFIG.included.map(i => `<div class="inc__i rv"><em>${i.tag}</em><b>${i.t}</b><p>${i.d}</p></div>`).join("");
+
+// portfolio (only entries with url)
+const work = CONFIG.portfolio.filter(w => w.url);
+if (work.length) {
+  $("#lavori").hidden = false;
+  $("#work").classList.toggle("work--one", work.length === 1);
+  $("#work").innerHTML = work.map(w => `
+    <div class="rv">
+      <div class="frame" data-preview>
+        <div class="frame__bar"><i></i><i></i><i></i><span>${w.url.replace(/^https?:\/\//,"")}</span></div>
+        <div class="frame__view">${w.image ? `<img src="${w.image}" alt="Anteprima del sito di ${w.name}" loading="lazy">` : `<iframe data-src="${w.url}" title="Anteprima del sito di ${w.name}" loading="lazy" tabindex="-1"></iframe>`}
+          <a class="frame__link" href="${w.url}" target="_blank" rel="noopener" aria-label="Apri il sito di ${w.name}"><span>Apri il sito ↗</span></a></div>
+      </div>
+      <div class="work__meta"><b>${w.name}</b><span>${w.type || ""}</span></div>
+    </div>`).join("");
+}
+// reviews (only entries with text)
+const revs = CONFIG.reviews.filter(r => r.text);
+if (revs.length) {
+  $("#recensioni").hidden = false;
+  $("#rev").innerHTML = revs.map(r => `<figure class="rv"><div class="stars">★★★★★</div><blockquote>“${r.text}”</blockquote><figcaption>${r.name}${r.role ? " · " + r.role : ""}</figcaption></figure>`).join("");
+}
+
+// iframe preview scaling + lazy load
+const fit = () => $$("[data-preview]").forEach(f => { const v = $(".frame__view", f), i = $("iframe", v); if (i) i.style.transform = `scale(${v.clientWidth / 1440})`; });
+const lio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const i = e.target; if (i.dataset.src) { i.src = i.dataset.src; delete i.dataset.src; } lio.unobserve(i); } }), {rootMargin:"300px"});
+$$("iframe[data-src]").forEach(i => lio.observe(i)); fit(); addEventListener("resize", fit); addEventListener("load", fit);
+
+// totals
+const state = () => {
+  const plan = CONFIG.plans.find(p => p.id === $("input[name=plan]:checked").value);
+  const picks = $$("#addons input:checked").map(i => allAddons.find(a => a.id === i.value));
+  return {plan, once: picks.filter(a => !a.monthly), monthly: picks.find(a => a.monthly)};
+};
+const update = () => {
+  const {plan, once, monthly} = state();
+  $$("#addons .addon").forEach(l => { const a = allAddons.find(x => x.id === l.dataset.id), off = (a.excludeIn || []).includes(plan.id); l.hidden = off; if (off) $("input", l).checked = false; });
+  const valid = once.filter(a => !(a.excludeIn || []).includes(plan.id));
+  const total = plan.price + valid.reduce((s, a) => s + a.price, 0);
+  $("#barLabel").textContent = `Pacchetto ${plan.name}` + (valid.length ? ` + ${valid.length} extra` : "");
+  $("#barTotal").textContent = eur(total);
+  $("#barMonthly").textContent = monthly ? `+ ${eur(monthly.price)}/mese` : "";
+  const msg = `Ciao! Accetto il preventivo n° ${CONFIG.quoteNumber}.\nPacchetto: ${plan.name} (${eur(plan.price)})` +
+    (valid.length ? `\nExtra: ${valid.map(a => a.name).join(", ")}` : "") + (monthly ? `\nCura mensile: ${eur(monthly.price)}/mese` : "") +
+    `\nTotale: ${eur(total)}\nQuando possiamo partire?`;
+  $("#accept").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+};
+$("#plans").addEventListener("change", update); $("#addons").addEventListener("change", update); update();
+
+addEventListener("scroll", () => $(".bar").classList.toggle("show", scrollY > innerHeight * .55), {passive:true}); dispatchEvent(new Event("scroll"));
+// reveal
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12, rootMargin:"0px 0px -5% 0px"});
+$$(".rv").forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArtèM — Centro estetico e onicotecnica a Cuneo</title>
+<meta name="description" content="Ricostruzione unghie, nail art, ciglia e sopracciglia a Cuneo, in Corso Vittorio Emanuele II. 5,0 su Google. Prenota su WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#110D13">
+<meta property="og:title" content="ArtèM — Unghie come opere d'arte">
+<meta property="og:description" content="Centro estetico e onicotecnica a Cuneo.">
+<meta property="og:image" content="assets/img/black-french.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BeautySalon","name":"ArtèM Centro estetico onicotecnica","address":{"@type":"PostalAddress","streetAddress":"Corso Vittorio Emanuele II, 23","postalCode":"12100","addressLocality":"Cuneo","addressRegion":"CN","addressCountry":"IT"},"telephone":"+39 389 945 6776","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"17"},"sameAs":["https://www.instagram.com/michelagulica/"]}
+</script>
+<style>
+/* ===== tokens ===== */
+:root{
+  --bg:#110D13; --fg:#F4EEEA; --gold:#D9B98A;
+  --omb:linear-gradient(100deg,#F8D5E0,#E4CBFF,#BFE1FF,#F7E5BC,#F8D5E0);
+  --ease:cubic-bezier(.2,.7,.1,1); --r:28px;
+  --gut:clamp(18px,4vw,56px);
+  --display:"Bodoni Moda","Didot","Times New Roman",serif;
+  --text:"Manrope",system-ui,sans-serif;
+}
+body[data-tone="pearl"]{--bg:#F3ECE8;--fg:#1B141D;--gold:#9A7236;--omb:linear-gradient(100deg,#C0577C,#8A5BD0,#3F86D6,#C28F2E,#C0577C)}
+body[data-tone="plum"]{--bg:#21122A;--fg:#F7EDF2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .9s var(--ease),color .9s var(--ease)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1260px;margin:0 auto;padding:0 var(--gut)}
+.disp{font-family:var(--display);font-weight:500;letter-spacing:-.02em;line-height:.98}
+.disp i,.disp em{font-style:italic;font-weight:400}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;opacity:.75}
+.omb{background:var(--omb);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:omb 9s linear infinite;font-style:italic;font-weight:400}
+@keyframes omb{to{background-position:-300% 0}}
+.btn{display:inline-flex;align-items:center;gap:.7em;padding:1.05em 1.8em;border-radius:999px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;transition:transform .3s var(--ease),background .4s,color .4s,border-color .4s;will-change:transform}
+.btn--fill{background:var(--fg);color:var(--bg)}
+.btn--fill:hover{background:var(--gold);color:#17110F}
+.btn--line{border:1px solid color-mix(in srgb,var(--fg) 45%,transparent)}
+.btn--line:hover{border-color:var(--fg);background:color-mix(in srgb,var(--fg) 10%,transparent)}
+.sec{padding:clamp(80px,11vw,160px) 0;position:relative}
+
+/* ===== preloader ===== */
+#pre{position:fixed;inset:0;z-index:300;background:#110D13;color:#F4EEEA;display:grid;place-items:center;transition:transform 1.15s cubic-bezier(.77,0,.18,1) .55s,border-radius 1.15s cubic-bezier(.77,0,.18,1) .55s;border-radius:0 0 0 0}
+.loaded #pre{transform:translateY(-102%);border-radius:0 0 50% 50%/0 0 14vh 14vh;pointer-events:none}
+#pre .w{font-family:var(--display);font-size:clamp(54px,12vw,150px);letter-spacing:-.02em;display:flex;overflow:hidden;padding:0 .05em .12em}
+#pre .w span{display:inline-block;transform:translateY(110%);animation:up .9s var(--ease) forwards;animation-delay:calc(var(--i)*.07s + .1s);background:linear-gradient(100deg,#F8D5E0,#E4CBFF,#BFE1FF,#F7E5BC);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+@keyframes up{to{transform:none}}
+
+/* ===== cursor ===== */
+#dot,#ring{position:fixed;left:0;top:0;pointer-events:none;z-index:250;display:none;opacity:0;transition:opacity .4s}
+.has-cur #dot,.has-cur #ring{display:block}
+.has-cur.moved #dot,.has-cur.moved #ring{opacity:1}
+.has-cur,.has-cur a,.has-cur button,.has-cur .g{cursor:none}
+.has-cur input,.has-cur textarea{cursor:text}
+#dot i{position:absolute;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--fg)}
+#ring i{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:1px solid var(--fg);display:grid;place-items:center;transition:transform .4s var(--ease),background .3s,border-color .3s}
+#ring b{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--bg);opacity:0;transition:opacity .25s}
+#ring.big i{transform:scale(1.7);background:color-mix(in srgb,var(--fg) 14%,transparent)}
+#ring.lab i{transform:scale(2.2);background:var(--fg);border-color:var(--fg)}
+#ring.lab b{opacity:1;transform:scale(.45)}
+
+/* ===== nav ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .5s,backdrop-filter .5s}
+.nav.s{background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{font-family:var(--display);font-size:30px;letter-spacing:-.02em;font-style:italic}
+.logo b{font-weight:800;font-style:normal}
+.nav__l{display:flex;gap:34px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.nav__l a{position:relative;padding:6px 0}
+.nav__l a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav__l a:hover::after{transform:scaleX(1);transform-origin:left}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid color-mix(in srgb,var(--fg) 40%,transparent);position:relative}
+.burger i{position:absolute;left:14px;right:14px;height:1px;background:currentColor;transition:transform .4s var(--ease)}
+.burger i:first-child{top:20px}.burger i:last-child{top:26px}
+.mopen .burger i:first-child{transform:translateY(3px) rotate(45deg)}
+.mopen .burger i:last-child{transform:translateY(-3px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:90;background:#110D13;color:#F4EEEA;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 var(--gut);clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .9s var(--ease)}
+.mopen .mmenu{clip-path:circle(150% at calc(100% - 40px) 40px)}
+.mmenu a{font-family:var(--display);font-size:clamp(38px,11vw,64px);line-height:1.15}
+.mmenu a em{font-weight:400}
+
+/* ===== hero ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 60px;overflow:hidden}
+#glit{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero__grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,4vw,60px);align-items:center;width:100%}
+.hero h1{font-size:clamp(50px,7.6vw,122px);margin:20px 0 26px}
+.ln{display:block;overflow:hidden;padding:.04em .04em .12em;margin:-.04em -.04em -.12em}
+.ln>span{display:inline-block;transform:translateY(112%);transition:transform 1.4s var(--ease)}
+.loaded .ln>span{transform:none;transition-delay:calc(1s + var(--i)*.13s)}
+.lead{max-width:470px;font-size:clamp(15px,1.25vw,17.5px);opacity:.82}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin:34px 0 30px}
+.gchip{display:inline-flex;align-items:center;gap:12px;font-size:13px;padding:8px 18px 8px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--fg) 22%,transparent)}
+.gchip b{font-weight:700}
+.gchip .st{color:var(--gold);letter-spacing:2px;font-size:12px}
+.gchip i{width:26px;height:26px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:13px}
+.fade{opacity:0;transform:translateY(18px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.loaded .fade{opacity:1;transform:none;transition-delay:calc(1.5s + var(--i,0)*.12s)}
+
+.hero__vis{position:relative;height:min(76vh,720px);min-height:480px}
+.nailwrap{position:absolute;aspect-ratio:3/4.3;filter:drop-shadow(0 28px 36px rgba(0,0,0,.35));transition:transform .5s var(--ease);will-change:transform;display:block;padding:0}
+.n1{left:0;bottom:0;width:45%;z-index:2}
+.n2{left:28%;top:0;width:46%;z-index:3}
+.n3{right:0;bottom:7%;width:40%;z-index:1}
+.nail{position:relative;display:block;width:100%;height:100%;overflow:hidden;background:#2a2230;clip-path:ellipse(50% 50% at 50% 50%)}
+.nail img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.hero .nail{animation:flt 7s ease-in-out infinite}
+.n2 .nail{animation-delay:-2.3s}.n3 .nail{animation-delay:-4.6s}
+@keyframes flt{50%{transform:translateY(-12px)}}
+.gloss{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.55),rgba(255,255,255,0) 42%);mix-blend-mode:soft-light;opacity:.0;transition:opacity .4s}
+.nailwrap:hover .gloss{opacity:1}
+.badge{position:absolute;z-index:5;right:3%;top:2%;width:clamp(96px,10vw,132px);aspect-ratio:1;display:grid;place-items:center}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.badge span{font-family:var(--display);font-size:clamp(26px,3vw,38px);font-style:italic}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hint{position:absolute;left:var(--gut);bottom:26px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;display:flex;align-items:center;gap:12px}
+.hint::before{content:"";width:46px;height:1px;background:currentColor}
+
+/* ===== marquee ===== */
+.marquee{overflow:hidden;padding:26px 0;border-block:1px solid color-mix(in srgb,var(--fg) 14%,transparent)}
+.marquee__t{display:flex;width:max-content;font-family:var(--display);font-size:clamp(34px,5vw,72px);font-style:italic;font-weight:400;white-space:nowrap}
+.marquee__t span{padding:0 .5em;display:inline-flex;align-items:center;gap:1em}
+.marquee__t span::after{content:"✦";font-style:normal;font-size:.4em;color:var(--gold)}
+
+/* ===== services ===== */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.head h2{font-size:clamp(40px,6vw,92px);max-width:900px}
+.head p{max-width:360px;opacity:.75;font-size:15px}
+.sw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.sw>span{display:inline-block;transform:translateY(112%);transition:transform 1.1s var(--ease);transition-delay:calc(var(--k)*.05s)}
+.in .sw>span,.sw.in>span{transform:none}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px)}
+.svc{position:relative;border-radius:var(--r);overflow:hidden;background:color-mix(in srgb,var(--fg) 6%,transparent);display:flex;flex-direction:column;transition:transform .6s var(--ease)}
+.svc__img{position:relative;aspect-ratio:4/4.6;overflow:hidden}
+.svc__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.svc:hover .svc__img img{transform:scale(1.07)}
+.svc__img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(17,13,19,.55),transparent 45%)}
+.svc__tag{position:absolute;z-index:2;left:18px;top:18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;background:rgba(17,13,19,.55);backdrop-filter:blur(8px);color:#F4EEEA;padding:6px 12px;border-radius:999px}
+.svc__b{padding:26px 26px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.svc h3{font-family:var(--display);font-size:clamp(26px,2.6vw,36px);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+.svc p{font-size:14.5px;opacity:.78}
+.svc a{margin-top:auto;padding-top:10px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;display:inline-flex;gap:10px;align-items:center}
+.svc a span{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid currentColor;transition:transform .5s var(--ease),background .3s,color .3s}
+.svc:hover a span{transform:rotate(-45deg);background:var(--fg);color:var(--bg)}
+
+/* ===== shapes + gallery ===== */
+.shapes__top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:46px}
+.shapes h2{font-size:clamp(44px,7vw,110px)}
+.pick{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;max-width:520px}
+.sbtn{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;padding:14px 2px 12px;border-radius:20px;border:1px solid color-mix(in srgb,var(--fg) 22%,transparent);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transition:all .4s var(--ease)}
+.sbtn svg{width:30px;height:42px;fill:color-mix(in srgb,var(--fg) 16%,transparent);stroke:var(--fg);stroke-width:1.6;transition:fill .4s,transform .5s var(--ease)}
+.sbtn:hover svg{transform:translateY(-4px)}
+.sbtn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.sbtn[aria-pressed="true"] svg{fill:var(--bg);stroke:var(--bg)}
+.shapes__info{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:0 0 40px;padding-bottom:22px;border-bottom:1px solid color-mix(in srgb,var(--fg) 16%,transparent)}
+.shapes__info h3{font-family:var(--display);font-size:clamp(34px,4vw,56px);font-style:italic;font-weight:400}
+.shapes__info p{flex:1;min-width:220px;opacity:.75;max-width:420px}
+.gal{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.6vw,26px);padding-bottom:50px}
+.gal .nailwrap{position:relative;width:100%;min-width:0;transition:transform .5s var(--ease)}
+.gal .nailwrap:nth-child(even){margin-top:56px}
+.gal .nailwrap:nth-child(n+6):nth-child(odd){margin-top:0}
+.gal .g{display:block;width:100%;text-align:left}
+.gal .nail{background:color-mix(in srgb,var(--fg) 12%,transparent)}
+.gal .nail img{transition:transform 1.1s var(--ease)}
+.gal .nailwrap:hover .nail img{transform:scale(1.16)}
+.ig{display:flex;justify-content:center;margin-top:20px}
+
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:400;background:rgba(10,7,12,.94);display:none;place-items:center;padding:24px}
+#lb.on{display:grid}
+#lb img{max-height:86vh;max-width:min(92vw,1000px);border-radius:20px;object-fit:contain;animation:lbin .6s var(--ease)}
+@keyframes lbin{from{opacity:0;transform:scale(.94)}}
+#lb button{position:absolute;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.35);color:#fff;font-size:20px;display:grid;place-items:center;transition:background .3s}
+#lb button:hover{background:rgba(255,255,255,.14)}
+#lbx{top:22px;right:22px}#lbp{left:22px;top:50%}#lbn{right:22px;top:50%}
+
+
+/* ===== creations ===== */
+.crea__row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.4vw,22px)}
+.cr{margin:0;transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.cr.rv{transform:translateY(40px) rotate(var(--r))}
+.cr.rv.in{transform:rotate(var(--r))}
+.cr.in:hover{transform:rotate(0) translateY(-10px)}
+.cr__img{aspect-ratio:3/4;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 36% 46% at 50% 50%,#000 42%,transparent 100%);mask-image:radial-gradient(ellipse 36% 46% at 50% 50%,#000 42%,transparent 100%)}
+.cr__img img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;transform:scale(1.12);transition:transform 1.2s var(--ease)}
+.cr:hover img{transform:scale(1.2) rotate(-2deg)}
+.cr figcaption{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:-4px;text-align:center}
+.cr figcaption b{font-family:var(--display);font-weight:500;font-size:clamp(20px,2vw,28px);letter-spacing:-.01em}
+.cr figcaption a{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:3px;opacity:.8}
+.cr figcaption a:hover{opacity:1}
+@media (max-width:900px){.crea__row{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}}
+
+/* ===== reviews ===== */
+.rev{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,100px);align-items:center}
+.big{font-family:var(--display);font-size:clamp(120px,20vw,300px);line-height:.85;letter-spacing:-.05em;font-weight:500}
+.stars{display:flex;gap:10px;margin:22px 0 14px}
+.stars svg{width:clamp(28px,4vw,46px);height:auto;fill:var(--gold);transform:scale(0) rotate(-40deg);transition:transform .9s var(--ease)}
+.in .stars svg{transform:none}
+.stars svg:nth-child(2){transition-delay:.12s}.stars svg:nth-child(3){transition-delay:.24s}.stars svg:nth-child(4){transition-delay:.36s}.stars svg:nth-child(5){transition-delay:.48s}
+.rev__sub{font-size:15px;opacity:.78}
+.nums{display:grid;gap:0}
+.num{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-top:1px solid color-mix(in srgb,var(--fg) 16%,transparent)}
+.num:last-of-type{border-bottom:1px solid color-mix(in srgb,var(--fg) 16%,transparent)}
+.num b{font-family:var(--display);font-size:clamp(40px,5vw,68px);font-weight:500;line-height:1;letter-spacing:-.03em}
+.num>span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;text-align:right}
+.rev__cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+
+/* ===== steps ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px);margin-top:10px}
+.step{padding:34px 30px;border-radius:var(--r);border:1px solid color-mix(in srgb,var(--fg) 18%,transparent);min-height:270px;display:flex;flex-direction:column;justify-content:space-between;transition:background .5s,transform .6s var(--ease)}
+.step:hover{background:color-mix(in srgb,var(--fg) 7%,transparent);transform:translateY(-6px)}
+.step .n{font-family:var(--display);font-style:italic;font-size:72px;line-height:1;color:var(--gold)}
+.step h3{font-family:var(--display);font-weight:500;font-size:28px;margin-bottom:8px}
+.step p{opacity:.75;font-size:14.5px}
+
+/* ===== contact ===== */
+.contact__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,80px);align-items:start}
+.contact h2{font-size:clamp(42px,6vw,92px);margin-bottom:34px}
+.info{display:grid;gap:0;margin-bottom:30px}
+.info a,.info div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 0;border-top:1px solid color-mix(in srgb,var(--fg) 16%,transparent);font-size:16px;transition:padding .4s var(--ease)}
+.info a:hover{padding-left:10px}
+.info small{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;padding-top:4px}
+.map{border-radius:var(--r);overflow:hidden;height:260px;filter:grayscale(1) contrast(1.05) brightness(.9)}
+.map iframe{width:100%;height:100%;border:0}
+.form{background:color-mix(in srgb,var(--fg) 7%,transparent);border-radius:var(--r);padding:clamp(26px,3.6vw,52px);display:grid;gap:26px}
+.form h3{font-family:var(--display);font-weight:500;font-size:clamp(28px,3vw,40px);line-height:1.05}
+.fld{position:relative}
+.fld input,.fld textarea{width:100%;font:inherit;font-size:16px;color:var(--fg);background:transparent;border:0;border-bottom:1px solid color-mix(in srgb,var(--fg) 30%,transparent);padding:24px 0 10px;outline:none;border-radius:0;transition:border-color .3s}
+.fld textarea{resize:vertical;min-height:84px}
+.fld label{position:absolute;left:0;top:24px;opacity:.6;pointer-events:none;transition:all .3s var(--ease);font-size:15px}
+.fld input:focus,.fld textarea:focus{border-color:var(--gold)}
+.fld input:focus+label,.fld input:not(:placeholder-shown)+label,.fld textarea:focus+label,.fld textarea:not(:placeholder-shown)+label{top:2px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:1;color:var(--gold)}
+fieldset{border:0;min-width:0}
+legend{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.65;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:.6em 1.1em;border:1px solid color-mix(in srgb,var(--fg) 28%,transparent);border-radius:999px;font-size:13px;transition:all .3s var(--ease);user-select:none}
+.chip span:hover{border-color:var(--fg)}
+.chip input:checked+span{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.ok{display:none;font-size:14px;padding:14px 18px;border-radius:14px;background:color-mix(in srgb,var(--gold) 20%,transparent)}
+.ok a{text-decoration:underline}
+
+/* ===== footer ===== */
+.foot{padding:40px 0 34px;overflow:hidden}
+#fword{font-family:var(--display);font-size:clamp(96px,27vw,420px);line-height:.85;letter-spacing:-.04em;text-align:center;white-space:nowrap;padding:0 0 .08em;display:block}
+#fword span{display:inline-block;font-weight:400;font-style:italic;transition:font-weight .15s linear;background:var(--omb);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:omb 9s linear infinite}
+.foot__r{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:22px;border-top:1px solid color-mix(in srgb,var(--fg) 16%,transparent);font-size:12px;letter-spacing:.08em;opacity:.75}
+.foot__r nav{display:flex;gap:22px;flex-wrap:wrap}
+
+/* ===== extras ===== */
+#pnail{position:fixed;left:18px;bottom:20px;z-index:60;width:30px;opacity:0;transition:opacity .6s}
+#pnail.show{opacity:1}
+#pnail .o{fill:none;stroke:var(--fg);stroke-width:2.4;opacity:.5}
+.wa{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;align-items:center;gap:10px;padding:8px 8px 8px 20px;border-radius:999px;background:var(--fg);color:var(--bg);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transform:translateY(130px);transition:transform .7s var(--ease),background .3s}
+.wa.show{transform:none}
+.wa i{width:40px;height:40px;border-radius:50%;background:#25D366;display:grid;place-items:center}
+.rv{opacity:0;transform:translateY(36px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.mag{transition:transform .35s var(--ease)}
+
+/* ===== responsive ===== */
+@media (max-width:1020px){
+  .nav__l,.nav .btn{display:none}.burger{display:block}
+  .hero__grid{grid-template-columns:1fr}
+  .hero{align-items:flex-start;padding-top:104px}
+  .hero__vis{height:460px;min-height:0}
+  .svcs{grid-template-columns:1fr 1fr}
+  .svc:last-child{grid-column:1/-1}
+  .shapes__top,.rev,.contact__grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(3,1fr)}
+  .gal .nailwrap:nth-child(n){margin-top:0}.gal .nailwrap:nth-child(3n+2){margin-top:40px}
+  .steps{grid-template-columns:1fr}.step{min-height:0;gap:26px}
+  .hint{display:none}
+}
+@media (max-width:640px){
+  .svcs{grid-template-columns:1fr}.svc:last-child{grid-column:auto}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .gal .nailwrap:nth-child(n){margin-top:0}.gal .nailwrap:nth-child(even){margin-top:34px}
+  .gal .nailwrap:nth-child(n+9){display:none}
+  .hero__vis{height:380px}
+  .n1{width:47%}.n2{left:26%;width:48%}.n3{width:40%}
+  .sbtn{font-size:8.5px;letter-spacing:.04em;gap:8px}
+  .wa span{display:none}.wa{padding:7px}
+  .info a,.info div{grid-template-columns:86px 1fr}
+  .head{margin-bottom:36px}
+  #pnail{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  #pre{display:none}
+  .ln>span,.sw>span,.fade,.rv{opacity:1!important;transform:none!important}
+  .stars svg{transform:none}
+  .omb,#fword span{background-position:0 0}
+}
+</style>
+</head>
+<body data-tone="night">
+
+<div id="pre" aria-hidden="true"><div class="w" id="preW"></div></div>
+<div id="dot"><i></i></div><div id="ring"><i><b id="ringLab"></b></i></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a href="#top" class="logo" aria-label="ArtèM, torna in alto">Art<b>è</b>M</a>
+    <nav class="nav__l" aria-label="Principale">
+      <a href="#servizi">Servizi</a><a href="#forme">Forme &amp; lavori</a><a href="#recensioni">Recensioni</a><a href="#contatti">Contatti</a>
+    </nav>
+    <a href="#contatti" class="btn btn--line mag" data-cursor="Scrivi">Prenota</a>
+    <button class="burger" id="burger" aria-label="Apri il menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <a href="#servizi">Servizi</a><a href="#forme"><em>Forme</em> &amp; lavori</a><a href="#recensioni">Recensioni</a><a href="#contatti"><em>Prenota</em> →</a>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" data-tone="night" id="hero">
+  <canvas id="glit" aria-hidden="true"></canvas>
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow fade" style="--i:0">Centro estetico · Onicotecnica · Cuneo</p>
+      <h1 class="disp" aria-label="Unghie come opere d'arte">
+        <span class="ln" aria-hidden="true"><span style="--i:0">Unghie</span></span>
+        <span class="ln" aria-hidden="true"><span style="--i:1">come <span class="omb">opere</span></span></span>
+        <span class="ln" aria-hidden="true"><span style="--i:2"><span class="omb">d'arte</span></span></span>
+      </h1>
+      <p class="lead fade" style="--i:1">Ricostruzione, nail art, ciglia e sopracciglia in Corso Vittorio Emanuele II. Ogni set è disegnato intorno alla tua mano.</p>
+      <div class="hero__cta fade" style="--i:2">
+        <a href="#contatti" class="btn btn--fill mag" data-cursor="Scrivi">Prenota su WhatsApp <span>→</span></a>
+        <a href="#forme" class="btn btn--line mag">Guarda i lavori ↓</a>
+      </div>
+      <a class="gchip fade" style="--i:3" href="#recensioni"><i>G</i><span class="st">★★★★★</span><span><b>5,0</b> · 17 recensioni su Google</span></a>
+    </div>
+    <div class="hero__vis" id="vis">
+      <a class="nailwrap n1 tilt" data-d="16" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="quadrata"><img src="assets/img/silver.jpg" alt="Unghie lunghe con french sfumato e glitter argento" style="object-position:22% 45%"><i class="gloss"></i></span></a>
+      <a class="nailwrap n2 tilt" data-d="-20" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="mandorla"><img src="assets/img/black-french.jpg" alt="Unghie con french nero a specchio, base perlata e anelli di perle" style="object-position:50% 30%"><i class="gloss"></i></span></a>
+      <a class="nailwrap n3 tilt" data-d="30" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="stiletto"><img src="assets/img/ombre-color.jpg" alt="Unghie ombré colorate rosa, azzurro, arancio e verde con glitter" style="object-position:42% 40%"><i class="gloss"></i></span></a>
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="bc" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-size="10.4" letter-spacing="3.1" fill="currentColor" font-family="Manrope" font-weight="700"><textPath href="#bc">5,0 SU GOOGLE · 17 RECENSIONI · </textPath></text></svg>
+        <span>★</span>
+      </div>
+    </div>
+  </div>
+  <p class="hint fade" style="--i:4">Le forme cambiano. Scegli la tua</p>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" data-tone="night" aria-hidden="true"><div class="marquee__t" id="mq"><span>Ricostruzione</span><span>Nail art</span><span>Ombré</span><span>French</span><span>Glitter</span><span>Ciglia</span><span>Sopracciglia</span><span>Ricostruzione</span><span>Nail art</span><span>Ombré</span><span>French</span><span>Glitter</span><span>Ciglia</span><span>Sopracciglia</span></div></div>
+
+<!-- SERVICES -->
+<section class="sec" id="servizi" data-tone="night">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="disp" data-split>Tre modi per prenderti cura di <span class="omb">te</span></h2>
+      <p class="rv">Dal naturale al più scenografico. Porta un'ispirazione: la traduciamo sulle tue mani.</p>
+    </div>
+    <div class="svcs">
+      <article class="svc rv tilt3" data-service="Ricostruzione e nail art">
+        <div class="svc__img"><img src="assets/img/silver.jpg" alt="Ricostruzione unghie con french sfumato" loading="lazy" style="object-position:25% 45%"><span class="svc__tag">Mani</span></div>
+        <div class="svc__b"><h3>Ricostruzione e nail art</h3><p>Forma, lunghezza e decorazione su misura. Dal look naturale al glitter più scenografico.</p><a href="#contatti" data-pick="Ricostruzione e nail art" data-cursor="Scrivi">Chiedi disponibilità <span>→</span></a></div>
+      </article>
+      <article class="svc rv tilt3" style="transition-delay:.1s" data-service="Ombré, French e colore">
+        <div class="svc__img"><img src="assets/img/ombre-color.jpg" alt="Unghie ombré colorate" loading="lazy" style="object-position:42% 40%"><span class="svc__tag">Colore</span></div>
+        <div class="svc__b"><h3>Ombré, French e colore</h3><p>Sfumature, french d'autore e finish perlati. Il dettaglio che fa la differenza.</p><a href="#contatti" data-pick="Ombré, French e colore" data-cursor="Scrivi">Chiedi disponibilità <span>→</span></a></div>
+      </article>
+      <article class="svc rv tilt3" style="transition-delay:.2s" data-service="Ciglia e sopracciglia">
+        <div class="svc__img"><img src="assets/img/lash.jpg" alt="Occhio con extension ciglia e sopracciglio definito" loading="lazy" style="object-position:50% 40%"><span class="svc__tag">Sguardo</span></div>
+        <div class="svc__b"><h3>Ciglia e sopracciglia</h3><p>Extension ciglia e sopracciglia disegnate per il tuo viso, naturali o d'effetto.</p><a href="#contatti" data-pick="Ciglia e sopracciglia" data-cursor="Scrivi">Chiedi disponibilità <span>→</span></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SHAPES + GALLERY -->
+<section class="sec shapes" id="forme" data-tone="pearl">
+  <div class="wrap">
+    <div class="shapes__top">
+      <h2 class="disp" data-split>Scegli la tua <span class="omb">forma</span></h2>
+      <div>
+        <p class="rv" style="margin-bottom:22px;max-width:440px;opacity:.78">Cinque forme, infinite combinazioni. Toccane una e guarda come cambiano anche le foto qui sotto.</p>
+        <div class="pick rv" id="pick" role="group" aria-label="Forma delle unghie"></div>
+      </div>
+    </div>
+    <div class="shapes__info">
+      <h3 id="sName">Mandorla</h3>
+      <p id="sDesc"></p>
+      <a href="#contatti" class="btn btn--fill mag" id="sCta" data-cursor="Scrivi">Voglio questa forma →</a>
+    </div>
+
+    <div class="gal" id="gal">
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: glitter rosa e lilla su base lattea"><span class="nail"><img src="assets/img/pink-glitter.jpg" alt="Unghie base lattea con glitter olografico rosa e lilla" loading="lazy" style="object-position:38% 40%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: french nero e perle"><span class="nail"><img src="assets/img/black-french.jpg" alt="French nero a specchio con base perlata" loading="lazy" style="object-position:50% 35%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: verde con glitter argento"><span class="nail"><img src="assets/img/green-glitter.jpg" alt="Unghie verde bosco con glitter argento sfumato" loading="lazy" style="object-position:62% 55%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: effetto oro rettile"><span class="nail"><img src="assets/img/gold.jpg" alt="Unghia con effetto oro texture rettile" loading="lazy" style="object-position:72% 25%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: bianco latte e oro"><span class="nail"><img src="assets/img/white-glitter.jpg" alt="Unghie bianco latte con glitter oro alla base" loading="lazy" style="object-position:40% 55%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: viola con glitter"><span class="nail"><img src="assets/img/purple.jpg" alt="Unghie lunghe sfumate viola con glitter" loading="lazy" style="object-position:45% 30%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: ombré colorato"><span class="nail"><img src="assets/img/ombre-color.jpg" alt="Unghie ombré colorate" loading="lazy" style="object-position:42% 40%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: linee dorate"><span class="nail"><img src="assets/img/gold-line.jpg" alt="Unghie nude con linea dorata sottile" loading="lazy" style="object-position:55% 25%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: rosa con mezzaluna oro"><span class="nail"><img src="assets/img/pink-gold.jpg" alt="Unghie rosa cipria con mezzaluna oro" loading="lazy" style="object-position:45% 45%"><i class="gloss"></i></span></button></div>
+      <div class="nailwrap tilt"><button class="g" aria-label="Apri foto: french sfumato argento"><span class="nail"><img src="assets/img/silver.jpg" alt="French sfumato con glitter argento" loading="lazy" style="object-position:22% 45%"><i class="gloss"></i></span></button></div>
+    </div>
+    <div class="ig"><a class="btn btn--line mag" href="https://www.instagram.com/michelagulica/" target="_blank" rel="noopener" data-cursor="Apri">Oltre 400 lavori su @michelagulica ↗</a></div>
+  </div>
+</section>
+
+<!-- CREATIONS -->
+<section class="sec crea" id="creazioni" data-tone="pearl" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="disp" data-split>Le nostre <span class="omb">creazioni</span></h2>
+      <p class="rv">Quattro set, un nome ciascuno. Scegline uno e te lo riproduciamo sulle tue mani.</p>
+    </div>
+    <div class="crea__row">
+      <figure class="cr rv" style="--r:-5deg"><div class="cr__img"><img src="assets/img/crea-rose-oro.jpg" alt="Unghia ballerina sfumata rosa con glitter oro sulla punta" loading="lazy"></div><figcaption><b>Rosé e oro</b><a href="#contatti" data-set="Rosé e oro" data-cursor="Scrivi">Voglio questo set →</a></figcaption></figure>
+      <figure class="cr rv" style="--r:-1.5deg;transition-delay:.1s"><div class="cr__img"><img src="assets/img/crea-galassia.jpg" alt="Unghia a mandorla viola con glitter esagonali e sfumatura lattea" loading="lazy"></div><figcaption><b>Galassia viola</b><a href="#contatti" data-set="Galassia viola" data-cursor="Scrivi">Voglio questo set →</a></figcaption></figure>
+      <figure class="cr rv" style="--r:1.5deg;transition-delay:.2s"><div class="cr__img"><img src="assets/img/crea-serpentina.jpg" alt="Unghia lattea e rosa con linea dorata a serpentina" loading="lazy"></div><figcaption><b>Serpentina oro</b><a href="#contatti" data-set="Serpentina oro" data-cursor="Scrivi">Voglio questo set →</a></figcaption></figure>
+      <figure class="cr rv" style="--r:5deg;transition-delay:.3s"><div class="cr__img"><img src="assets/img/crea-aurora.jpg" alt="Unghia con french ovale rosa e glitter argento" loading="lazy"></div><figcaption><b>Aurora argento</b><a href="#contatti" data-set="Aurora argento" data-cursor="Scrivi">Voglio questo set →</a></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="recensioni" data-tone="plum">
+  <div class="wrap rev">
+    <div class="rv" id="revBox">
+      <p class="eyebrow">Su Google</p>
+      <div class="big"><span data-count data-to="5" data-dec="1">5,0</span></div>
+      <div class="stars" aria-label="5 stelle su 5"><svg viewBox="0 0 24 24"><path d="M12 1.5l3.1 6.9 7.4.8-5.5 5 1.6 7.3L12 17.8 5.4 21.5 7 14.2 1.5 9.2l7.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 1.5l3.1 6.9 7.4.8-5.5 5 1.6 7.3L12 17.8 5.4 21.5 7 14.2 1.5 9.2l7.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 1.5l3.1 6.9 7.4.8-5.5 5 1.6 7.3L12 17.8 5.4 21.5 7 14.2 1.5 9.2l7.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 1.5l3.1 6.9 7.4.8-5.5 5 1.6 7.3L12 17.8 5.4 21.5 7 14.2 1.5 9.2l7.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 1.5l3.1 6.9 7.4.8-5.5 5 1.6 7.3L12 17.8 5.4 21.5 7 14.2 1.5 9.2l7.4-.8z"/></svg></div>
+      <p class="rev__sub">Media di 17 recensioni di clienti reali</p>
+    </div>
+    <div class="rv">
+      <h2 class="disp" style="font-size:clamp(32px,4vw,56px);margin-bottom:26px">Il lavoro <span class="omb">parla da solo</span></h2>
+      <div class="nums">
+        <div class="num"><b><span data-count data-to="17">17</span></b><span>recensioni su Google</span></div>
+        <div class="num"><b><span data-count data-to="409">409</span></b><span>lavori pubblicati su Instagram</span></div>
+        <div class="num"><b><span data-count data-to="1.1" data-dec="1" data-suf="K">1,1K</span></b><span>persone ci seguono</span></div>
+      </div>
+      <div class="rev__cta">
+        <a class="btn btn--fill mag" href="https://www.google.com/maps/search/?api=1&query=Centro+estetico+ArteM+onicotecnica+Cuneo" target="_blank" rel="noopener" data-cursor="Apri">Leggi le recensioni ↗</a>
+        <a class="btn btn--line mag" href="https://www.instagram.com/michelagulica/" target="_blank" rel="noopener" data-cursor="Apri">Seguici su Instagram ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="sec" data-tone="plum" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2 class="disp" data-split>Prenotare è <span class="omb">semplice</span></h2><p class="rv">Nessun modulo infinito. Un messaggio, e ci pensiamo noi.</p></div>
+    <div class="steps">
+      <div class="step rv"><span class="n">1</span><div><h3>Scrivici</h3><p>Su WhatsApp, con una foto di ciò che ti piace. Anche solo un'idea di colore.</p></div></div>
+      <div class="step rv" style="transition-delay:.1s"><span class="n">2</span><div><h3>Scegliamo insieme</h3><p>Forma, lunghezza e finitura. Ti diciamo cosa funziona meglio sulle tue mani.</p></div></div>
+      <div class="step rv" style="transition-delay:.2s"><span class="n">3</span><div><h3>Vieni a Cuneo</h3><p>Corso Vittorio Emanuele II, 23. Ti aspettiamo per il tuo set.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contatti" data-tone="night">
+  <div class="wrap contact__grid">
+    <div>
+      <p class="eyebrow rv">Prenota</p>
+      <h2 class="disp" data-split style="margin-top:14px">Il tuo set <span class="omb">ti aspetta</span></h2>
+      <div class="info rv">
+        <a href="tel:+393899456776"><small>Telefono</small><span>389 945 6776</span></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Corso+Vittorio+Emanuele+II+23+Cuneo" target="_blank" rel="noopener"><small>Dove</small><span>Corso Vittorio Emanuele II, 23<br>12100 Cuneo (CN)</span></a>
+        <a href="https://www.instagram.com/michelagulica/" target="_blank" rel="noopener"><small>Instagram</small><span>@michelagulica</span></a>
+        <div><small>Orari</small><span>Scrivici su WhatsApp per la disponibilità</span></div>
+      </div>
+      <div class="map rv"><iframe title="Mappa di ArtèM a Cuneo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Corso%20Vittorio%20Emanuele%20II%2023%2C%20Cuneo&z=16&output=embed"></iframe></div>
+    </div>
+    <form class="form rv" id="form" novalidate>
+      <h3>Scrivici cosa hai in mente</h3>
+      <div class="fld"><input id="fName" placeholder=" " required autocomplete="name"><label for="fName">Il tuo nome</label></div>
+      <fieldset><legend>Cosa ti serve</legend>
+        <div class="chips" id="svcChips">
+          <label class="chip"><input type="checkbox" value="Ricostruzione e nail art"><span>Ricostruzione e nail art</span></label>
+          <label class="chip"><input type="checkbox" value="Ombré, French e colore"><span>Ombré, French e colore</span></label>
+          <label class="chip"><input type="checkbox" value="Ciglia e sopracciglia"><span>Ciglia e sopracciglia</span></label>
+        </div>
+      </fieldset>
+      <fieldset><legend>Forma preferita</legend>
+        <div class="chips" id="shapeChips"></div>
+      </fieldset>
+      <div class="fld"><textarea id="fMsg" placeholder=" " rows="3"></textarea><label for="fMsg">Colori, ispirazioni, occasione (facoltativo)</label></div>
+      <button class="btn btn--fill mag" type="submit" style="justify-self:start" data-cursor="Invia">Invia su WhatsApp →</button>
+      <div class="ok" id="ok" role="status">Si apre WhatsApp con il messaggio già pronto. <a id="okLink" href="#" target="_blank" rel="noopener">Non si è aperto? Tocca qui.</a></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" data-tone="night">
+  <div class="wrap">
+    <span id="fword" aria-label="ArtèM">ArtèM</span>
+    <div class="foot__r"><span>© 2026 ArtèM · Corso Vittorio Emanuele II, 23 · Cuneo</span><nav><a href="#servizi">Servizi</a><a href="#forme">Lavori</a><a href="#contatti">Contatti</a><a href="https://www.instagram.com/michelagulica/" target="_blank" rel="noopener">Instagram</a></nav></div>
+  </div>
+</footer>
+
+<svg id="pnail" viewBox="0 0 100 140" aria-hidden="true"><defs><clipPath id="pc"><rect id="pcr" x="0" y="140" width="100" height="140"/></clipPath><linearGradient id="pg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F8D5E0"/><stop offset=".5" stop-color="#C9A5F5"/><stop offset="1" stop-color="#8CC4F5"/></linearGradient></defs><polygon id="pf" fill="url(#pg)" clip-path="url(#pc)"/><polygon class="o" id="po"/></svg>
+
+<a class="wa" id="wa" href="https://wa.me/393899456776?text=Ciao!%20Vorrei%20prenotare%20un%20appuntamento." target="_blank" rel="noopener"><span>Scrivici</span><i><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg></i></a>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Foto ingrandita"><img id="lbi" alt=""><button id="lbx" aria-label="Chiudi">✕</button><button id="lbp" aria-label="Precedente">←</button><button id="lbn" aria-label="Successiva">→</button></div>
+
+<script>
+(() => {
+const $ = (s, c=document) => c.querySelector(s), $$ = (s, c=document) => [...c.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+const root = document.documentElement;
+const WA = '393899456776';
+
+/* ---------- preloader + load ---------- */
+$('#preW').innerHTML = [...'ArtèM'].map((c,i)=>`<span style="--i:${i}">${c}</span>`).join('');
+const go = () => root.classList.add('loaded');
+addEventListener('load', () => setTimeout(go, reduce ? 0 : 1000));
+setTimeout(go, 3200);
+
+/* ---------- nail shape engine ---------- */
+const N = 22, Y = Array.from({length:N}, (_,i) => .5 - .5*Math.cos(Math.PI*i/(N-1)));
+const bot = y => y > .84 ? Math.sqrt(Math.max(0, 1 - ((y-.84)/.16)**2)) : 1;
+const se = (y,h,n) => y >= h ? .5 : .5*Math.pow(Math.max(0, 1 - Math.pow((h-y)/h, n)), 1/n);
+const F = {
+  quadrata: y => (y < .07 ? .43 + .07*Math.sqrt(Math.max(0, 1 - ((.07-y)/.07)**2)) : .5) * bot(y),
+  ovale:    y => se(y,.3,2) * bot(y),
+  mandorla: y => se(y,.46,1.7) * bot(y),
+  stiletto: y => se(y,.6,1.15) * bot(y),
+  coffin:   y => (y < .42 ? .2 + .3*(y/.42) : .5) * bot(y),
+};
+const P = {}; Object.keys(F).forEach(k => P[k] = Float32Array.from(Y.map(F[k])));
+const poly = w => { let L='',R=''; for (let i=0;i<N;i++) L += `${(50-w[i]*100).toFixed(2)}% ${(Y[i]*100).toFixed(2)}%,`; for (let i=N-1;i>=0;i--) R += `${(50+w[i]*100).toFixed(2)}% ${(Y[i]*100).toFixed(2)}%,`; return `polygon(${L}${R.slice(0,-1)})`; };
+const pts = (k, W, H, pad) => { const w=P[k]; const a=[],b=[]; for (let i=0;i<N;i++) a.push(`${(pad+(.5-w[i])*(W-2*pad)).toFixed(1)},${(pad+Y[i]*(H-2*pad)).toFixed(1)}`); for (let i=N-1;i>=0;i--) b.push(`${(pad+(.5+w[i])*(W-2*pad)).toFixed(1)},${(pad+Y[i]*(H-2*pad)).toFixed(1)}`); return a.concat(b).join(' '); };
+
+const items = new Map(); let raf = 0, last = 0;
+const reg = (el, shape) => { const cur = Float32Array.from(P[shape]); items.set(el, {cur, tgt:cur, busy:false}); el.style.clipPath = poly(cur); };
+const setShape = (el, shape, delay=0) => { const it = items.get(el); if (!it) return; const run = () => { it.tgt = P[shape]; if (reduce) { it.cur.set(it.tgt); el.style.clipPath = poly(it.cur); return; } it.busy = true; if (!raf) { last = performance.now(); raf = requestAnimationFrame(tick); } }; delay ? setTimeout(run, delay) : run(); };
+function tick(t) {
+  const dt = Math.min(.05, (t-last)/1000); last = t; const k = 1 - Math.exp(-dt*6); let any = false;
+  items.forEach((it, el) => { if (!it.busy) return; let d = 0; for (let i=0;i<N;i++) { const diff = it.tgt[i]-it.cur[i]; it.cur[i] += diff*k; d = Math.max(d, Math.abs(diff)); } el.style.clipPath = poly(it.cur); if (d < .0008) { it.cur.set(it.tgt); it.busy = false; el.style.clipPath = poly(it.cur); } else any = true; });
+  raf = any ? requestAnimationFrame(tick) : 0;
+}
+const SHAPES = [
+  ['quadrata','Quadrata','Pulita, moderna e facile da portare. Ideale per un french netto o per colori pieni.'],
+  ['ovale','Ovale','Naturale ed elegante: allunga otticamente le dita ed è molto resistente.'],
+  ['mandorla','Mandorla','Femminile e sofisticata. Affina la mano e valorizza le sfumature ombré.'],
+  ['stiletto','Stiletto','Audace e d\'effetto. Per chi vuole una nail art che non passi inosservata.'],
+  ['coffin','Ballerina','Punta piatta e lati affusolati: un look deciso, perfetto per glitter e decorazioni.'],
+];
+let cur = 'mandorla';
+const hero = $$('.hero .nail'); hero.forEach(el => reg(el, el.dataset.shape));
+const gal = $$('#gal .nail'); gal.forEach(el => reg(el, cur));
+
+/* hero cycles through shapes */
+const order = ['quadrata','ovale','mandorla','stiletto','coffin']; let tick2 = 0; let heroVisible = true;
+if (!reduce) setInterval(() => { if (document.hidden || !heroVisible) return; tick2++; hero.forEach((el,i) => setShape(el, order[(order.indexOf(el.dataset.shape)+tick2*(i+1)) % 5], i*260)); }, 3600);
+
+/* shape picker */
+const pick = $('#pick'), chipsBox = $('#shapeChips');
+SHAPES.forEach(([k,name]) => {
+  const b = document.createElement('button'); b.className = 'sbtn'; b.dataset.shape = k; b.setAttribute('aria-pressed', k === cur);
+  b.innerHTML = `<svg viewBox="0 0 40 56"><polygon points="${pts(k,40,56,3)}"/></svg>${name}`; pick.append(b);
+  const l = document.createElement('label'); l.className = 'chip'; l.innerHTML = `<input type="radio" name="shape" value="${name}"><span>${name}</span>`; chipsBox.append(l);
+});
+const chooseShape = k => {
+  cur = k; const s = SHAPES.find(x => x[0] === k);
+  $$('.sbtn').forEach(b => b.setAttribute('aria-pressed', b.dataset.shape === k));
+  $('#sName').textContent = s[1]; $('#sDesc').textContent = s[2];
+  gal.forEach((el,i) => setShape(el, k, i*55));
+};
+pick.addEventListener('click', e => { const b = e.target.closest('.sbtn'); if (b) chooseShape(b.dataset.shape); });
+chooseShape('mandorla');
+$('#sCta').addEventListener('click', () => { const s = SHAPES.find(x => x[0] === cur); const r = $$('input[name=shape]').find(i => i.value === s[1]); if (r) r.checked = true; });
+
+/* preselect service from buttons */
+$$('[data-pick]').forEach(a => a.addEventListener('click', () => { const i = $$('#svcChips input').find(x => x.value === a.dataset.pick); if (i) i.checked = true; }));
+
+
+/* prefill the message with the chosen set */
+$$('[data-set]').forEach(a => a.addEventListener('click', () => { $('#fMsg').value = `Vorrei il set "${a.dataset.set}".`; }));
+
+/* ---------- ombré scroll tone ---------- */
+const tio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) document.body.dataset.tone = e.target.dataset.tone; }), {rootMargin:'-45% 0px -54% 0px'});
+$$('main [data-tone], footer[data-tone]').forEach(s => tio.observe(s));
+
+/* ---------- nav / menu / floating ---------- */
+const nav = $('#nav'), wa = $('#wa'), pn = $('#pnail'), pcr = $('#pcr');
+$('#pf').setAttribute('points', pts('mandorla',100,140,4)); $('#po').setAttribute('points', pts('mandorla',100,140,4));
+const onScroll = () => { const y = scrollY, h = document.documentElement.scrollHeight - innerHeight; nav.classList.toggle('s', y > 40); wa.classList.toggle('show', y > innerHeight*.7); pn.classList.toggle('show', y > 120); pcr.setAttribute('y', (140 * (1 - Math.min(1, y/h))).toFixed(1)); };
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+const burger = $('#burger'), mm = $('#mmenu');
+const setMenu = o => { document.body.classList.toggle('mopen', o); burger.setAttribute('aria-expanded', o); mm.setAttribute('aria-hidden', !o); document.body.style.overflow = o ? 'hidden' : ''; };
+burger.addEventListener('click', () => setMenu(!document.body.classList.contains('mopen')));
+$$('a', mm).forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+/* ---------- reveal + split words ---------- */
+const split = el => {
+  let k = 0;
+  const wrap = txt => { const f = document.createDocumentFragment(); txt.split(/(\s+)/).forEach(w => { if (!w.trim()) { f.append(w); return; } const s = document.createElement('span'); s.className = 'sw'; s.innerHTML = `<span style="--k:${k++}">${w}</span>`; f.append(s); }); return f; };
+  [...el.childNodes].forEach(n => { if (n.nodeType === 3) n.replaceWith(wrap(n.textContent)); else if (n.nodeType === 1) { const s = document.createElement('span'); s.className = 'sw'; s.innerHTML = `<span style="--k:${k++}"></span>`; n.replaceWith(s); $('span', s).append(n); } });
+};
+$$('[data-split]').forEach(split);
+const rio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } }), {threshold:.15, rootMargin:'0px 0px -6% 0px'});
+$$('.rv, [data-split]').forEach(el => rio.observe(el));
+
+/* count up */
+const cio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; cio.unobserve(e.target); const el = e.target, to = parseFloat(el.dataset.to), dec = +el.dataset.dec || 0, suf = el.dataset.suf || ''; if (reduce) return; const t0 = performance.now(); (function f(t){ const p = Math.min(1,(t-t0)/1700), q = 1-Math.pow(1-p,3); el.textContent = (to*q).toFixed(dec).replace('.',',') + suf; if (p<1) requestAnimationFrame(f); })(t0); }), {threshold:.6});
+$$('[data-count]').forEach(el => cio.observe(el));
+
+/* ---------- glitter canvas ---------- */
+const cv = $('#glit'), cx = cv.getContext('2d'); let W=0, H=0, parts=[], mx=-999, my=-999, run=false;
+const size = () => { const r = cv.parentElement.getBoundingClientRect(), d = Math.min(2, devicePixelRatio||1); W = r.width; H = r.height; cv.width = W*d; cv.height = H*d; cx.setTransform(d,0,0,d,0,0); parts = Array.from({length: innerWidth < 700 ? 46 : 120}, () => ({x:Math.random()*W, y:Math.random()*H, s:Math.random()*2+.7, p:Math.random()*6.28, v:Math.random()*1.4+.4, dy:Math.random()*.12+.02, c:['255,255,255','248,213,224','217,185,138','205,182,255'][Math.random()*4|0]})); };
+const star = (x,y,r) => { cx.beginPath(); cx.moveTo(x,y-r); cx.quadraticCurveTo(x,y,x+r,y); cx.quadraticCurveTo(x,y,x,y+r); cx.quadraticCurveTo(x,y,x-r,y); cx.quadraticCurveTo(x,y,x,y-r); cx.fill(); };
+const draw = t => { if (!run) return; cx.clearRect(0,0,W,H); cx.globalCompositeOperation = 'lighter';
+  for (const p of parts) { p.y -= p.dy; if (p.y < -6) p.y = H+6; const tw = .5+.5*Math.sin(t/1000*p.v+p.p), near = Math.max(0, 1-Math.hypot(p.x-mx, p.y-my)/170), a = Math.min(1, .1+.5*tw+near*.9), r = p.s*(1+near*2.4)*(.6+.6*tw)*2.2; cx.fillStyle = `rgba(${p.c},${a})`; star(p.x,p.y,r); }
+  requestAnimationFrame(draw); };
+if (!reduce) {
+  size(); addEventListener('resize', size);
+  const hs = $('#hero'); hs.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); mx = e.clientX-r.left; my = e.clientY-r.top; }, {passive:true}); hs.addEventListener('pointerleave', () => { mx = my = -999; });
+  new IntersectionObserver(es => { heroVisible = es[0].isIntersecting; const was = run; run = heroVisible; if (run && !was) requestAnimationFrame(draw); }).observe(hs);
+}
+
+/* ---------- cursor ---------- */
+if (fine && !reduce) {
+  root.classList.add('has-cur');
+  const dot = $('#dot'), ring = $('#ring'), lab = $('#ringLab'); let x=innerWidth/2, y=innerHeight/2, rx=x, ry=y;
+  addEventListener('pointermove', e => { root.classList.add('moved'); x = e.clientX; y = e.clientY; dot.style.transform = `translate(${x}px,${y}px)`; }, {passive:true});
+  (function loop(){ rx += (x-rx)*.17; ry += (y-ry)*.17; ring.style.transform = `translate(${rx}px,${ry}px)`; requestAnimationFrame(loop); })();
+  document.addEventListener('pointerover', e => { const c = e.target.closest('[data-cursor]'), t = e.target.closest('a,button,.g,label'); ring.classList.toggle('lab', !!c); ring.classList.toggle('big', !!t && !c); lab.textContent = c ? c.dataset.cursor : ''; });
+  $$('.g').forEach(g => g.setAttribute('data-cursor','Vedi'));
+}
+
+/* ---------- tilt, gloss, parallax, magnetic ---------- */
+if (fine && !reduce) {
+  $$('.tilt').forEach(w => { const n = $('.nail', w);
+    w.addEventListener('pointermove', e => { const r = w.getBoundingClientRect(), px = (e.clientX-r.left)/r.width, py = (e.clientY-r.top)/r.height; w.style.transform = `perspective(900px) rotateX(${((.5-py)*10).toFixed(2)}deg) rotateY(${((px-.5)*12).toFixed(2)}deg) scale(1.02)`; n.style.setProperty('--mx', (px*100)+'%'); n.style.setProperty('--my', (py*100)+'%'); });
+    w.addEventListener('pointerleave', () => { w.style.transform = ''; }); });
+  $$('.tilt3').forEach(c => { c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.transform = `perspective(1000px) rotateX(${(((.5-(e.clientY-r.top)/r.height))*4).toFixed(2)}deg) rotateY(${((((e.clientX-r.left)/r.width)-.5)*5).toFixed(2)}deg)`; }); c.addEventListener('pointerleave', () => { c.style.transform = ''; }); });
+  const vis = $('#vis'); $('#hero').addEventListener('pointermove', e => { const px = e.clientX/innerWidth-.5, py = e.clientY/innerHeight-.5; $$('.hero .nailwrap', vis).forEach(n => { const d = +n.dataset.d; n.style.translate = `${(px*d*1.6).toFixed(1)}px ${(py*d*1.6).toFixed(1)}px`; }); }, {passive:true});
+  $$('.mag').forEach(b => { b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${((e.clientX-(r.left+r.width/2))*.22).toFixed(1)}px,${((e.clientY-(r.top+r.height/2))*.3).toFixed(1)}px)`; }); b.addEventListener('pointerleave', () => { b.style.transform = ''; }); });
+}
+
+/* ---------- marquee reacts to scroll speed ---------- */
+const mq = $('#mq');
+if (!reduce && mq.animate) { const a = mq.animate([{transform:'translateX(0)'},{transform:'translateX(-50%)'}], {duration:46000, iterations:Infinity}); let ls = scrollY, v = 0; addEventListener('scroll', () => { v = Math.min(14, v + Math.abs(scrollY-ls)*.3); ls = scrollY; }, {passive:true}); (function f(){ v *= .94; a.playbackRate = 1 + v; requestAnimationFrame(f); })(); }
+
+/* ---------- footer wordmark: weight follows the cursor ---------- */
+const fw = $('#fword'); fw.innerHTML = [...'ArtèM'].map(c => `<span>${c}</span>`).join('');
+if (fine && !reduce) { const sp = $$('span', fw); let fv = false; new IntersectionObserver(es => fv = es[0].isIntersecting).observe(fw);
+  addEventListener('pointermove', e => { if (!fv) return; sp.forEach(s => { const r = s.getBoundingClientRect(), d = Math.hypot(e.clientX-(r.left+r.width/2), e.clientY-(r.top+r.height/2)); s.style.fontWeight = Math.round(400 + 500*Math.max(0, 1-d/300)); }); }, {passive:true}); }
+
+/* ---------- lightbox ---------- */
+const lb = $('#lb'), lbi = $('#lbi'), photos = $$('#gal img'); let li = 0;
+const show = i => { li = (i+photos.length) % photos.length; lbi.src = photos[li].src; lbi.alt = photos[li].alt; };
+const open = i => { show(i); lb.classList.add('on'); $('#lbx').focus(); document.body.style.overflow = 'hidden'; };
+const close = () => { lb.classList.remove('on'); document.body.style.overflow = ''; };
+$$('#gal .g').forEach((g,i) => g.addEventListener('click', () => open(i)));
+$('#lbx').addEventListener('click', close); $('#lbp').addEventListener('click', () => show(li-1)); $('#lbn').addEventListener('click', () => show(li+1));
+lb.addEventListener('click', e => { if (e.target === lb) close(); });
+addEventListener('keydown', e => { if (!lb.classList.contains('on')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(li-1); if (e.key === 'ArrowRight') show(li+1); });
+
+/* ---------- form -> WhatsApp ---------- */
+$('#form').addEventListener('submit', e => {
+  e.preventDefault(); const nm = $('#fName'), name = nm.value.trim();
+  nm.style.borderColor = name ? '' : '#E0627A'; if (!name) { nm.focus(); return; }
+  const svc = $$('#svcChips input:checked').map(i => i.value).join(', ') || 'da definire', sh = ($$('input[name=shape]:checked')[0] || {}).value || 'da definire', msg = $('#fMsg').value.trim();
+  const text = `Ciao! Sono ${name}. Vorrei prenotare un appuntamento.\nMi serve: ${svc}.\nForma preferita: ${sh}.` + (msg ? `\n\n${msg}` : '');
+  const url = `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+  $('#okLink').href = url; $('#ok').style.display = 'block'; window.open(url, '_blank', 'noopener');
+});
+})();
+</script>
+</body>
+</html>
