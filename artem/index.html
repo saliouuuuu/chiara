@@ -89,40 +89,62 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .mmenu a em{font-weight:400}
 
 /* ===== hero ===== */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 60px;overflow:hidden}
+.hero{position:relative;height:230vh}
+.hero__pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 #glit{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero__grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,4vw,60px);align-items:center;width:100%}
-.hero h1{font-size:clamp(50px,7.6vw,122px);margin:20px 0 26px}
-.ln{display:block;overflow:hidden;padding:.04em .04em .12em;margin:-.04em -.04em -.12em}
+.hero__eyebrow{position:absolute;z-index:5;top:100px;left:0;right:0;text-align:center}
+.hero__title{position:absolute;inset:0;z-index:4;pointer-events:none;font-weight:500}
+.hw{position:absolute;white-space:nowrap;will-change:transform,opacity}
+.hw1,.hw2{top:21%;font-size:clamp(48px,8.2vw,140px)}
+.hw1{right:calc(50% + var(--w0,24vw)/2 + 2.2vw)}
+.hw2{left:calc(50% + var(--w0,24vw)/2 + 2.2vw)}
+.hw3{left:0;right:0;top:52%;text-align:center;font-size:clamp(56px,9.2vw,158px);filter:drop-shadow(0 10px 30px rgba(10,6,12,.6))}
+.ln{display:block;overflow:hidden;padding:.04em .06em .16em;margin:-.04em -.06em -.16em}
 .ln>span{display:inline-block;transform:translateY(112%);transition:transform 1.4s var(--ease)}
 .loaded .ln>span{transform:none;transition-delay:calc(1s + var(--i)*.13s)}
-.lead{max-width:470px;font-size:clamp(15px,1.25vw,17.5px);opacity:.82}
-.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin:34px 0 30px}
-.gchip{display:inline-flex;align-items:center;gap:12px;font-size:13px;padding:8px 18px 8px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--fg) 22%,transparent)}
+.vframe{position:absolute;z-index:3;left:50%;top:50%;width:24vw;height:58vh;transform:translate(-50%,-50%);filter:drop-shadow(0 40px 60px rgba(0,0,0,.55))}
+.vframe .nail{border-radius:30px;background:#241b29}
+.nail video{width:100%;height:100%;object-fit:cover;display:block}
+.vsound{position:absolute;z-index:4;left:50%;bottom:16px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:rgba(17,13,19,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F4EEEA;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;transition:background .3s}
+.vsound:hover,.vsound[aria-pressed="true"]{background:rgba(217,185,138,.85);color:#17110F}
+.vcap{position:absolute;z-index:4;left:50%;top:18px;transform:translateX(-50%);white-space:nowrap;padding:8px 14px;border-radius:999px;background:rgba(17,13,19,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F4EEEA;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:0}
+.vframe .badge{position:absolute;right:-52px;top:-34px;color:var(--fg)}
+.sats{position:absolute;inset:0;z-index:2;pointer-events:none}
+.sat{position:absolute;pointer-events:auto;will-change:transform,opacity}
+.sat .nailwrap{position:relative;width:100%}
+.s1{left:5%;top:45%;width:11.5vw;rotate:-7deg}
+.s2{right:4.5%;top:31%;width:9.5vw;rotate:7deg}
+.s3{right:13%;top:64%;width:8vw;rotate:-4deg}
+.hside{position:absolute;z-index:2;top:50%;transform:translateY(-50%);max-width:300px;opacity:0;pointer-events:none}
+.hside--l{left:var(--gut)}
+.hside--r{right:var(--gut);text-align:right;display:grid;gap:22px}
+.hside h2{font-family:var(--display);font-size:clamp(30px,3.2vw,50px);line-height:1.04;font-weight:500;letter-spacing:-.02em;margin:14px 0 16px}
+.hside p{opacity:.75;font-size:14.5px}
+.hstat b{display:block;font-family:var(--display);font-size:clamp(40px,4.4vw,66px);line-height:1;font-weight:500;letter-spacing:-.03em}
+.hstat span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.65}
+.hero__bar{position:absolute;z-index:5;left:0;right:0;bottom:4vh;display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:24px;padding:0 var(--gut)}
+.lead{max-width:320px;font-size:14px;opacity:.8}
+.hero__cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.gchip{justify-self:end;display:inline-flex;align-items:center;gap:12px;font-size:13px;padding:8px 18px 8px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--fg) 22%,transparent);background:color-mix(in srgb,var(--bg) 40%,transparent);backdrop-filter:blur(8px)}
 .gchip b{font-weight:700}
 .gchip .st{color:var(--gold);letter-spacing:2px;font-size:12px}
 .gchip i{width:26px;height:26px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:13px}
+.scrollcue{position:absolute;z-index:5;left:50%;top:calc(50% + 31vh);width:1px;height:0;display:none}
 .fade{opacity:0;transform:translateY(18px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
 .loaded .fade{opacity:1;transform:none;transition-delay:calc(1.5s + var(--i,0)*.12s)}
 
-.hero__vis{position:relative;height:min(76vh,720px);min-height:480px}
 .nailwrap{position:absolute;aspect-ratio:3/4.3;filter:drop-shadow(0 28px 36px rgba(0,0,0,.35));transition:transform .5s var(--ease);will-change:transform;display:block;padding:0}
-.n1{left:0;bottom:0;width:45%;z-index:2}
-.n2{left:28%;top:0;width:46%;z-index:3}
-.n3{right:0;bottom:7%;width:40%;z-index:1}
 .nail{position:relative;display:block;width:100%;height:100%;overflow:hidden;background:#2a2230;clip-path:ellipse(50% 50% at 50% 50%)}
 .nail img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
-.hero .nail{animation:flt 7s ease-in-out infinite}
-.n2 .nail{animation-delay:-2.3s}.n3 .nail{animation-delay:-4.6s}
+.sat .nail{animation:flt 7s ease-in-out infinite}
+.s2 .nail{animation-delay:-2.3s}.s3 .nail{animation-delay:-4.6s}
 @keyframes flt{50%{transform:translateY(-12px)}}
-.gloss{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.55),rgba(255,255,255,0) 42%);mix-blend-mode:soft-light;opacity:.0;transition:opacity .4s}
+.gloss{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.55),rgba(255,255,255,0) 42%);mix-blend-mode:soft-light;opacity:0;transition:opacity .4s}
 .nailwrap:hover .gloss{opacity:1}
-.badge{position:absolute;z-index:5;right:3%;top:2%;width:clamp(96px,10vw,132px);aspect-ratio:1;display:grid;place-items:center}
+.badge{position:absolute;z-index:5;width:clamp(96px,9vw,124px);aspect-ratio:1;display:grid;place-items:center}
 .badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
 .badge span{font-family:var(--display);font-size:clamp(26px,3vw,38px);font-style:italic}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hint{position:absolute;left:var(--gut);bottom:26px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;display:flex;align-items:center;gap:12px}
-.hint::before{content:"";width:46px;height:1px;background:currentColor}
 
 /* ===== marquee ===== */
 .marquee{overflow:hidden;padding:26px 0;border-block:1px solid color-mix(in srgb,var(--fg) 14%,transparent)}
@@ -270,9 +292,18 @@ legend{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.6
 /* ===== responsive ===== */
 @media (max-width:1020px){
   .nav__l,.nav .btn{display:none}.burger{display:block}
-  .hero__grid{grid-template-columns:1fr}
-  .hero{align-items:flex-start;padding-top:104px}
-  .hero__vis{height:460px;min-height:0}
+  .hero{height:200vh}
+  .hero__eyebrow{top:88px;font-size:9.5px;letter-spacing:.16em}
+  .hw1,.hw2{top:15.5%;font-size:clamp(40px,11vw,84px)}
+  .hw1{right:auto;left:var(--gut)}
+  .hw2{left:auto;right:var(--gut)}
+  .hw3{top:63%;font-size:clamp(44px,12.4vw,100px)}
+  .hero__bar{grid-template-columns:1fr;justify-items:center;bottom:3.5vh;gap:12px}
+  .hero__bar .lead,.hide-sm{display:none}
+  .gchip{justify-self:center}
+  .s1{left:-6%;top:33%;width:25vw}
+  .s2{right:-6%;top:47%;width:23vw}
+  .s3,.hside,.vframe .badge{display:none}
   .svcs{grid-template-columns:1fr 1fr}
   .svc:last-child{grid-column:1/-1}
   .shapes__top,.rev,.contact__grid{grid-template-columns:1fr}
@@ -286,8 +317,6 @@ legend{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.6
   .gal{grid-template-columns:repeat(2,1fr)}
   .gal .nailwrap:nth-child(n){margin-top:0}.gal .nailwrap:nth-child(even){margin-top:34px}
   .gal .nailwrap:nth-child(n+9){display:none}
-  .hero__vis{height:380px}
-  .n1{width:47%}.n2{left:26%;width:48%}.n3{width:40%}
   .sbtn{font-size:8.5px;letter-spacing:.04em;gap:8px}
   .wa span{display:none}.wa{padding:7px}
   .info a,.info div{grid-template-columns:86px 1fr}
@@ -297,6 +326,7 @@ legend{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.6
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   #pre{display:none}
+  .hero{height:auto}.hero__pin{position:relative}
   .ln>span,.sw>span,.fade,.rv{opacity:1!important;transform:none!important}
   .stars svg{transform:none}
   .omb,#fword span{background-position:0 0}
@@ -326,33 +356,53 @@ legend{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.6
 
 <!-- HERO -->
 <section class="hero" data-tone="night" id="hero">
+ <div class="hero__pin">
   <canvas id="glit" aria-hidden="true"></canvas>
-  <div class="wrap hero__grid">
-    <div class="hero__copy">
-      <p class="eyebrow fade" style="--i:0">Centro estetico · Onicotecnica · Cuneo</p>
-      <h1 class="disp" aria-label="Unghie come opere d'arte">
-        <span class="ln" aria-hidden="true"><span style="--i:0">Unghie</span></span>
-        <span class="ln" aria-hidden="true"><span style="--i:1">come <span class="omb">opere</span></span></span>
-        <span class="ln" aria-hidden="true"><span style="--i:2"><span class="omb">d'arte</span></span></span>
-      </h1>
-      <p class="lead fade" style="--i:1">Ricostruzione, nail art, ciglia e sopracciglia in Corso Vittorio Emanuele II. Ogni set è disegnato intorno alla tua mano.</p>
-      <div class="hero__cta fade" style="--i:2">
-        <a href="#contatti" class="btn btn--fill mag" data-cursor="Scrivi">Prenota su WhatsApp <span>→</span></a>
-        <a href="#forme" class="btn btn--line mag">Guarda i lavori ↓</a>
-      </div>
-      <a class="gchip fade" style="--i:3" href="#recensioni"><i>G</i><span class="st">★★★★★</span><span><b>5,0</b> · 17 recensioni su Google</span></a>
-    </div>
-    <div class="hero__vis" id="vis">
-      <a class="nailwrap n1 tilt" data-d="16" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="quadrata"><img src="assets/img/silver.jpg" alt="Unghie lunghe con french sfumato e glitter argento" style="object-position:22% 45%"><i class="gloss"></i></span></a>
-      <a class="nailwrap n2 tilt" data-d="-20" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="mandorla"><img src="assets/img/black-french.jpg" alt="Unghie con french nero a specchio, base perlata e anelli di perle" style="object-position:50% 30%"><i class="gloss"></i></span></a>
-      <a class="nailwrap n3 tilt" data-d="30" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="stiletto"><img src="assets/img/ombre-color.jpg" alt="Unghie ombré colorate rosa, azzurro, arancio e verde con glitter" style="object-position:42% 40%"><i class="gloss"></i></span></a>
-      <div class="badge" aria-hidden="true">
-        <svg viewBox="0 0 120 120"><defs><path id="bc" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-size="10.4" letter-spacing="3.1" fill="currentColor" font-family="Manrope" font-weight="700"><textPath href="#bc">5,0 SU GOOGLE · 17 RECENSIONI · </textPath></text></svg>
-        <span>★</span>
-      </div>
+  <p class="hero__eyebrow eyebrow fade" style="--i:0">Centro estetico · Onicotecnica · Cuneo</p>
+
+  <h1 class="hero__title disp" aria-label="Unghie come opere d'arte">
+    <span class="hw hw1" aria-hidden="true"><span class="ln"><span style="--i:0">Unghie</span></span></span>
+    <span class="hw hw2" aria-hidden="true"><span class="ln"><span style="--i:1">come</span></span></span>
+    <span class="hw hw3" aria-hidden="true"><span class="ln"><span style="--i:2"><span class="omb">opere d'arte</span></span></span></span>
+  </h1>
+
+  <div class="vframe" id="vframe">
+    <span class="nail vnail" data-shape="ovale"><video id="hvid" src="assets/video/atelier.mp4" poster="assets/img/atelier-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Video: extension ciglia nello studio ArtèM"></video></span>
+    <p class="vcap" id="vcap">Extension ciglia · in studio a Cuneo</p>
+    <button class="vsound" id="vsound" aria-pressed="false" data-cursor="Audio"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg><span>Audio</span></button>
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 120 120"><defs><path id="bc" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-size="10.4" letter-spacing="3.1" fill="currentColor" font-family="Manrope" font-weight="700"><textPath href="#bc">5,0 SU GOOGLE · 17 RECENSIONI · </textPath></text></svg>
+      <span>★</span>
     </div>
   </div>
-  <p class="hint fade" style="--i:4">Le forme cambiano. Scegli la tua</p>
+
+  <div class="sats" id="vis">
+    <div class="sat s1"><a class="nailwrap tilt" data-d="16" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="quadrata"><img src="assets/img/silver.jpg" alt="Unghie lunghe con french sfumato e glitter argento" style="object-position:22% 45%"><i class="gloss"></i></span></a></div>
+    <div class="sat s2"><a class="nailwrap tilt" data-d="-20" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="mandorla"><img src="assets/img/black-french.jpg" alt="Unghie con french nero a specchio, base perlata e anelli di perle" style="object-position:50% 30%"><i class="gloss"></i></span></a></div>
+    <div class="sat s3"><a class="nailwrap tilt" data-d="28" href="#forme" aria-label="Guarda i lavori"><span class="nail" data-shape="stiletto"><img src="assets/img/ombre-color.jpg" alt="Unghie ombré colorate rosa, azzurro, arancio e verde con glitter" style="object-position:42% 40%"><i class="gloss"></i></span></a></div>
+  </div>
+
+  <div class="hside hside--l">
+    <p class="eyebrow">Dentro l'atelier</p>
+    <h2>Ogni dettaglio, <em class="omb">fatto a mano</em></h2>
+    <p>Ciglia, unghie e sopracciglia nello stesso studio, in Corso Vittorio Emanuele II a Cuneo.</p>
+  </div>
+  <div class="hside hside--r">
+    <div class="hstat"><b>5,0</b><span>su Google</span></div>
+    <div class="hstat"><b>409</b><span>lavori su Instagram</span></div>
+    <div class="hstat"><b>1,1K</b><span>follower</span></div>
+  </div>
+
+  <div class="hero__bar" id="hbar">
+    <p class="lead fade" style="--i:1">Ricostruzione, nail art, ciglia e sopracciglia. Ogni set è disegnato intorno alla tua mano.</p>
+    <div class="hero__cta fade" style="--i:2">
+      <a href="#contatti" class="btn btn--fill mag" data-cursor="Scrivi">Prenota su WhatsApp <span>→</span></a>
+      <a href="#forme" class="btn btn--line mag hide-sm">Guarda i lavori ↓</a>
+    </div>
+    <a class="gchip fade" style="--i:3" href="#recensioni"><i>G</i><span class="st">★★★★★</span><span><b>5,0</b> · 17 recensioni</span></a>
+  </div>
+  <div class="scrollcue fade" style="--i:4" aria-hidden="true"><i></i></div>
+ </div>
 </section>
 
 <!-- MARQUEE -->
@@ -541,7 +591,7 @@ const F = {
   coffin:   y => (y < .42 ? .2 + .3*(y/.42) : .5) * bot(y),
 };
 const P = {}; Object.keys(F).forEach(k => P[k] = Float32Array.from(Y.map(F[k])));
-const poly = w => { let L='',R=''; for (let i=0;i<N;i++) L += `${(50-w[i]*100).toFixed(2)}% ${(Y[i]*100).toFixed(2)}%,`; for (let i=N-1;i>=0;i--) R += `${(50+w[i]*100).toFixed(2)}% ${(Y[i]*100).toFixed(2)}%,`; return `polygon(${L}${R.slice(0,-1)})`; };
+const poly = (w, o=0) => { let L='',R=''; for (let i=0;i<N;i++) { const v = w[i]+(.5-w[i])*o; L += `${(50-v*100).toFixed(2)}% ${(Y[i]*100).toFixed(2)}%,`; } for (let i=N-1;i>=0;i--) { const v = w[i]+(.5-w[i])*o; R += `${(50+v*100).toFixed(2)}% ${(Y[i]*100).toFixed(2)}%,`; } return `polygon(${L}${R.slice(0,-1)})`; };
 const pts = (k, W, H, pad) => { const w=P[k]; const a=[],b=[]; for (let i=0;i<N;i++) a.push(`${(pad+(.5-w[i])*(W-2*pad)).toFixed(1)},${(pad+Y[i]*(H-2*pad)).toFixed(1)}`); for (let i=N-1;i>=0;i--) b.push(`${(pad+(.5+w[i])*(W-2*pad)).toFixed(1)},${(pad+Y[i]*(H-2*pad)).toFixed(1)}`); return a.concat(b).join(' '); };
 
 const items = new Map(); let raf = 0, last = 0;
@@ -549,7 +599,7 @@ const reg = (el, shape) => { const cur = Float32Array.from(P[shape]); items.set(
 const setShape = (el, shape, delay=0) => { const it = items.get(el); if (!it) return; const run = () => { it.tgt = P[shape]; if (reduce) { it.cur.set(it.tgt); el.style.clipPath = poly(it.cur); return; } it.busy = true; if (!raf) { last = performance.now(); raf = requestAnimationFrame(tick); } }; delay ? setTimeout(run, delay) : run(); };
 function tick(t) {
   const dt = Math.min(.05, (t-last)/1000); last = t; const k = 1 - Math.exp(-dt*6); let any = false;
-  items.forEach((it, el) => { if (!it.busy) return; let d = 0; for (let i=0;i<N;i++) { const diff = it.tgt[i]-it.cur[i]; it.cur[i] += diff*k; d = Math.max(d, Math.abs(diff)); } el.style.clipPath = poly(it.cur); if (d < .0008) { it.cur.set(it.tgt); it.busy = false; el.style.clipPath = poly(it.cur); } else any = true; });
+  items.forEach((it, el) => { if (!it.busy) return; let d = 0; for (let i=0;i<N;i++) { const diff = it.tgt[i]-it.cur[i]; it.cur[i] += diff*k; d = Math.max(d, Math.abs(diff)); } el.style.clipPath = poly(it.cur, el.__o||0); if (d < .0008) { it.cur.set(it.tgt); it.busy = false; el.style.clipPath = poly(it.cur, el.__o||0); } else any = true; });
   raf = any ? requestAnimationFrame(tick) : 0;
 }
 const SHAPES = [
@@ -590,6 +640,35 @@ $$('[data-pick]').forEach(a => a.addEventListener('click', () => { const i = $$(
 
 /* prefill the message with the chosen set */
 $$('[data-set]').forEach(a => a.addEventListener('click', () => { $('#fMsg').value = `Vorrei il set "${a.dataset.set}".`; }));
+
+
+/* ---------- hero: scroll opens the video nail into a reel ---------- */
+const vs = $('#vsound'), heroEl = $('#hero'), vf = $('#vframe'), vn = $('.vnail'), hws = $$('.hw'), sats = $$('.sat'), hbar = $('#hbar'), heb = $('.hero__eyebrow'), sides = $$('.hside'), vcap = $('#vcap'), vbadge = $('.vframe .badge');
+const SDIR = [[-1,.25],[1,-.35],[1,.55]];
+const c01 = v => Math.max(0, Math.min(1, v)), eio = t => t < .5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
+const heroFrame = () => {
+  const vh = innerHeight, vw = innerWidth, mob = vw <= 1020;
+  const H0 = (mob ? .44 : .58)*vh, W0 = Math.min(H0*.7, vw*.62), H1 = (mob ? .74 : .86)*vh, W1 = Math.min(vw*.92, H1*.5625);
+  const total = Math.max(1, heroEl.offsetHeight - vh), p = reduce ? 0 : c01(-heroEl.getBoundingClientRect().top / (total*.85)), e = eio(p);
+  heroEl.style.setProperty('--w0', W0 + 'px');
+  vf.style.width = (W0 + (W1-W0)*e).toFixed(1) + 'px'; vf.style.height = (H0 + (H1-H0)*e).toFixed(1) + 'px';
+  vn.__o = eio(c01((p-.08)/.7)); const it = items.get(vn); if (it) vn.style.clipPath = poly(it.cur, vn.__o);
+  hws[0].style.transform = `translateX(${(-e*46).toFixed(2)}vw)`; hws[1].style.transform = `translateX(${(e*46).toFixed(2)}vw)`;
+  hws[0].style.opacity = hws[1].style.opacity = c01(1-e*1.6).toFixed(3);
+  hws[2].style.transform = `translateY(${(e*24).toFixed(2)}vh) scale(${(1+e*.12).toFixed(3)})`; hws[2].style.opacity = c01(1-e*1.9).toFixed(3);
+  sats.forEach((s,i) => { const [dx,dy] = SDIR[i]; s.style.transform = `translate(${(dx*e*42).toFixed(2)}vw,${(dy*e*42).toFixed(2)}vh) rotate(${(dx*e*28).toFixed(1)}deg)`; s.style.opacity = c01(1-e*1.4).toFixed(3); });
+  const fo = c01(1-p*3.2); hbar.style.opacity = heb.style.opacity = fo.toFixed(3); hbar.style.transform = `translateY(${(p*60).toFixed(1)}px)`; hbar.style.pointerEvents = fo < .2 ? 'none' : '';
+  const so = c01((p-.5)/.3); sides.forEach(sd => { sd.style.opacity = so.toFixed(3); sd.style.transform = `translateY(calc(-50% + ${((1-so)*30).toFixed(1)}px))`; });
+  const vso = c01((p-.22)/.25); vs.style.opacity = vso.toFixed(3); vs.style.pointerEvents = vso < .3 ? 'none' : '';
+  vcap.style.opacity = so.toFixed(3); if (vbadge) vbadge.style.opacity = c01(1-e*2).toFixed(3);
+};
+let hraf = 0; const hreq = () => { if (!hraf) hraf = requestAnimationFrame(() => { hraf = 0; heroFrame(); }); };
+addEventListener('scroll', hreq, {passive:true}); addEventListener('resize', hreq); heroFrame();
+
+/* sound toggle */
+const hv = $('#hvid');
+vs.addEventListener('click', () => { hv.muted = !hv.muted; if (hv.paused) hv.play().catch(() => {}); vs.setAttribute('aria-pressed', !hv.muted); $('span', vs).textContent = hv.muted ? 'Audio' : 'Muto'; });
+if (reduce) { hv.removeAttribute('autoplay'); hv.pause(); }
 
 /* ---------- ombré scroll tone ---------- */
 const tio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) document.body.dataset.tone = e.target.dataset.tone; }), {rootMargin:'-45% 0px -54% 0px'});
